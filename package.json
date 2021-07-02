@@ -1,0 +1,49 @@
+{
+    "name": "soundboard",
+    "productName": "soundboard",
+    "author": "Micha Hanselmann",
+    "version": "1.0.0",
+    "description": "soundboard",
+    "main": ".webpack/main",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\""
+    },
+    "license": "GPL-3.0-only",
+    "config": {
+        "forge": "./forge.config.js"
+    },
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.0-beta.57",
+        "@electron-forge/plugin-webpack": "6.0.0-beta.57",
+        "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+        "@types/react": "^17.0.13",
+        "@types/react-dom": "^17.0.8",
+        "@typescript-eslint/eslint-plugin": "^4.0.1",
+        "@typescript-eslint/parser": "^4.28.1",
+        "css-loader": "^5.0.0",
+        "electron": "13.1.5",
+        "eslint": "^7.6.0",
+        "eslint-import-resolver-typescript": "^2.4.0",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "fork-ts-checker-webpack-plugin": "^6.0.1",
+        "node-loader": "^2.0.0",
+        "sass": "^1.35.1",
+        "sass-loader": "^12.1.0",
+        "style-loader": "^3.0.0",
+        "ts-loader": "^9.2.2",
+        "typescript": "^4.0.2"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.6.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-redux": "^7.2.4",
+        "redux": "^4.1.0"
+    }
+}
