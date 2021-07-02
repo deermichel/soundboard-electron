@@ -16,7 +16,8 @@
         "resolveJsonModule": true,
         "jsx": "react-jsx",
         "paths": {
-            "assets/*": ["../assets/*"]
+            "assets/*": ["../assets/*"],
+            "modules/*": ["../build/Release/*"],
         }
     },
     "include": [

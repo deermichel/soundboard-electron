@@ -1,0 +1,3 @@
+[submodule "ext/juce"]
+	path = ext/juce
+	url = git@github.com:juce-framework/JUCE.git
