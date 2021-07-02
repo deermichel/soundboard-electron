@@ -1,0 +1,26 @@
+@import "theme.scss";
+
+.button {
+    all: unset;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    // transition: .1s ease-out;
+    width: 48px;
+
+    &:active {
+        background-color: #595959; // TODO: theming
+    }
+}
+
+.root {
+    align-self: flex-end;
+    background-color: $color-container;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+}

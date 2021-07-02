@@ -1,0 +1,14 @@
+@import "theme.scss";
+
+.root {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 352px;
+}
+
+.unitContainer {
+    display: flex;
+    flex-direction: column;
+}
