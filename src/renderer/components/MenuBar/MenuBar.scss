@@ -1,0 +1,32 @@
+@import "theme.scss";
+
+.button {
+    all: unset;
+    align-items: center;
+    background-color: $color-container;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    // transition: .1s ease-out;
+    width: 64px;
+
+    &:active {
+        background-color: #595959; // TODO: theming
+    }
+}
+
+.root {
+    align-items: center;
+    backdrop-filter: blur(16px);
+    background-color: transparentize($color: $color-background, $amount: 0.3); // TODO: shadow at bottom
+    display: flex;
+    left: 0;
+    justify-content: flex-end;
+    padding: 16px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}

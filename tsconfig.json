@@ -15,7 +15,9 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "jsx": "react-jsx",
-        "paths": {}
+        "paths": {
+            "assets/*": ["../assets/*"]
+        }
     },
     "include": [
         "src"

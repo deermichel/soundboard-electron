@@ -1,5 +1,17 @@
 @import "theme.scss";
 
-.title {
-    color: white;
+.channelStrip {
+    padding: 48px;
+}
+
+.channelStripsContainer {
+    display: flex;
+    margin: 0 auto;
+    padding: 48px;
+    padding-top: 56px;
+    transition: .1s ease-out;
+}
+
+.root {
+    display: flex;
 }
