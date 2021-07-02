@@ -1,4 +1,9 @@
 // backend interface typings
+interface Backend {
+    initialize: () => void,
+}
+
 declare module "*backend.node" {
-    export function initialize(): void;
+    const backend: Backend;
+    export default backend;
 }

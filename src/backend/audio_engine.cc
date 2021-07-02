@@ -26,6 +26,11 @@ void AudioEngine::initialize() {
     // auto midiInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiInputNode));
     // auto midiOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiOutputNode));
 
+    // TEMP: connect input to output
+    for (int channel = 0; channel < 2; channel++) {
+        mAudioGraph.addConnection({ { mAudioGraphAudioInputNode->nodeID, channel }, { mAudioGraphAudioOutputNode->nodeID, channel } });
+    }
+
     // setup audio processor player
     mAudioProcessorPlayer.setProcessor(&mAudioGraph);
     mInitialized = true;
