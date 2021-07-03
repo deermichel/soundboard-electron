@@ -91,3 +91,6 @@ out/
 # native addon
 bin/
 build/
+
+# vscode
+.vscode/

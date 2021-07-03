@@ -1,18 +1,23 @@
-#ifndef BACKEND_AUDIO_ENGINE_H
-#define BACKEND_AUDIO_ENGINE_H
+#ifndef AUDIO_ENGINE_H
+#define AUDIO_ENGINE_H
 
 #include <juce_audio_devices/juce_audio_devices.h>
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_audio_utils/juce_audio_utils.h>
 
 namespace soundboard {
-namespace backend {
 
 // juce-powered audio engine, derives audio processor graph from session
 class AudioEngine {
 public:
+    // add audio unit (returns unique id)
+    unsigned int addAudioUnit(const std::string &id);
+
     // initialize engine (required before calling any other method)
     void initialize();
+
+    // remove processor
+    void removeProcessor(unsigned int id);
 
     // return singleton instance
     static AudioEngine& instance() {
@@ -41,9 +46,11 @@ private:
 
     // whether the engine was initialized
     bool mInitialized = false;
+
+    // add internal processor (returns unique id)
+    unsigned int addInternalProcessor(std::unique_ptr<juce::AudioProcessor> processor);
 };
 
-} // namespace backend
 } // namespace soundboard
 
-#endif // BACKEND_AUDIO_ENGINE_H
+#endif // AUDIO_ENGINE_H
