@@ -36,6 +36,27 @@ void RemoveAudioUnit(const Napi::CallbackInfo &info) {
     }
 }
 
+// set audio unit parameter value
+void SetParameterValue(const Napi::CallbackInfo &info) {
+    Napi::Env env = info.Env();
+
+    // validate arguments
+    if (info.Length() < 3) throw Napi::TypeError::New(env, "invalid number of arguments");
+    if (!info[0].IsNumber()) throw Napi::TypeError::New(env, "first argument is not a number");
+    if (!info[1].IsString()) throw Napi::TypeError::New(env, "second argument is not a string");
+    if (!info[2].IsNumber()) throw Napi::TypeError::New(env, "third argument is not a number");
+    unsigned int ref = info[0].As<Napi::Number>().Uint32Value();
+    std::string paramId = info[1].As<Napi::String>().Utf8Value();
+    float value = info[2].As<Napi::Number>().FloatValue();
+
+    // set parameter value
+    try {
+        soundboard::AudioEngine::instance().setParameterValue(ref, paramId, value);
+    } catch (const std::exception &e) {
+        throw Napi::Error::New(env, e.what());
+    }
+}
+
 // update audio graph connections via session
 void UpdateGraph(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
@@ -61,6 +82,7 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
     // exports
     exports.Set(Napi::String::New(env, "addAudioUnit"), Napi::Function::New(env, AddAudioUnit));
     exports.Set(Napi::String::New(env, "removeAudioUnit"), Napi::Function::New(env, RemoveAudioUnit));
+    exports.Set(Napi::String::New(env, "setParameterValue"), Napi::Function::New(env, SetParameterValue));
     exports.Set(Napi::String::New(env, "updateGraph"), Napi::Function::New(env, UpdateGraph));
     return exports;
 }

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AudioUnit, AudioUnitId, Session } from "backend/types";
+import { AudioUnit, AudioUnitControlId, AudioUnitId, Session } from "backend/types";
 import { AppThunk } from "./index";
 
 // app state
@@ -84,6 +84,12 @@ export const removeChannelStrip = (index: number): AppThunk => (dispatch, getSta
     });
     dispatch(appSlice.actions.removeChannelStrip({ index }));
     window.backend.updateGraph(getState().session!);
+};
+
+// set parameter value
+export const setParameterValue = (channelStrip: number, index: number, paramId: AudioUnitControlId, value: number): AppThunk => (dispatch, getState) => {
+    const { ref } = getState().session!.channelStrips[channelStrip].audioUnits[index];
+    window.backend.setParameterValue(ref, paramId, value);
 };
 
 export default appSlice.reducer;

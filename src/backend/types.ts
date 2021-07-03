@@ -55,5 +55,6 @@ export interface Session {
 export interface Backend {
     addAudioUnit: (id: AudioUnitId) => AudioUnitRef,
     removeAudioUnit: (ref: AudioUnitRef) => void,
+    setParameterValue: (ref: AudioUnitRef, paramId: AudioUnitControlId, value: number) => void,
     updateGraph: (session: Session) => void,
 }

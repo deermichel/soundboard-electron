@@ -9,6 +9,9 @@ namespace model {
 
 // channel strip containing audio units
 struct ChannelStrip {
+    // audio units
+    std::vector<AudioUnit> audioUnits;
+
     // construct channel strip from js object
     ChannelStrip(const Napi::Object &object) {
         auto audioUnitsObject = object.Get("audioUnits").As<Napi::Array>();
@@ -16,9 +19,6 @@ struct ChannelStrip {
             audioUnits.emplace_back(audioUnitsObject.Get(i).As<Napi::Object>());
         }
     }
-
-    // audio units
-    std::vector<AudioUnit> audioUnits;
 };
 
 } // namespace model

@@ -20,42 +20,20 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
     return addInternalProcessor(std::move(instance));
 }
 
-// update audio graph connections via session
-void AudioEngine::updateGraph(const model::Session &session) {
-    auto channelStrips = session.channelStrips;
-    fprintf(stderr, "updating audio graph of session '%s' (%d channel strips)\n", session.name.c_str(), channelStrips.size());
+// return audio unit parameter values
+std::vector<model::ParameterValue> AudioEngine::getParameterValues(unsigned int ref) const {
+    if (!mInitialized) throw std::logic_error("audio engine is not initialized");
+    auto node = mAudioGraph.getNodeForId(juce::AudioProcessorGraph::NodeID(ref));
+    if (!node) throw std::logic_error("invalid node id");
+    auto parameters = node->getProcessor()->getParameters();
 
-    // // clear all connections
-    for (const auto &node : mAudioGraph.getNodes()) {
-        mAudioGraph.disconnectNode(node->nodeID);
+    // cast and convert params
+    std::vector<model::ParameterValue> values;
+    for (const auto &param : parameters) {
+        auto paramWithId = static_cast<juce::AudioProcessorParameterWithID*>(param);
+        values.push_back({ .id = paramWithId->paramID.toStdString(), .value = paramWithId->getValue() });
     }
-
-    // iterate channel strips
-    for (unsigned int index = 0; index < channelStrips.size(); index++) {
-        auto audioUnits = channelStrips[index].audioUnits;
-        fprintf(stderr, "channel strip %d: %d audio units\n", index, audioUnits.size());
-
-        // connect audio unit chain
-        auto lastNodeId = mAudioGraphAudioInputNode->nodeID;
-        for (const auto &audioUnit : audioUnits) {
-            auto nodeId = juce::AudioProcessorGraph::NodeID(audioUnit.ref);
-
-            // create new connections
-            for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
-                bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { nodeId, channel } });
-                fprintf(stderr, "add connection %d to %d: %s\n", lastNodeId.uid, nodeId.uid, result ? "success" : "failed");
-            }
-            lastNodeId = nodeId;
-        }
-
-        // connect to output
-        for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
-            bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { mAudioGraphAudioOutputNode->nodeID, channel } });
-            fprintf(stderr, "add connection %d to output: %s\n", lastNodeId.uid, result ? "success" : "failed");
-        }
-    }
-
-    fprintf(stderr, "there are now %d nodes and %d connections\n", mAudioGraph.getNumNodes(), mAudioGraph.getConnections().size());
+    return values;
 }
 
 // initialize engine (required before calling any other method)
@@ -99,6 +77,61 @@ void AudioEngine::reset() {
     mAudioGraphAudioOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode));
     // auto midiInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiInputNode));
     // auto midiOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiOutputNode));
+}
+
+// set audio unit parameter value
+void AudioEngine::setParameterValue(unsigned int ref, const std::string &paramId, float value) {
+    if (!mInitialized) throw std::logic_error("audio engine is not initialized");
+    auto node = mAudioGraph.getNodeForId(juce::AudioProcessorGraph::NodeID(ref));
+    if (!node) throw std::logic_error("invalid node id");
+    auto parameters = node->getProcessor()->getParameters();
+    for (const auto &param : parameters) {
+        auto paramWithId = static_cast<juce::AudioProcessorParameterWithID*>(param);
+        if (paramWithId->paramID.toStdString() == paramId) {
+            paramWithId->setValue(value);
+            paramWithId->sendValueChangedMessageToListeners(value); // TODO: better way?
+            return;
+        }
+    }
+    throw std::logic_error("invalid parameter id");
+}
+
+// update audio graph connections via session
+void AudioEngine::updateGraph(const model::Session &session) {
+    auto channelStrips = session.channelStrips;
+    fprintf(stderr, "updating audio graph of session '%s' (%d channel strips)\n", session.name.c_str(), channelStrips.size());
+
+    // // clear all connections
+    for (const auto &node : mAudioGraph.getNodes()) {
+        mAudioGraph.disconnectNode(node->nodeID);
+    }
+
+    // iterate channel strips
+    for (unsigned int index = 0; index < channelStrips.size(); index++) {
+        auto audioUnits = channelStrips[index].audioUnits;
+        fprintf(stderr, "channel strip %d: %d audio units\n", index, audioUnits.size());
+
+        // connect audio unit chain
+        auto lastNodeId = mAudioGraphAudioInputNode->nodeID;
+        for (const auto &audioUnit : audioUnits) {
+            auto nodeId = juce::AudioProcessorGraph::NodeID(audioUnit.ref);
+
+            // create new connections
+            for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
+                bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { nodeId, channel } });
+                fprintf(stderr, "add connection %d to %d: %s\n", lastNodeId.uid, nodeId.uid, result ? "success" : "failed");
+            }
+            lastNodeId = nodeId;
+        }
+
+        // connect to output
+        for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
+            bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { mAudioGraphAudioOutputNode->nodeID, channel } });
+            fprintf(stderr, "add connection %d to output: %s\n", lastNodeId.uid, result ? "success" : "failed");
+        }
+    }
+
+    fprintf(stderr, "there are now %d nodes and %d connections\n", mAudioGraph.getNumNodes(), mAudioGraph.getConnections().size());
 }
 
 // --- private methods ---

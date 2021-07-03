@@ -8,13 +8,13 @@ namespace model {
 
 // audio unit is a single instance of an effect, instrument, internal
 struct AudioUnit {
+    // unique processor reference
+    unsigned int ref;
+
     // construct audio unit from js object
     AudioUnit(const Napi::Object &object) {
         ref = object.Get("ref").As<Napi::Number>().Uint32Value();
     }
-
-    // unique processor reference
-    unsigned int ref;
 };
 
 } // namespace model

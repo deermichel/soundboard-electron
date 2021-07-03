@@ -9,6 +9,12 @@ namespace model {
 
 // session containing a single project (channel strips, audio units, mappings, etc.)
 struct Session {
+    // channel strips
+    std::vector<ChannelStrip> channelStrips;
+
+    // session name
+    std::string name;
+
     // construct session from js object
     Session(const Napi::Object &object) {
         name = object.Get("name").As<Napi::String>().Utf8Value();
@@ -17,12 +23,6 @@ struct Session {
             channelStrips.emplace_back(channelStripsObject.Get(i).As<Napi::Object>());
         }
     }
-
-    // channel strips
-    std::vector<ChannelStrip> channelStrips;
-
-    // session name
-    std::string name;
 };
 
 } // namespace model

@@ -27,9 +27,9 @@ const AudioUnit = ({ descriptionId, values, onChange }: AudioUnitProps) => {
             <div className={`${styles.header} ${styles[type]}`}>{name}</div>
             <div className={styles.content} style={{ height }}>
                 {controls.map((control) => (
-                    <ControlContainer
+                    <ControlContainer // eslint-disable-line
                         control={control}
-                        key={control.id} // TODO: fix!!!!
+                        // key={control.id} // TODO: fix!!!!
                         value={values[control.id]}
                         onChange={(value) => onChange(control.id, value)}
                     />

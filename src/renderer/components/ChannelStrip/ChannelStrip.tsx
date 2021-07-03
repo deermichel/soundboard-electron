@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { AudioUnitPlaceholder, AudioUnit } from "renderer/components";
-import { AudioUnitId, AudioUnitType } from "backend/types";
+import { AudioUnitControlId, AudioUnitId, AudioUnitType } from "backend/types";
 import { useAppDispatch, useAppSelector } from "renderer/store/hooks";
-import { addChannelStrip, insertAudioUnit, removeAudioUnit, removeChannelStrip } from "renderer/store/app";
+import { addChannelStrip, insertAudioUnit, removeAudioUnit, removeChannelStrip, setParameterValue } from "renderer/store/app";
 import styles from "./ChannelStrip.scss";
 import MenuButtons from "./MenuButtons";
 
@@ -22,6 +22,11 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
 
     // hide placeholder when edit mode is cancelled
     useEffect(() => { if (!editMode) setShowPlaceholder(undefined); }, [editMode]);
+
+    // on change
+    const onChange = (audioUnitIndex: number, controlId: AudioUnitControlId, value: number) => {
+        dispatch(setParameterValue(channelStripIndex, audioUnitIndex, controlId, value));
+    };
 
     // on add audio unit
     const onAddAudioUnit = (id: AudioUnitId | null, index: number) => {
@@ -93,7 +98,7 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
                                     <AudioUnit
                                         descriptionId={unit.id}
                                         values={{}}
-                                        onChange={(controlId, value) => console.log(index, controlId, value)}
+                                        onChange={(controlId, value) => onChange(index, controlId, value)}
                                     />
                                 )}
                             </div>

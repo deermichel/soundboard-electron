@@ -4,6 +4,7 @@
 #include <juce_audio_devices/juce_audio_devices.h>
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_audio_utils/juce_audio_utils.h>
+#include "model/parameter_value.h"
 #include "model/session.h"
 
 namespace soundboard {
@@ -14,6 +15,9 @@ public:
     // add audio unit (returns unique ref)
     unsigned int addAudioUnit(const std::string &id);
 
+    // return audio unit parameter values
+    std::vector<model::ParameterValue> getParameterValues(unsigned int ref) const;
+
     // initialize engine (required before calling any other method)
     void initialize();
 
@@ -22,6 +26,9 @@ public:
 
     // reset engine (to freshly initialized state, e.g. removes all audio units)
     void reset();
+
+    // set audio unit parameter value
+    void setParameterValue(unsigned int ref, const std::string &paramId, float value);
 
     // update audio graph connections via session
     void updateGraph(const model::Session &session);
