@@ -28,7 +28,7 @@ public:
     void reset();
 
     // set audio unit parameter value
-    void setParameterValue(unsigned int ref, const std::string &paramId, float value);
+    std::vector<model::ParameterValue> setParameterValue(unsigned int ref, const std::string &paramId, float value);
 
     // update audio graph connections via session
     void updateGraph(const model::Session &session);

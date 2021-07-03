@@ -15,8 +15,7 @@ struct ParameterValue {
     float value;
 
     // construct js object
-    Napi::Object CreateObject(const Napi::CallbackInfo &info) {
-        Napi::Env env = info.Env();
+    Napi::Object CreateObject(const Napi::Env &env) const {
         Napi::Object object = Napi::Object::New(env);
         object.Set(Napi::String::New(env, "id"), Napi::String::New(env, id));
         object.Set(Napi::String::New(env, "value"), Napi::Number::New(env, value));

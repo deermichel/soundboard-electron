@@ -37,7 +37,7 @@ void RemoveAudioUnit(const Napi::CallbackInfo &info) {
 }
 
 // set audio unit parameter value
-void SetParameterValue(const Napi::CallbackInfo &info) {
+Napi::Value SetParameterValue(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
 
     // validate arguments
@@ -51,7 +51,14 @@ void SetParameterValue(const Napi::CallbackInfo &info) {
 
     // set parameter value
     try {
-        soundboard::AudioEngine::instance().setParameterValue(ref, paramId, value);
+        auto paramValues = soundboard::AudioEngine::instance().setParameterValue(ref, paramId, value);
+
+        // return updated parameter values
+        Napi::Object values = Napi::Object::New(env);
+        for (const auto &paramValue : paramValues) {
+            values.Set(Napi::String::New(env, paramValue.id), paramValue.CreateObject(env));
+        }
+        return values;
     } catch (const std::exception &e) {
         throw Napi::Error::New(env, e.what());
     }

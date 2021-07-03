@@ -80,20 +80,30 @@ void AudioEngine::reset() {
 }
 
 // set audio unit parameter value
-void AudioEngine::setParameterValue(unsigned int ref, const std::string &paramId, float value) {
+std::vector<model::ParameterValue> AudioEngine::setParameterValue(unsigned int ref, const std::string &paramId, float value) {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
     auto node = mAudioGraph.getNodeForId(juce::AudioProcessorGraph::NodeID(ref));
     if (!node) throw std::logic_error("invalid node id");
     auto parameters = node->getProcessor()->getParameters();
+
+    // iterate and convert params
+    std::vector<model::ParameterValue> values;
+    bool paramSet = false;
     for (const auto &param : parameters) {
         auto paramWithId = static_cast<juce::AudioProcessorParameterWithID*>(param);
+
+        // set param
         if (paramWithId->paramID.toStdString() == paramId) {
             paramWithId->setValue(value);
             paramWithId->sendValueChangedMessageToListeners(value); // TODO: better way?
-            return;
+            paramSet = true;
         }
+
+        // store (updated) params
+        values.push_back({ .id = paramWithId->paramID.toStdString(), .value = paramWithId->getValue() });
     }
-    throw std::logic_error("invalid parameter id");
+    if (!paramSet) throw std::logic_error("invalid parameter id"); // param with given id not found
+    return values;
 }
 
 // update audio graph connections via session

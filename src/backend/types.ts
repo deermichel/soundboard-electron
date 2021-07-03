@@ -1,6 +1,6 @@
 // id types
 export type AudioUnitId = string; // TODO: derive allowed enum dynamically
-export type AudioUnitControlId = string;
+export type AudioUnitParamId = string;
 export type AudioUnitRef = number;
 
 // audio unit control types
@@ -12,7 +12,7 @@ export enum AudioUnitControlType {
 
 // audio unit control (e.g. fader, knob, button)
 export interface AudioUnitControl {
-    id: AudioUnitControlId,
+    id: AudioUnitParamId,
     label: string,
     type: AudioUnitControlType,
     x: number,
@@ -32,6 +32,12 @@ export enum AudioUnitType {
     Effect = "effect",
     Instrument = "instrument",
     Internal = "internal",
+}
+
+// audio unit parameter value
+export interface ParameterValue {
+    id: AudioUnitParamId,
+    value: number,
 }
 
 // audio unit (instance)
@@ -55,6 +61,6 @@ export interface Session {
 export interface Backend {
     addAudioUnit: (id: AudioUnitId) => AudioUnitRef,
     removeAudioUnit: (ref: AudioUnitRef) => void,
-    setParameterValue: (ref: AudioUnitRef, paramId: AudioUnitControlId, value: number) => void,
+    setParameterValue: (ref: AudioUnitRef, paramId: AudioUnitParamId, value: number) => { [id in AudioUnitParamId]: ParameterValue },
     updateGraph: (session: Session) => void,
 }

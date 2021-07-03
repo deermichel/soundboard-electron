@@ -1,16 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AudioUnit, AudioUnitControlId, AudioUnitId, Session } from "backend/types";
+import { AudioUnit, AudioUnitParamId, AudioUnitId, Session, AudioUnitRef, ParameterValue } from "backend/types";
 import { AppThunk } from "./index";
 
 // app state
 interface AppState {
     editMode: boolean,
+    parameterValues: { [ref in AudioUnitRef]: { [id in AudioUnitParamId]: ParameterValue } },
     session: Session | null,
 }
 
 // initial state
 const initialState: AppState = {
     editMode: false,
+    parameterValues: {},
     session: {
         channelStrips: [],
         name: "New Session",
@@ -45,6 +47,11 @@ const appSlice = createSlice({
         // set edit mode
         setEditMode: (state, { payload }: PayloadAction<boolean>) => {
             state.editMode = payload;
+        },
+
+        // update parameter values (single audio unit)
+        updateAudioUnitParameterValues: (state, { payload }: PayloadAction<{ ref: AudioUnitRef, values: { [id in AudioUnitParamId]: ParameterValue } }>) => {
+            state.parameterValues[payload.ref] = payload.values;
         },
     },
 });
@@ -87,9 +94,10 @@ export const removeChannelStrip = (index: number): AppThunk => (dispatch, getSta
 };
 
 // set parameter value
-export const setParameterValue = (channelStrip: number, index: number, paramId: AudioUnitControlId, value: number): AppThunk => (dispatch, getState) => {
+export const setParameterValue = (channelStrip: number, index: number, paramId: AudioUnitParamId, value: number): AppThunk => (dispatch, getState) => {
     const { ref } = getState().session!.channelStrips[channelStrip].audioUnits[index];
-    window.backend.setParameterValue(ref, paramId, value);
+    const values = window.backend.setParameterValue(ref, paramId, value);
+    dispatch(appSlice.actions.updateAudioUnitParameterValues({ ref, values }));
 };
 
 export default appSlice.reducer;

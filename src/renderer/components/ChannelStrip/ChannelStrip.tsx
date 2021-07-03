@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AudioUnitPlaceholder, AudioUnit } from "renderer/components";
-import { AudioUnitControlId, AudioUnitId, AudioUnitType } from "backend/types";
+import { AudioUnitParamId, AudioUnitId, AudioUnitType } from "backend/types";
 import { useAppDispatch, useAppSelector } from "renderer/store/hooks";
 import { addChannelStrip, insertAudioUnit, removeAudioUnit, removeChannelStrip, setParameterValue } from "renderer/store/app";
 import styles from "./ChannelStrip.scss";
@@ -16,6 +16,7 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
     // redux
     const dispatch = useAppDispatch();
     const audioUnits = useAppSelector((state) => state.session?.channelStrips[channelStripIndex]?.audioUnits || []);
+    const parameterValues = useAppSelector((state) => state.parameterValues);
     const editMode = useAppSelector((state) => state.editMode);
     const [showPlaceholder, setShowPlaceholder] = useState<{ atIndex: number, mode: "add" | "edit" }>(); // show audio unit placeholder at index
     const isPlaceholder = audioUnits.length === 0;
@@ -24,8 +25,8 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
     useEffect(() => { if (!editMode) setShowPlaceholder(undefined); }, [editMode]);
 
     // on change
-    const onChange = (audioUnitIndex: number, controlId: AudioUnitControlId, value: number) => {
-        dispatch(setParameterValue(channelStripIndex, audioUnitIndex, controlId, value));
+    const onChange = (audioUnitIndex: number, paramId: AudioUnitParamId, value: number) => {
+        dispatch(setParameterValue(channelStripIndex, audioUnitIndex, paramId, value));
     };
 
     // on add audio unit
@@ -97,8 +98,8 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
                                 ) : (
                                     <AudioUnit
                                         descriptionId={unit.id}
-                                        values={{}}
-                                        onChange={(controlId, value) => onChange(index, controlId, value)}
+                                        values={parameterValues[unit.ref] || {}}
+                                        onChange={(paramId, value) => onChange(index, paramId, value)}
                                     />
                                 )}
                             </div>
