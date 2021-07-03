@@ -17,10 +17,10 @@ public:
     // initialize engine (required before calling any other method)
     void initialize();
 
-    // remove processor
-    void removeProcessor(unsigned int ref);
+    // remove audio unit
+    void removeAudioUnit(unsigned int ref);
 
-    // reset engine (to freshly initialized state, e.g. removes all processors)
+    // reset engine (to freshly initialized state, e.g. removes all audio units)
     void reset();
 
     // update audio graph connections via session

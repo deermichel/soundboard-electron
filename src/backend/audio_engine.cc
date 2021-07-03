@@ -80,13 +80,13 @@ void AudioEngine::initialize() {
     reset();
 }
 
-// remove processor
-void AudioEngine::removeProcessor(unsigned int ref) {
+// remove audio unit
+void AudioEngine::removeAudioUnit(unsigned int ref) {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
     mAudioGraph.removeNode(juce::AudioProcessorGraph::NodeID(ref));
 }
 
-// reset engine to freshly initialized state (e.g. removes all processors)
+// reset engine to freshly initialized state (e.g. removes all audio units)
 void AudioEngine::reset() {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
 

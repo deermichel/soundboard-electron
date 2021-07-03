@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AudioUnitPlaceholder, AudioUnit } from "renderer/components";
 import { AudioUnitId, AudioUnitType } from "backend/types";
 import { useAppDispatch, useAppSelector } from "renderer/store/hooks";
-import { addChannelStrip, insertAudioUnit } from "renderer/store/app";
+import { addChannelStrip, insertAudioUnit, removeAudioUnit, removeChannelStrip } from "renderer/store/app";
 import styles from "./ChannelStrip.scss";
 import MenuButtons from "./MenuButtons";
 
@@ -39,13 +39,13 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
         if (id === audioUnits[index].id) return; // same as before
         if (id) {
             // TODO: new api call -> replace
-            // dispatch(api.session.removeAudioUnit(channelStripIndex, index));
-            // dispatch(api.session.insertAudioUnit(id, channelStripIndex, index));
+            dispatch(removeAudioUnit(channelStripIndex, index));
+            dispatch(insertAudioUnit(id, channelStripIndex, index));
         } else if (index === 0) {
             // TODO: confirm dialog if channel strip contains units after instrument
-            // dispatch(api.session.removeChannelStrip(index)); // none on first audio unit = remove channel strip
+            dispatch(removeChannelStrip(index)); // none on first audio unit = remove channel strip
         } else {
-            // dispatch(api.session.removeAudioUnit(channelStripIndex, index)); // none = remove audio unit
+            dispatch(removeAudioUnit(channelStripIndex, index)); // none = remove audio unit
         }
     };
 

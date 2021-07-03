@@ -32,6 +32,16 @@ const appSlice = createSlice({
             state.session?.channelStrips[payload.channelStrip].audioUnits.splice(payload.index, 0, payload.audioUnit);
         },
 
+        // remove audio unit
+        removeAudioUnit: (state, { payload }: PayloadAction<{ channelStrip: number, index: number }>) => {
+            state.session?.channelStrips[payload.channelStrip].audioUnits.splice(payload.index, 1);
+        },
+
+        // remove channel strip
+        removeChannelStrip: (state, { payload }: PayloadAction<{ index: number }>) => {
+            state.session?.channelStrips.splice(payload.index, 1);
+        },
+
         // set edit mode
         setEditMode: (state, { payload }: PayloadAction<boolean>) => {
             state.editMode = payload;
@@ -56,6 +66,23 @@ export const insertAudioUnit = (id: AudioUnitId, channelStrip: number, index: nu
     const ref = window.backend.addAudioUnit(id);
     const audioUnit: AudioUnit = { id, ref };
     dispatch(appSlice.actions.insertAudioUnit({ audioUnit, channelStrip, index }));
+    window.backend.updateGraph(getState().session!);
+};
+
+// remove audio unit
+export const removeAudioUnit = (channelStrip: number, index: number): AppThunk => (dispatch, getState) => {
+    const { ref } = getState().session!.channelStrips[channelStrip].audioUnits[index];
+    window.backend.removeAudioUnit(ref);
+    dispatch(appSlice.actions.removeAudioUnit({ channelStrip, index }));
+    window.backend.updateGraph(getState().session!);
+};
+
+// remove channel strip
+export const removeChannelStrip = (index: number): AppThunk => (dispatch, getState) => {
+    getState().session!.channelStrips[index].audioUnits.forEach((audioUnit) => {
+        window.backend.removeAudioUnit(audioUnit.ref); // remove all audio units
+    });
+    dispatch(appSlice.actions.removeChannelStrip({ index }));
     window.backend.updateGraph(getState().session!);
 };
 
