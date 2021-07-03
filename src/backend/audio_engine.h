@@ -4,6 +4,7 @@
 #include <juce_audio_devices/juce_audio_devices.h>
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_audio_utils/juce_audio_utils.h>
+#include "types.h"
 
 namespace soundboard {
 
@@ -21,6 +22,9 @@ public:
 
     // reset engine (to freshly initialized state, e.g. removes all processors)
     void reset();
+
+    // update audio graph connections via session
+    void updateGraph(const Session &session);
 
     // return singleton instance
     static AudioEngine& instance() {

@@ -47,16 +47,16 @@ export const { setEditMode } = appSlice.actions;
 // add channel strip
 export const addChannelStrip = (): AppThunk => (dispatch, getState) => {
     dispatch(appSlice.actions.addChannelStrip());
-    const channelStripIndex = (getState().session?.channelStrips.length || 0) - 1;
+    const channelStripIndex = getState().session!.channelStrips.length - 1;
     dispatch(insertAudioUnit("output", channelStripIndex, 0)); // add output, will update graph as well
 };
 
 // insert audio unit
-export const insertAudioUnit = (id: AudioUnitId, channelStrip: number, index: number): AppThunk => (dispatch) => {
+export const insertAudioUnit = (id: AudioUnitId, channelStrip: number, index: number): AppThunk => (dispatch, getState) => {
     const ref = window.backend.addAudioUnit(id);
     const audioUnit: AudioUnit = { id, ref };
     dispatch(appSlice.actions.insertAudioUnit({ audioUnit, channelStrip, index }));
-    // TODO: update graph
+    window.backend.updateGraph(getState().session!);
 };
 
 export default appSlice.reducer;

@@ -1,3 +1,4 @@
+import { Backend } from "backend/types";
 import { contextBridge } from "electron";
 import backend from "modules/backend.node";
 

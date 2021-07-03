@@ -50,3 +50,9 @@ export interface Session {
     channelStrips: ChannelStrip[],
     name: string,
 }
+
+// backend interface
+export interface Backend {
+    addAudioUnit: (id: AudioUnitId) => AudioUnitRef,
+    updateGraph: (session: Session) => void,
+}
