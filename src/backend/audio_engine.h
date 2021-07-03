@@ -4,7 +4,7 @@
 #include <juce_audio_devices/juce_audio_devices.h>
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_audio_utils/juce_audio_utils.h>
-#include "types.h"
+#include "model/session.h"
 
 namespace soundboard {
 
@@ -24,7 +24,7 @@ public:
     void reset();
 
     // update audio graph connections via session
-    void updateGraph(const Session &session);
+    void updateGraph(const model::Session &session);
 
     // return singleton instance
     static AudioEngine& instance() {

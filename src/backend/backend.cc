@@ -1,20 +1,13 @@
 #include <napi.h>
 #include "audio_engine.h"
-#include "types.h"
 
 // add audio unit (returns unique ref)
 Napi::Value AddAudioUnit(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
 
     // validate arguments
-    if (info.Length() < 1) {
-        Napi::TypeError::New(env, "invalid number of arguments").ThrowAsJavaScriptException();
-        return env.Null();
-    }
-    if (!info[0].IsString()) {
-        Napi::TypeError::New(env, "first argument is not a string").ThrowAsJavaScriptException();
-        return env.Null();
-    }
+    if (info.Length() < 1) throw Napi::TypeError::New(env, "invalid number of arguments");
+    if (!info[0].IsString()) throw Napi::TypeError::New(env, "first argument is not a string");
     std::string id = info[0].As<Napi::String>().Utf8Value();
 
     // add audio unit
@@ -27,40 +20,13 @@ Napi::Value AddAudioUnit(const Napi::CallbackInfo &info) {
 }
 
 // update audio graph connections via session
-Napi::Value UpdateGraph(const Napi::CallbackInfo &info) {
+void UpdateGraph(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
 
     // validate arguments
-    if (info.Length() < 1) {
-        Napi::TypeError::New(env, "invalid number of arguments").ThrowAsJavaScriptException();
-        return env.Null();
-    }
-    if (!info[0].IsObject()) {
-        Napi::TypeError::New(env, "first argument is not an object").ThrowAsJavaScriptException();
-        return env.Null();
-    }
-
-    // parse name
-    auto _session = info[0].As<Napi::Object>();
-    soundboard::Session session;
-    session.name = _session.Get("name").As<Napi::String>().Utf8Value();
-
-    // parse channel strips
-    auto _channelStrips = _session.Get("channelStrips").As<Napi::Array>();
-    for (unsigned int c = 0; c < _channelStrips.Length(); c++) {
-        auto _channelStrip = _channelStrips.Get(c).As<Napi::Object>();
-        fprintf(stderr, "%d channel strip\n", c);
-
-        // soundboard::ChannelStrip& channelStrip = session.channelStrips.emplace_back();
-
-        // parse audio units
-        auto _audioUnits = _channelStrip.Get("audioUnits").As<Napi::Array>();
-        for (unsigned int a = 0; a < _audioUnits.Length(); a++) {
-            auto _audioUnit = _audioUnits.Get(a).As<Napi::Object>();
-            auto ref = _audioUnit.Get("ref").As<Napi::Number>().Uint32Value();
-            fprintf(stderr, "%d audio unit - ref: %d\n", a, ref);
-        }
-    }
+    if (info.Length() < 1) throw Napi::TypeError::New(env, "invalid number of arguments");
+    if (!info[0].IsObject()) throw Napi::TypeError::New(env, "first argument is not an object");
+    soundboard::model::Session session(info[0].As<Napi::Object>());
 
     // update graph
     soundboard::AudioEngine::instance().updateGraph(session);

@@ -21,7 +21,7 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
 }
 
 // update audio graph connections via session
-void AudioEngine::updateGraph(const Session &session) {
+void AudioEngine::updateGraph(const model::Session &session) {
     auto channelStrips = session.channelStrips;
     fprintf(stderr, "updating audio graph of session '%s' (%d channel strips)\n", session.name.c_str(), channelStrips.size());
 
@@ -36,23 +36,23 @@ void AudioEngine::updateGraph(const Session &session) {
         fprintf(stderr, "channel strip %d: %d audio units\n", index, audioUnits.size());
 
         // connect audio unit chain
-        // auto lastNodeId = mAudioGraphAudioInputNode->nodeID;
-        // for (const auto &audioUnit : audioUnits) {
-        //     auto nodeId = juce::AudioProcessorGraph::NodeID(audioUnit.ref);
+        auto lastNodeId = mAudioGraphAudioInputNode->nodeID;
+        for (const auto &audioUnit : audioUnits) {
+            auto nodeId = juce::AudioProcessorGraph::NodeID(audioUnit.ref);
 
-        //     // create new connections
-        //     for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
-        //         bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { nodeId, channel } });
-        //         fprintf(stderr, "add connection %d to %d: %s\n", lastNodeId.uid, nodeId.uid, result ? "success" : "failed");
-        //     }
-        //     lastNodeId = nodeId;
-        // }
+            // create new connections
+            for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
+                bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { nodeId, channel } });
+                fprintf(stderr, "add connection %d to %d: %s\n", lastNodeId.uid, nodeId.uid, result ? "success" : "failed");
+            }
+            lastNodeId = nodeId;
+        }
 
-        // // connect to output
-        // for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
-        //     bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { mAudioGraphAudioOutputNode->nodeID, channel } });
-        //     fprintf(stderr, "add connection %d to output: %s\n", lastNodeId.uid, result ? "success" : "failed");
-        // }
+        // connect to output
+        for (int channel = 0; channel < 2; channel++) { // TODO: always stereo?
+            bool result = mAudioGraph.addConnection({ { lastNodeId, channel }, { mAudioGraphAudioOutputNode->nodeID, channel } });
+            fprintf(stderr, "add connection %d to output: %s\n", lastNodeId.uid, result ? "success" : "failed");
+        }
     }
 
     fprintf(stderr, "there are now %d nodes and %d connections\n", mAudioGraph.getNumNodes(), mAudioGraph.getConnections().size());
