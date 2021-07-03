@@ -20,20 +20,23 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
     return addInternalProcessor(std::move(instance));
 }
 
-// return audio unit parameter values
-std::vector<model::ParameterValue> AudioEngine::getParameterValues(unsigned int ref) const {
+// return parameter values mapped by audio units refs
+std::map<unsigned int, std::vector<model::ParameterValue>> AudioEngine::getParameterValues() const {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
-    auto node = mAudioGraph.getNodeForId(juce::AudioProcessorGraph::NodeID(ref));
-    if (!node) throw std::logic_error("invalid node id");
-    auto parameters = node->getProcessor()->getParameters();
 
-    // cast and convert params
-    std::vector<model::ParameterValue> values;
-    for (const auto &param : parameters) {
-        auto paramWithId = static_cast<juce::AudioProcessorParameterWithID*>(param);
-        values.push_back({ .id = paramWithId->paramID.toStdString(), .value = paramWithId->getValue() });
+    // iterate audio graph
+    std::map<unsigned int, std::vector<model::ParameterValue>> valuesByRef;
+    for (const auto &node : mAudioGraph.getNodes()) {
+        // cast and convert parameters
+        std::vector<model::ParameterValue> values;
+        for (const auto &param : node->getProcessor()->getParameters()) {
+            // TODO: move cast to a ParameterValue constructor
+            auto paramWithId = static_cast<juce::AudioProcessorParameterWithID*>(param);
+            values.push_back({ .id = paramWithId->paramID.toStdString(), .value = paramWithId->getValue() });
+        }
+        valuesByRef[node->nodeID.uid] = values;
     }
-    return values;
+    return valuesByRef;
 }
 
 // initialize engine (required before calling any other method)
@@ -111,7 +114,7 @@ void AudioEngine::updateGraph(const model::Session &session) {
     auto channelStrips = session.channelStrips;
     fprintf(stderr, "updating audio graph of session '%s' (%d channel strips)\n", session.name.c_str(), channelStrips.size());
 
-    // // clear all connections
+    // clear all connections
     for (const auto &node : mAudioGraph.getNodes()) {
         mAudioGraph.disconnectNode(node->nodeID);
     }

@@ -19,6 +19,21 @@ Napi::Value AddAudioUnit(const Napi::CallbackInfo &info) {
     }
 }
 
+// return parameter values mapped by audio units refs
+Napi::Value GetParameterValues(const Napi::CallbackInfo &info) {
+    Napi::Env env = info.Env();
+    // TODO: refactor using clearer variable names (js vs c++ types)
+    Napi::Object valuesByRefs = Napi::Object::New(env);
+    for (auto const &[ref, paramValues] : soundboard::AudioEngine::instance().getParameterValues()) {
+        Napi::Object values = Napi::Object::New(env); // TODO: duplicated code from SetParameterValue()
+        for (const auto &paramValue : paramValues) {
+            values.Set(Napi::String::New(env, paramValue.id), paramValue.CreateObject(env));
+        }
+        valuesByRefs.Set(Napi::String::New(env, std::to_string(ref)), values);
+    }
+    return valuesByRefs;
+}
+
 // remove audio unit
 void RemoveAudioUnit(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
@@ -88,6 +103,7 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 
     // exports
     exports.Set(Napi::String::New(env, "addAudioUnit"), Napi::Function::New(env, AddAudioUnit));
+    exports.Set(Napi::String::New(env, "getParameterValues"), Napi::Function::New(env, GetParameterValues));
     exports.Set(Napi::String::New(env, "removeAudioUnit"), Napi::Function::New(env, RemoveAudioUnit));
     exports.Set(Napi::String::New(env, "setParameterValue"), Napi::Function::New(env, SetParameterValue));
     exports.Set(Napi::String::New(env, "updateGraph"), Napi::Function::New(env, UpdateGraph));

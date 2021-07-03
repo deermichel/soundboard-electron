@@ -60,6 +60,7 @@ export interface Session {
 // backend interface
 export interface Backend {
     addAudioUnit: (id: AudioUnitId) => AudioUnitRef,
+    getParameterValues: () => { [ref in AudioUnitRef]: { [id in AudioUnitParamId]: ParameterValue } },
     removeAudioUnit: (ref: AudioUnitRef) => void,
     setParameterValue: (ref: AudioUnitRef, paramId: AudioUnitParamId, value: number) => { [id in AudioUnitParamId]: ParameterValue },
     updateGraph: (session: Session) => void,

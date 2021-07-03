@@ -15,8 +15,8 @@ public:
     // add audio unit (returns unique ref)
     unsigned int addAudioUnit(const std::string &id);
 
-    // return audio unit parameter values
-    std::vector<model::ParameterValue> getParameterValues(unsigned int ref) const;
+    // return parameter values mapped by audio units refs
+    std::map<unsigned int, std::vector<model::ParameterValue>> getParameterValues() const;
 
     // initialize engine (required before calling any other method)
     void initialize();
