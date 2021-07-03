@@ -1,0 +1,49 @@
+@import "theme.scss";
+
+.fader {
+    cursor: pointer;
+    display: flex;
+    height: 236px;
+    margin-bottom: 4px;
+    justify-content: center;
+    touch-action: none;
+
+    &.mouseDown .knob {
+        border-color: $color-text;
+        transition: border-color .1s ease-out;
+    }
+}
+
+.knob {
+    align-items: center;
+    background-color: $color-container;
+    border: 2px solid $color-border;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    position: absolute;
+    transition: .1s ease-out;
+    width: 44px;
+}
+
+.mark {
+    background-color: $color-text;
+    border-radius: 1px;
+    height: 2px;
+    width: 24px;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 96px;
+}
+
+.track {
+    background-color: $color-border;
+    border-radius: 1px;
+    height: 100%;
+    width: 2px;
+}

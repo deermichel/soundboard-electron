@@ -1,0 +1,36 @@
+@import "theme.scss";
+
+.knob {
+    align-items: center;
+    border: 2px solid $color-border;
+    border-radius: 48px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    height: 96px;
+    justify-content: center;
+    margin-bottom: 4px;
+    touch-action: none;
+    transition: .1s ease-out;
+
+    &.mouseDown {
+        border-color: $color-text;
+    }
+    &.mouseDown .mark {
+        transition: none; // TODO: correct?
+    }
+}
+
+.mark {
+    background-color: $color-text;
+    border-radius: 1px;
+    height: 2px;
+    transition: .1s ease-out;
+    width: 24px;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 96px;
+}

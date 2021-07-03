@@ -1,0 +1,20 @@
+@use "sass:color";
+@import "theme.scss";
+
+.root {
+    all: unset;
+    border: 2px solid $color-border;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 44px;
+    transition: .1s ease-out;
+    width: 96px;
+
+    &.active {
+        background-color: color.scale($color-border, $lightness: -25%); // TODO: replace with variable
+    }
+    &:active {
+        border-color: $color-text;
+    }
+}

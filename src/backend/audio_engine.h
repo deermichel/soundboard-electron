@@ -10,14 +10,17 @@ namespace soundboard {
 // juce-powered audio engine, derives audio processor graph from session
 class AudioEngine {
 public:
-    // add audio unit (returns unique id)
+    // add audio unit (returns unique ref)
     unsigned int addAudioUnit(const std::string &id);
 
     // initialize engine (required before calling any other method)
     void initialize();
 
     // remove processor
-    void removeProcessor(unsigned int id);
+    void removeProcessor(unsigned int ref);
+
+    // reset engine (to freshly initialized state, e.g. removes all processors)
+    void reset();
 
     // return singleton instance
     static AudioEngine& instance() {
@@ -47,7 +50,7 @@ private:
     // whether the engine was initialized
     bool mInitialized = false;
 
-    // add internal processor (returns unique id)
+    // add internal processor (returns unique ref)
     unsigned int addInternalProcessor(std::unique_ptr<juce::AudioProcessor> processor);
 };
 

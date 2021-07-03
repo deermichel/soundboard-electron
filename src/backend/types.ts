@@ -1,6 +1,7 @@
 // id types
-export type AudioUnitId = string;
+export type AudioUnitId = string; // TODO: derive allowed enum dynamically
 export type AudioUnitControlId = string;
+export type AudioUnitRef = number;
 
 // audio unit control types
 export enum AudioUnitControlType {
@@ -33,9 +34,15 @@ export enum AudioUnitType {
     Internal = "internal",
 }
 
+// audio unit (instance)
+export interface AudioUnit {
+    id: AudioUnitId,
+    ref: AudioUnitRef,
+}
+
 // channel strip
 export interface ChannelStrip {
-    // audioUnits: int[],
+    audioUnits: AudioUnit[],
 }
 
 // session

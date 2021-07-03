@@ -1,7 +1,7 @@
 #include <napi.h>
 #include "audio_engine.h"
 
-// add audio unit (returns unique id)
+// add audio unit (returns unique ref)
 Napi::Value AddAudioUnit(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
 
@@ -25,14 +25,13 @@ Napi::Value AddAudioUnit(const Napi::CallbackInfo &info) {
     }
 }
 
-// initialize engine (required before calling any other method)
-void Initialize(const Napi::CallbackInfo &info) {
-    soundboard::AudioEngine::instance().initialize();
-}
-
+// init module
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
+    // init engine
+    soundboard::AudioEngine::instance().initialize();
+
+    // exports
     exports.Set(Napi::String::New(env, "addAudioUnit"), Napi::Function::New(env, AddAudioUnit));
-    exports.Set(Napi::String::New(env, "initialize"), Napi::Function::New(env, Initialize));
     return exports;
 }
 

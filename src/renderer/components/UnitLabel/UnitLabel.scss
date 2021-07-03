@@ -1,0 +1,9 @@
+@import "theme.scss";
+
+.root {
+    height: 24px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

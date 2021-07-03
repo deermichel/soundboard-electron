@@ -5,8 +5,6 @@ import App from "./App";
 import store from "./store";
 import "./index.scss";
 
-window.backend.initialize();
-
 // root component
 const root = (
     <React.StrictMode>

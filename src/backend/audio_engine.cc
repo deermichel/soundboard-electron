@@ -5,7 +5,7 @@
 
 namespace soundboard {
 
-// add audio unit (returns unique id)
+// add audio unit (returns unique ref)
 unsigned int AudioEngine::addAudioUnit(const std::string &id) {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
 
@@ -22,6 +22,7 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
 
 // initialize engine (required before calling any other method)
 void AudioEngine::initialize() {
+    if (mInitialized) return; // already initialized
     std::cerr << "initializing audio engine" << std::endl;
 
     // init audio devices
@@ -33,25 +34,33 @@ void AudioEngine::initialize() {
         deviceSetup.inputDeviceName.toUTF8(), deviceSetup.inputChannels.toInteger(),
         deviceSetup.sampleRate, deviceSetup.bufferSize);
 
+    // setup audio processor player
+    mAudioProcessorPlayer.setProcessor(&mAudioGraph);
+    mInitialized = true;
+
     // init audio graph
-    mAudioGraph.enableAllBuses();
+    reset();
+}
+
+// remove processor
+void AudioEngine::removeProcessor(unsigned int ref) {
+    if (!mInitialized) throw std::logic_error("audio engine is not initialized");
+    mAudioGraph.removeNode(juce::AudioProcessorGraph::NodeID(ref));
+}
+
+// reset engine to freshly initialized state (e.g. removes all processors)
+void AudioEngine::reset() {
+    if (!mInitialized) throw std::logic_error("audio engine is not initialized");
+
+    // clear graph
     mAudioGraph.clear();
+    mAudioGraph.enableAllBuses();
 
     // add audio and midi io nodes
     mAudioGraphAudioInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode));
     mAudioGraphAudioOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode));
     // auto midiInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiInputNode));
     // auto midiOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiOutputNode));
-
-    // setup audio processor player
-    mAudioProcessorPlayer.setProcessor(&mAudioGraph);
-    mInitialized = true;
-}
-
-// remove processor
-void AudioEngine::removeProcessor(unsigned int id) {
-    if (!mInitialized) throw std::logic_error("audio engine is not initialized");
-    mAudioGraph.removeNode(juce::AudioProcessorGraph::NodeID(id));
 }
 
 // --- private methods ---
@@ -64,7 +73,7 @@ AudioEngine::~AudioEngine() {
     mDeviceManager.removeAudioCallback(&mAudioProcessorPlayer);
 }
 
-// add internal processor (returns unique id)
+// add internal processor (returns unique ref)
 unsigned int AudioEngine::addInternalProcessor(std::unique_ptr<juce::AudioProcessor> processor) {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
     auto node = mAudioGraph.addNode(std::move(processor));

@@ -5,7 +5,7 @@ import styles from "./App.scss";
 // main app container
 const App = () => {
     // redux
-    const channelStrips: string[] = [];
+    const channelStrips = useAppSelector((state) => state.session?.channelStrips) || [];
     const editMode = useAppSelector((state) => state.editMode);
 
     // render
@@ -14,7 +14,7 @@ const App = () => {
             <MenuBar />
             <div className={styles.channelStripsContainer} style={{ flex: editMode ? 1 : 0 }}>
                 {channelStrips.map((_, i) => (
-                    <div key={i} className={styles.channelStrip}>
+                    <div key={`channel${i}`} className={styles.channelStrip}>
                         <ChannelStrip channelStripIndex={i} />
                     </div>
                 ))}

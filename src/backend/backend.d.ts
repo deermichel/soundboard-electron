@@ -1,6 +1,6 @@
 // backend interface typings
 interface Backend {
-    initialize: () => void,
+    addAudioUnit: (id: string) => number,
 }
 
 declare module "*backend.node" {
