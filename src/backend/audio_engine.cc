@@ -125,7 +125,7 @@ void AudioEngine::updateGraph(const model::Session &session) {
         fprintf(stderr, "channel strip %d: %d audio units\n", index, audioUnits.size());
 
         // connect audio unit chain
-        auto lastNodeId = mAudioGraphAudioInputNode->nodeID;
+        auto lastNodeId = juce::AudioProcessorGraph::NodeID(0); // mAudioGraphAudioInputNode->nodeID; // TODO: handle audio input
         for (const auto &audioUnit : audioUnits) {
             auto nodeId = juce::AudioProcessorGraph::NodeID(audioUnit.ref);
 

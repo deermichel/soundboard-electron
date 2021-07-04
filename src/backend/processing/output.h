@@ -14,7 +14,7 @@ public:
 
     // construct output
     Output() {
-        addParameter(new juce::AudioParameterFloat("gain", "TODO", 0.0f, 1.0f, 0.2f));
+        addParameter(mGain = new juce::AudioParameterFloat("gain", "TODO", 0.0f, 1.0f, 0.2f));
     }
 
     // --- overrides ---
@@ -56,7 +56,9 @@ public:
     bool producesMidi() const override { return false; }
 
     // renders the next block
-    void processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages) override {};
+    void processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages) override {
+        buffer.applyGain(*mGain);
+    };
 
     // called after playback has stopped, to let the object free up any resources it no longer needs
     void releaseResources() override {}
@@ -71,6 +73,9 @@ public:
     void setStateInformation (const void *data, int sizeInBytes) override {};
 
 private:
+    // gain parameter
+    juce::AudioParameterFloat *mGain;
+
     // non copy, leak detection
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Output)
 };
