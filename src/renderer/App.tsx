@@ -1,12 +1,23 @@
+import { useEffect } from "react";
 import { ChannelStrip, MenuBar } from "renderer/components";
-import { useAppSelector } from "renderer/store/hooks";
+import { useAppDispatch, useAppSelector } from "renderer/store/hooks";
 import styles from "./App.scss";
+import { updateParameterValues } from "./store/app";
 
 // main app container
 const App = () => {
     // redux
-    const channelStrips = useAppSelector((state) => state.session?.channelStrips) || [];
+    const dispatch = useAppDispatch();
+    const channelStrips = useAppSelector((state) => state.session.channelStrips);
     const editMode = useAppSelector((state) => state.editMode);
+
+    // frequently poll parameter values
+    useEffect(() => {
+        const id = setInterval(() => {
+            dispatch(updateParameterValues());
+        }, 500);
+        return () => clearTimeout(id);
+    }, []);
 
     // render
     return (

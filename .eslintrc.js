@@ -23,6 +23,7 @@ module.exports = {
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
         "react/react-in-jsx-scope": "off",
+        "react-hooks/exhaustive-deps": "off",
     },
     settings: {
         "import/resolver": {

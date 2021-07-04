@@ -15,7 +15,7 @@ interface ChannelStripProps {
 const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
     // redux
     const dispatch = useAppDispatch();
-    const audioUnits = useAppSelector((state) => state.session?.channelStrips[channelStripIndex]?.audioUnits || []);
+    const audioUnits = useAppSelector((state) => state.session.channelStrips[channelStripIndex]?.audioUnits || []);
     const parameterValues = useAppSelector((state) => state.parameterValues);
     const editMode = useAppSelector((state) => state.editMode);
     const [showPlaceholder, setShowPlaceholder] = useState<{ atIndex: number, mode: "add" | "edit" }>(); // show audio unit placeholder at index
