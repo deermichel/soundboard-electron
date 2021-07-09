@@ -4,6 +4,8 @@ It is designed to be straightforward to use and to be understandable without kno
 Behind the scenes, it is a React-based [Electron](https://github.com/electron/electron) app backed by a C++ native module built around the [JUCE](https://github.com/juce-framework/JUCE) framework.
 It started out as a personal project to learn audio programming, but everyone is invited to contribute :).
 
+![some nice screenshot](docs/screenshot.png)
+
 ## Contents
 - [Build Instructions](#build-instructions)
 - [Architecture](#architecture)
@@ -64,6 +66,7 @@ TODO: write some history starting from Pedalboard and the four attempts before t
 - [ ] [frontend] review eslint ignores
 - [ ] [frontend] setup and add unit tests
 - [ ] [org] design a logo (idea: spotlight, knob, fader)
+- [ ] [org] package app
 - [ ] [org] write architecture section in readme
 
 ### Ideas
@@ -71,6 +74,7 @@ TODO: write some history starting from Pedalboard and the four attempts before t
 - [frontend] first steps builtin tutorial
 - [frontend] i18n: church slang
 - [org] setup CI/CD pipeline with GitHub Actions
+- [org] publish in app store
 - [org] use GitHub projects for this roadmap
 - [org] write contribution guide
 
