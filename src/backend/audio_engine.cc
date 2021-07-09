@@ -51,6 +51,12 @@ void AudioEngine::initialize() {
         deviceSetup.inputDeviceName.toUTF8(), deviceSetup.inputChannels.toInteger(),
         deviceSetup.sampleRate, deviceSetup.bufferSize);
 
+    // init midi devices
+    for (const auto &device : juce::MidiInput::getAvailableDevices()) { // TODO: must be called on message thread
+        mDeviceManager.setMidiInputDeviceEnabled(device.identifier, true);
+    }
+    mDeviceManager.addMidiInputDeviceCallback("", &mAudioProcessorPlayer);
+
     // setup audio processor player
     mAudioProcessorPlayer.setProcessor(&mAudioGraph);
     mInitialized = true;
@@ -76,8 +82,8 @@ void AudioEngine::reset() {
     // add audio and midi io nodes
     mAudioGraphAudioInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode));
     mAudioGraphAudioOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode));
-    // auto midiInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiInputNode));
-    // auto midiOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiOutputNode));
+    mAudioGraphMidiInputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiInputNode));
+    mAudioGraphMidiOutputNode = mAudioGraph.addNode(std::make_unique<juce::AudioProcessorGraph::AudioGraphIOProcessor>(juce::AudioProcessorGraph::AudioGraphIOProcessor::midiOutputNode));
 }
 
 // set audio unit parameter value
@@ -120,6 +126,13 @@ void AudioEngine::updateGraph(const model::Session &session) {
     for (unsigned int index = 0; index < channelStrips.size(); index++) {
         auto audioUnits = channelStrips[index].audioUnits;
         fprintf(stderr, "channel strip %d: %d audio units\n", index, audioUnits.size());
+
+        // connect midi input
+        if (audioUnits.size() > 0) {
+            const auto firstNodeId = juce::AudioProcessorGraph::NodeID(audioUnits.front().ref);
+            bool result = mAudioGraph.addConnection({ { mAudioGraphMidiInputNode->nodeID, juce::AudioProcessorGraph::midiChannelIndex }, { firstNodeId, juce::AudioProcessorGraph::midiChannelIndex } });
+            fprintf(stderr, "add midi input connection to %d: %s\n", firstNodeId.uid, result ? "success" : "failed");
+        }
 
         // connect audio unit chain
         auto lastNodeId = juce::AudioProcessorGraph::NodeID(0); // mAudioGraphAudioInputNode->nodeID; // TODO: handle audio input

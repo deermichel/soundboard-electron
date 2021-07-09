@@ -3,6 +3,7 @@
 
 #include <juce_dsp/juce_dsp.h>
 #include "base_processor.h"
+#include "linked_float_parameter.h"
 
 namespace soundboard {
 namespace processing {
@@ -30,6 +31,9 @@ public:
 private:
     // oscillator dsp
     juce::dsp::Oscillator<float> mOscillator;
+
+    // frequency parameter
+    LinkedFloatParameter *mFrequency;
 };
 
 } // namespace processing

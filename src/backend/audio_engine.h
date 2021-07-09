@@ -52,6 +52,12 @@ private:
     // audio graph audio output node
     juce::AudioProcessorGraph::Node::Ptr mAudioGraphAudioOutputNode;
 
+    // audio graph midi input node
+    juce::AudioProcessorGraph::Node::Ptr mAudioGraphMidiInputNode;
+
+    // audio graph midi output node
+    juce::AudioProcessorGraph::Node::Ptr mAudioGraphMidiOutputNode;
+
     // audio processor player
     juce::AudioProcessorPlayer mAudioProcessorPlayer;
 

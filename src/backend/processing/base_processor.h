@@ -18,7 +18,7 @@ public:
     // --- overrides ---
 
     // returns true if the processor wants midi messages
-    bool acceptsMidi() const override { return false; }
+    bool acceptsMidi() const override { return true; }
 
     // called by the host to rename a program
     void changeProgramName(int index, const juce::String &newName) override {}

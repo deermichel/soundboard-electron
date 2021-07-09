@@ -22,6 +22,12 @@ public:
     // called when parameter value changes
     void valueChanged(float newValue) override { mValueChanged(newValue); };
 
+    // assignment operator to set value
+    LinkedFloatParameter& operator= (float newValue) {
+        AudioParameterFloat::operator=(newValue);
+        return *this;
+    }
+
 private:
     // value changed callback
     const ValueChangedCallback mValueChanged;

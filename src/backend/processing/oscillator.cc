@@ -1,4 +1,3 @@
-#include "linked_float_parameter.h"
 #include "oscillator.h"
 
 namespace soundboard {
@@ -7,7 +6,7 @@ namespace processing {
 // construct oscillator
 Oscillator::Oscillator() {
     // add parameters
-    addParameter(new LinkedFloatParameter("frequency", 20, 20000, 440, std::bind(&juce::dsp::Oscillator<float>::setFrequency, &mOscillator, std::placeholders::_1, false)));
+    addParameter(mFrequency = new LinkedFloatParameter("frequency", 20, 20000, 440, std::bind(&juce::dsp::Oscillator<float>::setFrequency, &mOscillator, std::placeholders::_1, false)));
 
     // init oscillator
     mOscillator.setFrequency(440.0f);
@@ -22,6 +21,17 @@ void Oscillator::prepareToPlay(double sampleRate, int bufferSize) {
 
 // renders the next block
 void Oscillator::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages) {
+    buffer.clear();
+
+    // process midi
+    for (const auto &metadata : midiMessages) {
+        const auto message = metadata.getMessage();
+        if (message.isNoteOn()) {
+            *mFrequency = juce::MidiMessage::getMidiNoteInHertz(message.getNoteNumber());
+        }
+    }
+
+    // process audio
     juce::dsp::AudioBlock<float> block(buffer);
     juce::dsp::ProcessContextReplacing<float> context(block);
     mOscillator.process(context);
