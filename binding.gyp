@@ -9,13 +9,18 @@
                 "ext/juce/modules/juce_audio_utils/juce_audio_utils.mm",
                 "ext/juce/modules/juce_core/juce_core.mm",
                 "ext/juce/modules/juce_data_structures/juce_data_structures.mm",
+                "ext/juce/modules/juce_dsp/juce_dsp.mm",
                 "ext/juce/modules/juce_events/juce_events.mm",
                 "ext/juce/modules/juce_graphics/juce_graphics.mm",
                 "ext/juce/modules/juce_gui_basics/juce_gui_basics.mm",
                 "src/backend/audio_engine.cc",
                 "src/backend/backend.cc",
+                "src/backend/processing/mixer.cc",
+                "src/backend/processing/oscillator.cc",
             ],
-            "libraries": [],
+            "libraries": [
+                # "<(module_root_dir)/ext/juce/prebuilt.a",
+            ],
             "include_dirs": [
                 "<!@(node -p \"require('node-addon-api').include\")",
                 "ext/juce/modules",
@@ -30,6 +35,7 @@
             "xcode_settings": {
                 "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
                 "GCC_ENABLE_CPP_RTTI": "YES",
+                "OTHER_CFLAGS": [ "-std=c++17" ],
                 "OTHER_LDFLAGS": [ "-framework CoreAudioKit" ],
             },
         },

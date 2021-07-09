@@ -1,5 +1,4 @@
 #include "audio_engine.h"
-#include "processing/equalizer.h"
 #include "processing/oscillator.h"
 #include "processing/mixer.h"
 
@@ -12,7 +11,6 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
     // create processor instance
     std::unique_ptr<juce::AudioProcessor> instance;
     if (id == processing::Oscillator::ID) instance = std::make_unique<processing::Oscillator>(); // TODO: use map & register instead of hardcoding?
-    if (id == processing::Equalizer::ID) instance = std::make_unique<processing::Equalizer>();
     if (id == processing::Mixer::ID) instance = std::make_unique<processing::Mixer>();
     if (!instance) throw std::logic_error("invalid audio unit id");
 

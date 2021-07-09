@@ -3,16 +3,16 @@ import { AudioUnitId, AudioUnitControlType, AudioUnitDescription, AudioUnitType 
 // audio unit descriptions
 export const availableAudioUnits: { [id in AudioUnitId]: AudioUnitDescription } = {
     // [effect] equalizer
-    eq: {
-        controls: [
-            { id: "low", label: "Lows", type: AudioUnitControlType.Knob, x: 0, y: 0 },
-            { id: "mid", label: "Mids", type: AudioUnitControlType.Knob, x: 1, y: 0 },
-            { id: "high", label: "Highs", type: AudioUnitControlType.Knob, x: 2, y: 0 },
-        ],
-        id: "eq",
-        name: "Equalizer",
-        type: AudioUnitType.Effect,
-    },
+    // eq: {
+    //     controls: [
+    //         { id: "low", label: "Lows", type: AudioUnitControlType.Knob, x: 0, y: 0 },
+    //         { id: "mid", label: "Mids", type: AudioUnitControlType.Knob, x: 1, y: 0 },
+    //         { id: "high", label: "Highs", type: AudioUnitControlType.Knob, x: 2, y: 0 },
+    //     ],
+    //     id: "eq",
+    //     name: "Equalizer",
+    //     type: AudioUnitType.Effect,
+    // },
 
     // [instrument] oscillator
     oscillator: {
