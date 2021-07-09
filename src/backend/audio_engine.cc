@@ -1,7 +1,7 @@
 #include "audio_engine.h"
 #include "processing/equalizer.h"
 #include "processing/oscillator.h"
-#include "processing/output.h"
+#include "processing/mixer.h"
 
 namespace soundboard {
 
@@ -13,7 +13,7 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
     std::unique_ptr<juce::AudioProcessor> instance;
     if (id == processing::Oscillator::ID) instance = std::make_unique<processing::Oscillator>(); // TODO: use map & register instead of hardcoding?
     if (id == processing::Equalizer::ID) instance = std::make_unique<processing::Equalizer>();
-    if (id == processing::Output::ID) instance = std::make_unique<processing::Output>();
+    if (id == processing::Mixer::ID) instance = std::make_unique<processing::Mixer>();
     if (!instance) throw std::logic_error("invalid audio unit id");
 
     // add processor
@@ -98,7 +98,6 @@ std::vector<model::ParameterValue> AudioEngine::setParameterValue(unsigned int r
         // set param
         if (paramWithId->paramID.toStdString() == paramId) {
             paramWithId->setValue(value);
-            paramWithId->sendValueChangedMessageToListeners(value); // TODO: better way?
             paramSet = true;
         }
 

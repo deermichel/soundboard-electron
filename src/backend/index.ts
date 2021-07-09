@@ -26,13 +26,13 @@ export const availableAudioUnits: { [id in AudioUnitId]: AudioUnitDescription } 
         type: AudioUnitType.Instrument,
     },
 
-    // [internal] output
-    output: {
+    // [internal] mixer
+    mixer: {
         controls: [
             { id: "gain", label: "Gain", type: AudioUnitControlType.Knob, x: 0, y: 0 },
         ],
-        id: "output",
-        name: "Output",
+        id: "mixer",
+        name: "Mixer",
         type: AudioUnitType.Internal,
     },
 };

@@ -1,21 +1,19 @@
-#ifndef PROCESSING_OUTPUT_H
-#define PROCESSING_OUTPUT_H
+#ifndef PROCESSING_BASE_PROCESSOR_H
+#define PROCESSING_BASE_PROCESSOR_H
 
 #include <juce_audio_processors/juce_audio_processors.h>
 
 namespace soundboard {
 namespace processing {
 
-// output internal processor
-class Output : public juce::AudioProcessor {
+// base audio processor (overrides unused methods)
+class BaseProcessor : public juce::AudioProcessor {
 public:
-    // audio unit id
-    static constexpr const char *ID = "output";
+    // constructor
+    BaseProcessor() {}
 
-    // construct output
-    Output() {
-        addParameter(mGain = new juce::AudioParameterFloat("gain", "TODO", 0.0f, 1.0f, 0.2f));
-    }
+    // destructor
+    virtual ~BaseProcessor() {}
 
     // --- overrides ---
 
@@ -32,7 +30,7 @@ public:
     int getCurrentProgram() override { return 0; }
 
     // returns the name of this processor
-    const juce::String getName() const override { return "Output"; };
+    const juce::String getName() const override { return ""; };
 
     // returns the number of preset programs the processor supports
     int getNumPrograms() override { return 0; }
@@ -52,13 +50,11 @@ public:
     // called before playback starts, to let the processor prepare itself
     void prepareToPlay(double sampleRate, int bufferSize) override {}
 
+    // renders the next block
+    void processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages) override {};
+
     // returns true if the processor produces midi messages
     bool producesMidi() const override { return false; }
-
-    // renders the next block
-    void processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages) override {
-        buffer.applyGain(*mGain);
-    };
 
     // called after playback has stopped, to let the object free up any resources it no longer needs
     void releaseResources() override {}
@@ -70,17 +66,14 @@ public:
     void setCurrentProgram(int index) override {}
 
     // this must restore the processor state from a block of data previously created using getStateInformation()
-    void setStateInformation (const void *data, int sizeInBytes) override {};
+    void setStateInformation(const void *data, int sizeInBytes) override {};
 
 private:
-    // gain parameter
-    juce::AudioParameterFloat *mGain;
-
     // non copy, leak detection
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Output)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(BaseProcessor)
 };
 
 } // namespace processing
 } // namespace soundboard
 
-#endif // PROCESSING_OUTPUT_H
+#endif // PROCESSING_BASE_PROCESSOR_H

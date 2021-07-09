@@ -70,7 +70,7 @@ export const { setEditMode } = appSlice.actions;
 export const addChannelStrip = (): AppThunk => (dispatch, getState) => {
     dispatch(appSlice.actions.addChannelStrip());
     const channelStripIndex = getState().session.channelStrips.length - 1;
-    dispatch(insertAudioUnit("output", channelStripIndex, 0)); // add output, will update graph as well
+    dispatch(insertAudioUnit("mixer", channelStripIndex, 0)); // add mixer, will update graph as well
 };
 
 // insert audio unit
