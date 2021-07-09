@@ -30,6 +30,9 @@ public:
 private:
     // gain dsp
     juce::dsp::Gain<float> mGain;
+
+    // panner dsp
+    juce::dsp::Panner<float> mPanner;
 };
 
 } // namespace processing

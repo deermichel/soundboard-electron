@@ -29,7 +29,8 @@ export const availableAudioUnits: { [id in AudioUnitId]: AudioUnitDescription } 
     // [internal] mixer
     mixer: {
         controls: [
-            { id: "gain", label: "Gain", type: AudioUnitControlType.Knob, x: 0, y: 0 },
+            { id: "gain", label: "Gain", type: AudioUnitControlType.Knob, x: 2, y: 0 },
+            { id: "pan", label: "Pan", type: AudioUnitControlType.Knob, x: 1, y: 0 },
         ],
         id: "mixer",
         name: "Mixer",
