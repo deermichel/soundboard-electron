@@ -15,13 +15,11 @@ export const availableAudioUnits: { [id in AudioUnitId]: AudioUnitDescription } 
     },
 
     // [instrument] oscillator
-    osc: {
+    oscillator: {
         controls: [
-            { id: "freq", label: "Frequency", type: AudioUnitControlType.Knob, x: 0, y: 0 },
-            { id: "saw", label: "Sine / Saw", type: AudioUnitControlType.Button, x: 1, y: 0 },
-            { id: "gain", label: "Gain", type: AudioUnitControlType.Knob, x: 2, y: 0 },
+            { id: "frequency", label: "Frequency", type: AudioUnitControlType.Knob, x: 0, y: 0 },
         ],
-        id: "osc",
+        id: "oscillator",
         name: "Oscillator",
         type: AudioUnitType.Instrument,
     },
