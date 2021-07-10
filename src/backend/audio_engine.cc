@@ -1,6 +1,7 @@
 #include "audio_engine.h"
-#include "processing/oscillator.h"
 #include "processing/mixer.h"
+#include "processing/oscillator.h"
+#include "processing/piano.h"
 
 namespace soundboard {
 
@@ -9,9 +10,10 @@ unsigned int AudioEngine::addAudioUnit(const std::string &id) {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
 
     // create processor instance
-    std::unique_ptr<juce::AudioProcessor> instance;
-    if (id == processing::Oscillator::ID) instance = std::make_unique<processing::Oscillator>(); // TODO: use map & register instead of hardcoding?
+    std::unique_ptr<juce::AudioProcessor> instance; // TODO: use map & register instead of hardcoding?
     if (id == processing::Mixer::ID) instance = std::make_unique<processing::Mixer>();
+    if (id == processing::Oscillator::ID) instance = std::make_unique<processing::Oscillator>();
+    if (id == processing::Piano::ID) instance = std::make_unique<processing::Piano>();
     if (!instance) throw std::logic_error("invalid audio unit id");
 
     // add processor
@@ -43,9 +45,13 @@ void AudioEngine::initialize() {
     std::cerr << "initializing audio engine" << std::endl;
 
     // init audio devices
-    mDeviceManager.initialiseWithDefaultDevices(2, 2);
+    juce::AudioDeviceManager::AudioDeviceSetup deviceSetup = {
+        .sampleRate = 44100,
+        .bufferSize = 64,
+    };
+    mDeviceManager.initialise(2, 2, nullptr, true, "", &deviceSetup);
     mDeviceManager.addAudioCallback(&mAudioProcessorPlayer);
-    auto deviceSetup = mDeviceManager.getAudioDeviceSetup();
+    deviceSetup = mDeviceManager.getAudioDeviceSetup();
     fprintf(stderr, "using audio output '%s' (%d channels) and input '%s' (%d channels) at sample rate %.2f with buffer size %d\n",
         deviceSetup.outputDeviceName.toUTF8(), deviceSetup.outputChannels.toInteger(),
         deviceSetup.inputDeviceName.toUTF8(), deviceSetup.inputChannels.toInteger(),

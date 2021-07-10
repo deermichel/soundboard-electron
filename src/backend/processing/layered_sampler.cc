@@ -3,10 +3,11 @@
 namespace soundboard {
 namespace processing {
 
-// add sound bank
-void LayeredSampler::addSoundBank() {
+// add sound bank (returns index)
+unsigned int LayeredSampler::addSoundBank() {
     const juce::ScopedLock sl(lock);
     mSoundBanks.emplace_back();
+    return mSoundBanks.size() - 1;
 }
 
 // add sound to bank
