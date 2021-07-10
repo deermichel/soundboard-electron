@@ -1,7 +1,9 @@
 #ifndef MODEL_SESSION_H
 #define MODEL_SESSION_H
 
+#ifndef STANDALONE
 #include <napi.h>
+#endif
 #include "channel_strip.h"
 
 namespace soundboard {
@@ -15,6 +17,7 @@ struct Session {
     // session name
     std::string name;
 
+#ifndef STANDALONE
     // construct session from js object
     Session(const Napi::Object &object) {
         name = object.Get("name").As<Napi::String>().Utf8Value();
@@ -23,6 +26,7 @@ struct Session {
             channelStrips.emplace_back(channelStripsObject.Get(i).As<Napi::Object>());
         }
     }
+#endif
 };
 
 } // namespace model
