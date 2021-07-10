@@ -42,13 +42,13 @@ Piano::Piano() {
             const auto audioReader = wavFormat.createReaderFor(sampleFile.createInputStream().release(), true);
 
             // read meta
-            juce::BigInteger midiNotes;
-            midiNotes.setRange(sample.loNote, sample.hiNote, true);
-            const auto velocityRange = juce::Range<float>(sample.loVel / 127.0f, sample.hiVel / 127.0f);
-            const double maxSampleLengthSeconds = sample.end / 44100.0; // TODO: use actual sample rate
+            juce::BigInteger midiNotes, velocities;
+            midiNotes.setRange(sample.loNote, sample.hiNote - sample.loNote + 1, true);
+            velocities.setRange(sample.loVel, sample.hiVel - sample.loVel + 1, true);
+            const double maxSampleLengthSeconds = sample.end / 44100.0 + 1; // TODO: use actual sample rate
 
             // add sound
-            const auto sound = new LayeredSamplerSound(sample.path, *audioReader, midiNotes, velocityRange, sample.rootNote, 0.001, 0.1, maxSampleLengthSeconds);
+            const auto sound = new LayeredSamplerSound(sample.path, *audioReader, midiNotes, velocities, sample.rootNote, 0.001, 0.1, maxSampleLengthSeconds);
             mSampler.addSoundToBank(sound, bank);
         }
     }
@@ -71,7 +71,7 @@ void Piano::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &mid
 // should reset any playing voices
 void Piano::reset() {
     mSampler.clearVoices();
-    for (unsigned int i = 0; i < 8; i++) {
+    for (unsigned int i = 0; i < 128; i++) {
         mSampler.addVoice(new juce::SamplerVoice());
     }
 }

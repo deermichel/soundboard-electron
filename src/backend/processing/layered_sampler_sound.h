@@ -10,15 +10,15 @@ namespace processing {
 class LayeredSamplerSound : public juce::SamplerSound {
 public:
     // construct sampler sound
-    LayeredSamplerSound(const juce::String &name, juce::AudioFormatReader &source, const juce::BigInteger &midiNotes, const juce::Range<float> &velocityRange,
+    LayeredSamplerSound(const juce::String &name, juce::AudioFormatReader &source, const juce::BigInteger &midiNotes, const juce::BigInteger &velocities,
         int midiNoteForNormalPitch, double attackTimeSecs, double releaseTimeSecs, double maxSampleLengthSeconds);
 
     // return true if this sound should be played when a given midi note is pressed
-    bool appliesToNoteWithVelocity(int midiNoteNumber, float velocity);
+    bool appliesToNoteWithVelocity(int midiNoteNumber, int velocity);
 
 private:
     // velocity range
-    const juce::Range<float> mVelocityRange;
+    const juce::BigInteger mVelocities;
 };
 
 } // namespace processing
