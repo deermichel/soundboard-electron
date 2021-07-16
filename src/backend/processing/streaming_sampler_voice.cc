@@ -63,7 +63,7 @@ void StreamingSamplerVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuff
         jassert(index + 1 <= samplesToCopy);
 
         const float alpha = indexFloat - index;
-        const float invAlpha = 1.0f / alpha;
+        const float invAlpha = 1.0f - alpha;
 
         float l = inL[index] * invAlpha + inL[index+1] * alpha;
         float r = inR[index] * invAlpha + inR[index+1] * alpha;

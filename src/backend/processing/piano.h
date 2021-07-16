@@ -3,7 +3,6 @@
 
 #include <juce_audio_basics/juce_audio_basics.h>
 #include "base_processor.h"
-#include "layered_sampler.h"
 
 namespace soundboard {
 namespace processing {
@@ -25,12 +24,12 @@ public:
     // renders the next block
     void processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &midiMessages) override;
 
-    // should reset any playing voices
-    void reset() override;
-
 private:
-    // sampler
-    LayeredSampler mSampler;
+    // synthesizer
+    juce::Synthesiser mSynth;
+
+    // thread pool for disk streaming
+    std::unique_ptr<juce::ThreadPool> mThreadPool;
 };
 
 } // namespace processing
