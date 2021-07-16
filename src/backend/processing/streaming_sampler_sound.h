@@ -13,6 +13,9 @@ public:
     // construct sampler sound
     StreamingSamplerSound(const juce::File &file, const juce::BigInteger &midiNotes, int midiNoteForNormalPitch);
 
+    // return preload buffer size in bytes
+    size_t getPreloadBufferSizeBytes() const { return (size_t)(mPreloadSize * mPreloadBuffer.getNumChannels()) * sizeof(float); }
+
 	// return pitch factor for the note number
 	double getPitchFactor(int noteNumberToPitch) const { return pow(2.0, (noteNumberToPitch - mRootNote) / 12.0); }
 
@@ -21,6 +24,9 @@ public:
 
     // check if file is mapped and has enough samples
     bool hasEnoughSamplesForBlock(long long maxSampleIndexInFile) const;
+
+    // load entire sample in memory
+    void loadEntireSample() { setPreloadSize(-1); }
 
     // set the preload size (-1 for entire sample)
     void setPreloadSize(int sizeInSamples);

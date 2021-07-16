@@ -13,6 +13,15 @@ public:
     // construct sample loader
     StreamingSampleLoader(juce::ThreadPool *threadPool);
 
+    // fill buffer with samples from the current read buffer (works with buffer swapping)
+    void fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuffer, int numSamples, int sampleIndex);
+
+    // calculate and return disk usage
+    double getDiskUsage();
+
+    // return loaded sound
+    const StreamingSamplerSound* getLoadedSound() const { return mSound; }
+
     // reset loader (unloads sound)
     void reset();
 
@@ -69,6 +78,9 @@ private:
 
     // kick off background job
     void requestNewData();
+
+    // swap buffers
+    bool swapBuffers();
 };
 
 } // namespace processing

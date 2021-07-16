@@ -10,12 +10,51 @@ StreamingSampleLoader::StreamingSampleLoader(juce::ThreadPool *threadPool) :
     mDiskUsage(0.0),
     mLastCallToRequestData(0.0),
     mPositionInSampleFile(0),
+    mReadIndex(0),
     mSound(nullptr),
     mThreadPool(threadPool),
     mWriteBufferIsBeingFilled(false) {
 
     // set buffer size
     setBufferSize(PRELOAD_BUFFER_SIZE);
+}
+
+// fill buffer with samples from the current read buffer (works with buffer swapping)
+void StreamingSampleLoader::fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuffer, int numSamples, int sampleIndex) {
+    // since the numSamples is only a estimate for buffering, the sampleIndex is used for the exact clock
+    mReadIndex = sampleIndex % mBufferSize;
+
+    // fill buffer
+    jassert(mSound != nullptr);
+    if (mReadIndex + numSamples < mBufferSize) {
+        // copy all samples from the current read buffer
+        juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, 0), mReadBuffer->getReadPointer(0, mReadIndex), numSamples);
+        juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, 0), mReadBuffer->getReadPointer(1, mReadIndex), numSamples);
+    } else {
+        // copy remaining samples from current read buffer
+        const int remainingSamples = mBufferSize - mReadIndex;
+        juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, 0), mReadBuffer->getReadPointer(0, mReadIndex), remainingSamples);
+        juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, 0), mReadBuffer->getReadPointer(1, mReadIndex), remainingSamples);
+
+        // swap buffers and copy remaining samples from the new read buffer
+        if (swapBuffers()) {
+            mReadIndex = 0;
+            const int numSamplesInNewReadBuffer = numSamples - remainingSamples;
+            juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, remainingSamples), mReadBuffer->getReadPointer(0, mReadIndex), numSamplesInNewReadBuffer);
+            juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, remainingSamples), mReadBuffer->getReadPointer(1, mReadIndex), numSamplesInNewReadBuffer);
+            mPositionInSampleFile += mBufferSize;
+            requestNewData();
+        } else {
+            jassertfalse; // ERROR: background thread was not quick enough -> increase preload / buffer size
+        }
+    }
+}
+
+// calculate and return disk usage
+double StreamingSampleLoader::getDiskUsage() {
+    const double diskUsage = mDiskUsage;
+    mDiskUsage = 0.0;
+    return diskUsage;
 }
 
 // reset loader (unloads sound)
@@ -100,6 +139,18 @@ void StreamingSampleLoader::requestNewData() {
     jassert(!mThreadPool->contains(this)); // check if the background thread is already loading this sound
     mThreadPool->addJob(this, false);
 #endif
+}
+
+// swap buffers
+bool StreamingSampleLoader::swapBuffers() {
+    if (mReadBuffer == &mBuffer1) {
+        mReadBuffer = &mBuffer2;
+        mWriteBuffer = &mBuffer1;
+    } else { // will also be true if read pointer points at preload buffer
+        mReadBuffer = &mBuffer1;
+        mWriteBuffer = &mBuffer2;
+    }
+    return mWriteBufferIsBeingFilled == false;
 }
 
 } // namespace processing

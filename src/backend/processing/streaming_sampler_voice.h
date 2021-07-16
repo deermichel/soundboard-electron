@@ -13,8 +13,20 @@ public:
     // construct sampler voice using given thread pool
     StreamingSamplerVoice(juce::ThreadPool *backgroundThreadPool);
 
+    // get disk usage of the voice
+    double getDiskUsage() { return mLoader.getDiskUsage(); }
+
+    // prepare internal sample buffer
+    void prepareToPlay(double sampleRate, int samplesPerBlock);
+
     // reset voice
     void resetVoice();
+
+    // set streaming loader buffer size
+    void setLoaderBufferSize(int newBufferSize) { mLoader.setBufferSize(newBufferSize); }
+
+    // set pitch information for each sample of the next block (array size must match block size)
+	void setPitchValues(const float *pitchDataForBlock)	{ mPitchData = pitchDataForBlock; }
 
     // --- overrides ---
 
@@ -39,6 +51,12 @@ public:
 private:
     // sample loader
     StreamingSampleLoader mLoader;
+
+    // pitch data for the next block
+	const float *mPitchData;
+
+    // sample buffer
+    juce::AudioSampleBuffer mSamplesForThisBlock;
 
     // uptime delta
     double mUptimeDelta;
