@@ -29,11 +29,11 @@ public:
     void reset() override;
 
 private:
-    // oscillator dsp
-    juce::dsp::Oscillator<float> mOscillator;
-
     // frequency parameter
     LinkedFloatParameter *mFrequency;
+
+    // oscillator dsp
+    juce::dsp::Oscillator<float> mOscillator;
 };
 
 } // namespace processing

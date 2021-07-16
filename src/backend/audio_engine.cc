@@ -66,6 +66,7 @@ void AudioEngine::initialize() {
     // setup audio processor player
     mAudioProcessorPlayer.setProcessor(&mAudioGraph);
     mInitialized = true;
+    fprintf(stderr, "initialization done\n");
 
     // init audio graph
     reset();
