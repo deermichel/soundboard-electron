@@ -32,6 +32,9 @@ target_sources(soundboard
         "src/backend/processing/mixer.cc"
         "src/backend/processing/oscillator.cc"
         "src/backend/processing/piano.cc"
+        "src/backend/processing/streaming_sample_loader.cc"
+        "src/backend/processing/streaming_sampler_sound.cc"
+        "src/backend/processing/streaming_sampler_voice.cc"
 )
 
 # defs

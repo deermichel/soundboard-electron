@@ -10,12 +10,12 @@ int main(int argc, char *argv[]) {
     AudioEngine::instance().initialize();
 
     // add audio unit
-    AudioEngine::instance().addAudioUnit("oscillator");
+    AudioEngine::instance().addAudioUnit("piano");
 
     // update session
     model::Session session = { .name = "New Session" };
     auto &channelStrip = session.channelStrips.emplace_back();
-    // channelStrip.audioUnits.push_back({ 5 });
+    channelStrip.audioUnits.push_back({ 5 });
     AudioEngine::instance().updateGraph(session);
 
     std::cin.get();
