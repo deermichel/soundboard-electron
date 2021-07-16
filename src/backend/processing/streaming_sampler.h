@@ -6,7 +6,7 @@
 // maximum value for sample pitch manipulation (8 = 3 octaves)
 #define MAX_SAMPLER_PITCH 8
 
-// preload buffer size
+// preload buffer size // TODO: split into two defines
 #define PRELOAD_BUFFER_SIZE 11000
 
 // load samples in audio thread (useful for debugging)

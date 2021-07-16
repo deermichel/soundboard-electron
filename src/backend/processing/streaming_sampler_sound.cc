@@ -20,6 +20,11 @@ StreamingSamplerSound::StreamingSamplerSound(const juce::File &file, const juce:
     setPreloadSize(PRELOAD_BUFFER_SIZE);
 }
 
+// check if file is mapped and has enough samples
+bool StreamingSamplerSound::hasEnoughSamplesForBlock(long long maxSampleIndexInFile) const {
+    return maxSampleIndexInFile < mAudioFormatReader->getMappedSection().getEnd();
+}
+
 // set the preload size (-1 for entire sample)
 void StreamingSamplerSound::setPreloadSize(int sizeInSamples) {
     mPreloadSize = sizeInSamples;
@@ -39,6 +44,11 @@ void StreamingSamplerSound::setPreloadSize(int sizeInSamples) {
     mAudioFormatReader->read(&mPreloadBuffer, 0, mPreloadSize, 0, true, true);
 }
 
+// get sound into active memory
+void StreamingSamplerSound::wakeSound() {
+    mAudioFormatReader->touchSample(0);
+}
+
 // return true if this sound should be played for a given midi channel
 bool StreamingSamplerSound::appliesToChannel(int midiChannel) {
     return true;
@@ -50,6 +60,16 @@ bool StreamingSamplerSound::appliesToNote(int midiNoteNumber) {
 }
 
 // --- private methods ---
+
+// fill the supplied buffer with samples (don't call from audio thread, might read data from disk)
+void StreamingSamplerSound::fillSampleBuffer(juce::AudioSampleBuffer &sampleBuffer, int samplesToCopy, int startOffset) const {
+    if (startOffset + samplesToCopy < mPreloadSize) {
+        juce::FloatVectorOperations::copy(sampleBuffer.getWritePointer(0, 0), mPreloadBuffer.getReadPointer(0, startOffset), samplesToCopy);
+        juce::FloatVectorOperations::copy(sampleBuffer.getWritePointer(1, 0), mPreloadBuffer.getReadPointer(1, startOffset), samplesToCopy);
+    } else {
+        mAudioFormatReader->read(&sampleBuffer, 0, samplesToCopy, startOffset, true, true);
+    }
+}
 
 } // namespace processing
 } // namespace soundboard

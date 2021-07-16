@@ -13,8 +13,20 @@ public:
     // construct sampler sound
     StreamingSamplerSound(const juce::File &file, const juce::BigInteger &midiNotes, int midiNoteForNormalPitch);
 
+	// return pitch factor for the note number
+	double getPitchFactor(int noteNumberToPitch) const { return pow(2.0, (noteNumberToPitch - mRootNote) / 12.0); }
+
+    // return read-only access to the preload buffer
+    const juce::AudioSampleBuffer& getPreloadBuffer() const { return mPreloadBuffer; }
+
+    // check if file is mapped and has enough samples
+    bool hasEnoughSamplesForBlock(long long maxSampleIndexInFile) const;
+
     // set the preload size (-1 for entire sample)
     void setPreloadSize(int sizeInSamples);
+
+    // get sound into active memory
+    void wakeSound();
 
     // --- overrides ---
 
@@ -45,6 +57,12 @@ private:
 
     // sample rate
     double mSampleRate;
+
+    // you got a friend in me
+    friend class StreamingSampleLoader;
+
+    // fill the supplied buffer with samples (don't call from audio thread, might read data from disk)
+	void fillSampleBuffer(juce::AudioSampleBuffer &sampleBuffer, int samplesToCopy, int startOffset) const;
 
     // non copy, leak detection
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(StreamingSamplerSound)

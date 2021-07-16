@@ -13,6 +13,9 @@ public:
     // construct sampler voice using given thread pool
     StreamingSamplerVoice(juce::ThreadPool *backgroundThreadPool);
 
+    // reset voice
+    void resetVoice();
+
     // --- overrides ---
 
     // return true if this voice object is capable of playing the given sound (always)
@@ -36,6 +39,12 @@ public:
 private:
     // sample loader
     StreamingSampleLoader mLoader;
+
+    // uptime delta
+    double mUptimeDelta;
+
+    // voice uptime
+    double mVoiceUptime;
 };
 
 } // namespace processing
