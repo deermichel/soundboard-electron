@@ -3,10 +3,11 @@
 namespace soundboard {
 namespace processing {
 
-// add sound bank
-void LayeredSampler::addSoundBank() {
+// add sound bank (returns index)
+unsigned int LayeredSampler::addSoundBank() {
     const juce::ScopedLock sl(lock);
     mSoundBanks.emplace_back();
+    return mSoundBanks.size() - 1;
 }
 
 // add sound to bank
@@ -31,7 +32,7 @@ void LayeredSampler::noteOn(int midiChannel, int midiNoteNumber, float velocity)
     auto soundBank = mSoundBanks[mNextSoundBank];
     for (int i = 0; i < soundBank.size(); i++) {
         LayeredSamplerSound *sound = static_cast<LayeredSamplerSound*>(soundBank.getUnchecked(i).get());
-        if (sound->appliesToNoteWithVelocity(midiNoteNumber, velocity) && sound->appliesToChannel(midiChannel)) {
+        if (sound->appliesToNoteWithVelocity(midiNoteNumber, velocity * 127.0f) && sound->appliesToChannel(midiChannel)) {
             // TODO: that's probably not want we want
             // stop note if still ringing
             // for (auto *voice : voices) {

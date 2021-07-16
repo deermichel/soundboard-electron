@@ -13,8 +13,8 @@ public:
     // construct sampler
     LayeredSampler() {}
 
-    // add sound bank
-    void addSoundBank();
+    // add sound bank (returns index)
+    unsigned int addSoundBank();
 
     // add sound to bank
     void addSoundToBank(const juce::ReferenceCountedObjectPtr<LayeredSamplerSound> &sound, unsigned int bank);

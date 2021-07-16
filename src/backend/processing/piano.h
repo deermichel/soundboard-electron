@@ -1,21 +1,21 @@
-#ifndef PROCESSING_OSCILLATOR_H
-#define PROCESSING_OSCILLATOR_H
+#ifndef PROCESSING_PIANO_H
+#define PROCESSING_PIANO_H
 
-#include <juce_dsp/juce_dsp.h>
+#include <juce_audio_basics/juce_audio_basics.h>
 #include "base_processor.h"
-#include "linked_float_parameter.h"
+#include "layered_sampler.h"
 
 namespace soundboard {
 namespace processing {
 
-// [instrument] oscillator - basic midi-controlled oscillator for testing purposes
-class Oscillator : public BaseProcessor {
+// [instrument] piano - piano sampler
+class Piano : public BaseProcessor {
 public:
     // audio unit id
-    static constexpr const char *ID = "oscillator";
+    static constexpr const char *ID = "piano";
 
-    // construct oscillator
-    Oscillator();
+    // construct piano
+    Piano();
 
     // --- overrides ---
 
@@ -29,14 +29,11 @@ public:
     void reset() override;
 
 private:
-    // frequency parameter
-    LinkedFloatParameter *mFrequency;
-
-    // oscillator dsp
-    juce::dsp::Oscillator<float> mOscillator;
+    // sampler
+    LayeredSampler mSampler;
 };
 
 } // namespace processing
 } // namespace soundboard
 
-#endif // PROCESSING_OSCILLATOR_H
+#endif // PROCESSING_PIANO_H

@@ -24,6 +24,15 @@ export const availableAudioUnits: { [id in AudioUnitId]: AudioUnitDescription } 
         type: AudioUnitType.Instrument,
     },
 
+    // [instrument] piano
+    piano: {
+        controls: [
+        ],
+        id: "piano",
+        name: "Piano",
+        type: AudioUnitType.Instrument,
+    },
+
     // [internal] mixer
     mixer: {
         controls: [

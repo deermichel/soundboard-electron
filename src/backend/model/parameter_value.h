@@ -1,7 +1,9 @@
 #ifndef MODEL_PARAMETER_VALUE_H
 #define MODEL_PARAMETER_VALUE_H
 
+#ifndef STANDALONE
 #include <napi.h>
+#endif
 
 namespace soundboard {
 namespace model {
@@ -14,6 +16,7 @@ struct ParameterValue {
     // value
     float value;
 
+#ifndef STANDALONE
     // construct js object
     Napi::Object CreateObject(const Napi::Env &env) const {
         Napi::Object object = Napi::Object::New(env);
@@ -21,6 +24,7 @@ struct ParameterValue {
         object.Set(Napi::String::New(env, "value"), Napi::Number::New(env, value));
         return object;
     }
+#endif
 };
 
 } // namespace model
