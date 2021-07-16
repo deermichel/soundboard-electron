@@ -177,8 +177,8 @@ AudioEngine::~AudioEngine() {
 // add internal processor (returns unique ref)
 unsigned int AudioEngine::addInternalProcessor(std::unique_ptr<juce::AudioProcessor> processor) {
     if (!mInitialized) throw std::logic_error("audio engine is not initialized");
+    processor->enableAllBuses();
     auto node = mAudioGraph.addNode(std::move(processor));
-    node->getProcessor()->enableAllBuses();
     return node->nodeID.uid;
 }
 

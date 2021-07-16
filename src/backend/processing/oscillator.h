@@ -34,6 +34,9 @@ private:
 
     // oscillator dsp
     juce::dsp::Oscillator<float> mOscillator;
+
+    // number of output channels
+    unsigned int mNumOutputChannels;
 };
 
 } // namespace processing

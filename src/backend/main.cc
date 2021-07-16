@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
     // update session
     model::Session session = { .name = "New Session" };
     auto &channelStrip = session.channelStrips.emplace_back();
+    // channelStrip.audioUnits.push_back({ 5 });
     AudioEngine::instance().updateGraph(session);
 
     std::cin.get();

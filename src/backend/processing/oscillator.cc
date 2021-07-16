@@ -15,7 +15,8 @@ Oscillator::Oscillator() {
 
 // called before playback starts, to let the processor prepare itself
 void Oscillator::prepareToPlay(double sampleRate, int bufferSize) {
-    juce::dsp::ProcessSpec spec { sampleRate, static_cast<juce::uint32>(bufferSize), 2 };
+    mNumOutputChannels = getMainBusNumOutputChannels();
+    juce::dsp::ProcessSpec spec { sampleRate, static_cast<juce::uint32>(bufferSize), mNumOutputChannels };
     mOscillator.prepare(spec);
 }
 
@@ -32,7 +33,7 @@ void Oscillator::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer
     }
 
     // process audio
-    juce::dsp::AudioBlock<float> block(buffer);
+    juce::dsp::AudioBlock<float> block(buffer.getArrayOfWritePointers(), mNumOutputChannels, buffer.getNumSamples());
     juce::dsp::ProcessContextReplacing<float> context(block);
     mOscillator.process(context);
 }
