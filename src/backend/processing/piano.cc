@@ -24,6 +24,8 @@ Piano::Piano() :
     }
 }
 
+// deconstructor -> clearSounds, clearVoices
+
 // called before playback starts, to let the processor prepare itself
 void Piano::prepareToPlay(double sampleRate, int bufferSize) {
     mSynth.setCurrentPlaybackSampleRate(sampleRate);

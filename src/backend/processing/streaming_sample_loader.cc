@@ -33,6 +33,7 @@ void StreamingSampleLoader::fillSampleBlockBuffer(juce::AudioSampleBuffer &sampl
     } else {
         // copy remaining samples from current read buffer
         const int remainingSamples = mBufferSize - mReadIndex;
+        jassert(remainingSamples <= numSamples);
         juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, 0), mReadBuffer->getReadPointer(0, mReadIndex), remainingSamples);
         juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, 0), mReadBuffer->getReadPointer(1, mReadIndex), remainingSamples);
 
