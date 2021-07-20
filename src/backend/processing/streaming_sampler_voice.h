@@ -49,6 +49,9 @@ public:
     void stopNote(float velocity, bool allowTailOff) override;
 
 private:
+    // adsr
+    juce::ADSR mAdsr;
+
     // sample loader
     StreamingSampleLoader mLoader;
 

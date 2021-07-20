@@ -19,7 +19,7 @@ Piano::Piano() :
     mSynth.addSound(new StreamingSamplerSound(juce::File::getCurrentWorkingDirectory().getChildFile("samples/RR1 C3 359.wav"), midiNotes, 48));
 
     // add voices
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 128; i++) {
         mSynth.addVoice(new StreamingSamplerVoice(mThreadPool.get()));
     }
 }

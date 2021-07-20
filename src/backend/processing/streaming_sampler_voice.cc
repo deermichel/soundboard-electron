@@ -11,7 +11,9 @@ StreamingSamplerVoice::StreamingSamplerVoice(juce::ThreadPool *backgroundThreadP
 // prepare internal sample buffer
 void StreamingSamplerVoice::prepareToPlay(double sampleRate, int samplesPerBlock) {
     if (sampleRate != -1.0) {
-        mSamplesForThisBlock = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH);
+        mAdsr.setSampleRate(sampleRate);
+        mAdsr.setParameters({ .attack = 0.01, .release = 0.1 });
+        mSamplesForThisBlock = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH + 4);
         mSamplesForThisBlock.clear();
     }
 }
@@ -20,6 +22,7 @@ void StreamingSamplerVoice::prepareToPlay(double sampleRate, int samplesPerBlock
 void StreamingSamplerVoice::resetVoice() {
     mVoiceUptime = 0.0;
     mUptimeDelta = 0.0;
+    mAdsr.reset();
     clearCurrentNote();
 }
 
@@ -41,7 +44,7 @@ void StreamingSamplerVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuff
             numSamplesUsed += mUptimeDelta;
         }
     }
-    const int samplesToCopy = (int)numSamplesUsed + 2; // get a few more for linear interpolating
+    const int samplesToCopy = (int)numSamplesUsed + 4; // get a few more for linear interpolating
 
     // check if enough samples are available
     if (!sound->hasEnoughSamplesForBlock(pos + samplesToCopy)) {
@@ -68,6 +71,10 @@ void StreamingSamplerVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuff
         float l = inL[index] * invAlpha + inL[index+1] * alpha;
         float r = inR[index] * invAlpha + inR[index+1] * alpha;
 
+        float envelopeValue = mAdsr.getNextSample();
+        l *= envelopeValue;
+        r *= envelopeValue;
+
         *outL++ += l;
         *outR++ += r;
 
@@ -86,12 +93,18 @@ void StreamingSamplerVoice::startNote(int midiNoteNumber, float velocity, juce::
 
     mVoiceUptime = 0.0;
     mUptimeDelta = juce::jmin(streamingSound->getPitchFactor(midiNoteNumber), (double)MAX_SAMPLER_PITCH);
+    mAdsr.noteOn();
 }
 
 // stop the note
 void StreamingSamplerVoice::stopNote(float velocity, bool allowTailOff) {
-    clearCurrentNote();
-    mLoader.reset();
+    if (allowTailOff) {
+        mAdsr.noteOff();
+    } else {
+        clearCurrentNote();
+        mAdsr.reset();
+        mLoader.reset();
+    }
 }
 
 // --- private methods ---
