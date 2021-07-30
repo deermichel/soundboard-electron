@@ -18,7 +18,7 @@ PapageiSound::PapageiSound(const juce::File &file, const juce::BigInteger &midiN
     if (mSourceSampleRate == 0 || mLength == 0) throw std::runtime_error("invalid sample rate or empty audio file: " + mFileName);
 
     // adsr
-    mAdsrParams.attack = 0.001;
+    mAdsrParams.attack = 0.01;
     mAdsrParams.release = 0.1;
 
     // preload sample
@@ -68,7 +68,6 @@ bool PapageiSound::appliesToChannel(int midiChannel) {
 
 // fill the supplied buffer with samples (don't call from audio thread, might read data from disk)
 void PapageiSound::fillSampleBuffer(juce::AudioSampleBuffer &sampleBuffer, int samplesToCopy, int startOffset) const {
-    printf("fill %s from %d to %d\n", mFileName.c_str(), startOffset, startOffset + samplesToCopy);
     if (startOffset + samplesToCopy < mPreloadSize) {
         juce::FloatVectorOperations::copy(sampleBuffer.getWritePointer(0, 0), mPreloadBuffer.getReadPointer(0, startOffset), samplesToCopy);
         juce::FloatVectorOperations::copy(sampleBuffer.getWritePointer(1, 0), mPreloadBuffer.getReadPointer(1, startOffset), samplesToCopy);

@@ -56,10 +56,14 @@ private:
     double mPitchRatio;
 
     // sample buffer
-    juce::AudioSampleBuffer mSamplesForThisBlock;
+    juce::AudioSampleBuffer mInputBuffer;
+    juce::AudioSampleBuffer mOutputBuffer;
 
     // source sample position
     double mSourceSamplePosition;
+
+    juce::LagrangeInterpolator mLeftInterpolator;
+    juce::LagrangeInterpolator mRightInterpolator;
 };
 
 } // namespace processing

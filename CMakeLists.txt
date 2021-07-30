@@ -39,7 +39,7 @@ target_sources(soundboard
 # defs
 target_compile_definitions(soundboard
     PRIVATE
-        NDEBUG
+        DEBUG
         JSON_USE_IMPLICIT_CONVERSIONS=0
         JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED
         JUCE_MAC
