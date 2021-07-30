@@ -11,7 +11,7 @@ PapageiVoice::PapageiVoice(juce::ThreadPool *backgroundThreadPool) :
 // prepare internal sample buffer
 void PapageiVoice::prepareToPlay(double sampleRate, int samplesPerBlock) {
     if (sampleRate > 0) {
-        mSamplesForThisBlock = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH + 4);
+        mSamplesForThisBlock = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH);
         mSamplesForThisBlock.clear();
     }
 }
@@ -57,11 +57,61 @@ void PapageiVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuffer, int s
 
         // adjust pos
         mSourceSamplePosition += mPitchRatio;
-        if (mSourceSamplePosition > PRELOAD_BUFFER_SIZE) {
+        if (mSourceSamplePosition > sound->getLength()) {
             stopNote(0.0f, false);
             break;
         }
     }
+
+    // auto *sound = mLoader.getLoadedSound();
+    // if (sound == nullptr) return;
+
+    // // samples calculation
+    // int pos = (int)mSourceSamplePosition;
+    // double numSamplesUsed = mSourceSamplePosition - pos;
+    // numSamplesUsed += mPitchRatio * numSamples;
+    // int samplesToCopy = (int)numSamplesUsed + 2; // get a few more for linear interpolating
+
+    // // check if enough samples are available
+    // if (!sound->hasEnoughSamplesForBlock(pos + samplesToCopy)) {
+    //     stopNote(0.0f, false);
+    //     return;
+    // }
+
+    // // get buffers
+    // mLoader.fillSampleBlockBuffer(mSamplesForThisBlock, samplesToCopy, pos);
+    // const float *inL = mSamplesForThisBlock.getReadPointer(0);
+    // const float *inR = mSamplesForThisBlock.getNumChannels() > 1 ? mSamplesForThisBlock.getReadPointer(1) : nullptr;
+    // float *outL = outputBuffer.getWritePointer(0, startSample);
+    // float *outR = outputBuffer.getNumChannels() > 1 ? outputBuffer.getWritePointer(1, startSample) : nullptr;
+
+    // // copy samples and interpolate as needed
+    // while (--numSamples >= 0) {
+    //     float indexFloat = (float)(mSourceSamplePosition - pos);
+    //     int index = (int)indexFloat;
+    //     jassert(index + 1 <= samplesToCopy);
+    //     float alpha = indexFloat - index;
+    //     float invAlpha = 1.0f - alpha;
+
+    //     // simple linear interpolation
+    //     float l = (inL[index] * invAlpha + inL[index + 1] * alpha);
+    //     float r = (inR != nullptr) ? (inR[index] * invAlpha + inR[index + 1] * alpha) : l;
+
+    //     // envelope & gain
+    //     auto envelopeValue = mAdsr.getNextSample() * 2; // TODO: remove 2 !!!
+    //     l *= mGain * envelopeValue;
+    //     r *= mGain * envelopeValue;
+
+    //     if (outR != nullptr) {
+    //         *outL++ += l;
+    //         *outR++ += r;
+    //     } else {
+    //         *outL++ += (l + r) * 0.5f;
+    //     }
+
+    //     // increment pos
+    //     mSourceSamplePosition += mPitchRatio;
+    // }
 }
 
 // start streaming the sound

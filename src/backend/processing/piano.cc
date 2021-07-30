@@ -52,6 +52,7 @@ Piano::Piano() :
 
             // add sound
             const auto sound = new PapageiSound(sampleFile, midiNotes, velocities, sample.rootNote);
+            sound->loadEntireSample();
             mSampler.addSound(sound);
             printf("added sound %s\n", sampleFile.getFileName().toStdString().c_str());
             // const auto sound = new LayeredSamplerSound(sample.path, *audioReader, midiNotes, velocities, sample.rootNote, 0.001, 0.1, maxSampleLengthSeconds);
@@ -60,12 +61,20 @@ Piano::Piano() :
     }
 
     // init voices
-    reset();
+    for (unsigned int i = 0; i < 64; i++) {
+        mSampler.addVoice(new PapageiVoice(mThreadPool.get()));
+    }
 }
 
 // called before playback starts, to let the processor prepare itself
 void Piano::prepareToPlay(double sampleRate, int bufferSize) {
     mSampler.setCurrentPlaybackSampleRate(sampleRate);
+
+    // prepare voices (resize buffers)
+    for (int i = 0; i < mSampler.getNumVoices(); i++) {
+        PapageiVoice *voice = dynamic_cast<PapageiVoice*>(mSampler.getVoice(i));
+        voice->prepareToPlay(sampleRate, bufferSize);
+    }
 }
 
 // renders the next block
@@ -76,10 +85,6 @@ void Piano::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &mid
 
 // should reset any playing voices
 void Piano::reset() {
-    mSampler.clearVoices();
-    for (unsigned int i = 0; i < 64; i++) {
-        mSampler.addVoice(new PapageiVoice(mThreadPool.get()));
-    }
 }
 
 } // namespace processing

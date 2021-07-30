@@ -47,7 +47,7 @@ void AudioEngine::initialize() {
     // init audio devices
     juce::AudioDeviceManager::AudioDeviceSetup deviceSetup = {
         .sampleRate = 44100,
-        .bufferSize = 64,
+        .bufferSize = 128,
     };
     mDeviceManager.initialise(2, 2, nullptr, true, "", &deviceSetup);
     mDeviceManager.addAudioCallback(&mAudioProcessorPlayer);
