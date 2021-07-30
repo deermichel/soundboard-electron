@@ -2,6 +2,10 @@
 #define PROCESSING_SAMPLER_PAPAGEI_VOICE_H
 
 #include <juce_audio_basics/juce_audio_basics.h>
+#include "sample_loader.h"
+
+// maximum value for sample pitch manipulation (8 = 3 octaves)
+#define MAX_SAMPLER_PITCH 8
 
 namespace soundboard {
 namespace processing {
@@ -13,16 +17,10 @@ public:
     PapageiVoice(juce::ThreadPool *backgroundThreadPool);
 
     // prepare internal sample buffer
-    // void prepareToPlay(double sampleRate, int samplesPerBlock);
-
-    // reset voice
-    // void resetVoice();
+    void prepareToPlay(double sampleRate, int samplesPerBlock);
 
     // set streaming loader buffer size
-    // void setLoaderBufferSize(int newBufferSize) { mLoader.setBufferSize(newBufferSize); }
-
-    // set pitch information for each sample of the next block (array size must match block size)
-	// void setPitchValues(const float *pitchDataForBlock)	{ mPitchData = pitchDataForBlock; }
+    void setLoaderBufferSize(int newBufferSize) { mLoader.setBufferSize(newBufferSize); }
 
     // --- overrides ---
 
@@ -51,8 +49,14 @@ private:
     // velocity gain
     float mGain;
 
+    // sample loader
+    SampleLoader mLoader;
+
     // pitch ratio
     double mPitchRatio;
+
+    // sample buffer
+    juce::AudioSampleBuffer mSamplesForThisBlock;
 
     // source sample position
     double mSourceSamplePosition;

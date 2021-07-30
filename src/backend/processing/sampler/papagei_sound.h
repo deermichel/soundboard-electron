@@ -35,7 +35,7 @@ public:
     double getSourceSampleRate() const { return mSourceSampleRate; }
 
     // check if file is mapped and has enough samples
-    // bool hasEnoughSamplesForBlock(long long maxSampleIndexInFile) const;
+    bool hasEnoughSamplesForBlock(long long maxSampleIndexInFile) const;
 
     // load entire sample in memory
     void loadEntireSample() { setPreloadSize(-1); }
@@ -89,10 +89,10 @@ private:
     const juce::BigInteger mVelocities;
 
     // you got a friend in me
-    // friend class StreamingSampleLoader;
+    friend class SampleLoader;
 
     // fill the supplied buffer with samples (don't call from audio thread, might read data from disk)
-	// void fillSampleBuffer(juce::AudioSampleBuffer &sampleBuffer, int samplesToCopy, int startOffset) const;
+	void fillSampleBuffer(juce::AudioSampleBuffer &sampleBuffer, int samplesToCopy, int startOffset) const;
 
     // non copy, leak detection
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PapageiSound)

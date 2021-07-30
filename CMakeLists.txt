@@ -33,6 +33,7 @@ target_sources(soundboard
         "src/backend/processing/sampler/papagei_sampler.cc"
         "src/backend/processing/sampler/papagei_sound.cc"
         "src/backend/processing/sampler/papagei_voice.cc"
+        "src/backend/processing/sampler/sample_loader.cc"
 )
 
 # defs

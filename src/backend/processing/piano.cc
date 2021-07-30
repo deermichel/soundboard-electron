@@ -28,7 +28,9 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Group, samples);
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Metadata, groups);
 
 // construct piano
-Piano::Piano() {
+Piano::Piano() :
+    mThreadPool(std::make_unique<juce::ThreadPool>()) {
+
     // parse metadata
     const std::string rawMetadata = juce::File::getCurrentWorkingDirectory().getChildFile("piano.json").loadFileAsString().toStdString();
     const Metadata metadata = nlohmann::json::parse(rawMetadata).get<Metadata>();
@@ -76,7 +78,7 @@ void Piano::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &mid
 void Piano::reset() {
     mSampler.clearVoices();
     for (unsigned int i = 0; i < 64; i++) {
-        mSampler.addVoice(new PapageiVoice(nullptr));
+        mSampler.addVoice(new PapageiVoice(mThreadPool.get()));
     }
 }
 

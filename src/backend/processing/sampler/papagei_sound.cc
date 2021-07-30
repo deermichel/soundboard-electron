@@ -30,6 +30,11 @@ bool PapageiSound::appliesToNoteWithVelocity(int midiNoteNumber, int velocity) {
     return mMidiNotes[midiNoteNumber] && mVelocities[velocity];
 }
 
+// check if file is mapped and has enough samples
+bool PapageiSound::hasEnoughSamplesForBlock(long long maxSampleIndexInFile) const {
+    return maxSampleIndexInFile < mAudioFormatReader->getMappedSection().getEnd();
+}
+
 // set the preload size (-1 for entire sample)
 void PapageiSound::setPreloadSize(int sizeInSamples) {
     mPreloadSize = sizeInSamples;
@@ -57,6 +62,19 @@ void PapageiSound::wakeSound() {
 // return true if this sound should be played for a given midi channel
 bool PapageiSound::appliesToChannel(int midiChannel) {
     return true;
+}
+
+// --- private methods ---
+
+// fill the supplied buffer with samples (don't call from audio thread, might read data from disk)
+void PapageiSound::fillSampleBuffer(juce::AudioSampleBuffer &sampleBuffer, int samplesToCopy, int startOffset) const {
+    printf("fill %s from %d to %d\n", mFileName.c_str(), startOffset, startOffset + samplesToCopy);
+    if (startOffset + samplesToCopy < mPreloadSize) {
+        juce::FloatVectorOperations::copy(sampleBuffer.getWritePointer(0, 0), mPreloadBuffer.getReadPointer(0, startOffset), samplesToCopy);
+        juce::FloatVectorOperations::copy(sampleBuffer.getWritePointer(1, 0), mPreloadBuffer.getReadPointer(1, startOffset), samplesToCopy);
+    } else {
+        mAudioFormatReader->read(&sampleBuffer, 0, samplesToCopy, startOffset, true, true);
+    }
 }
 
 } // namespace processing

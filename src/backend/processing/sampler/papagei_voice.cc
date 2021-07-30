@@ -5,8 +5,15 @@ namespace soundboard {
 namespace processing {
 
 // construct voice using given thread pool
-PapageiVoice::PapageiVoice(juce::ThreadPool *backgroundThreadPool) {
+PapageiVoice::PapageiVoice(juce::ThreadPool *backgroundThreadPool) :
+    mLoader(backgroundThreadPool) {}
 
+// prepare internal sample buffer
+void PapageiVoice::prepareToPlay(double sampleRate, int samplesPerBlock) {
+    if (sampleRate > 0) {
+        mSamplesForThisBlock = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH + 4);
+        mSamplesForThisBlock.clear();
+    }
 }
 
 // return true if this voice object is capable of playing the given sound
@@ -16,7 +23,7 @@ bool PapageiVoice::canPlaySound(juce::SynthesiserSound *sound) {
 
 // renders the next block of data for this voice
 void PapageiVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuffer, int startSample, int numSamples) {
-    auto *sound = static_cast<PapageiSound*>(getCurrentlyPlayingSound().get());
+    auto *sound = mLoader.getLoadedSound();
     if (sound == nullptr) return;
 
     // get buffers
@@ -28,13 +35,13 @@ void PapageiVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuffer, int s
 
     // copy samples and interpolate as needed
     while (--numSamples >= 0) {
-        int pos = (int)mSourceSamplePosition;
-        float alpha = (float)(mSourceSamplePosition - pos);
+        int index = (int)mSourceSamplePosition;
+        float alpha = (float)(mSourceSamplePosition - index);
         float invAlpha = 1.0f - alpha;
 
         // simple linear interpolation
-        float l = (inL[pos] * invAlpha + inL[pos + 1] * alpha);
-        float r = (inR != nullptr) ? (inR[pos] * invAlpha + inR[pos + 1] * alpha) : l;
+        float l = (inL[index] * invAlpha + inL[index + 1] * alpha);
+        float r = (inR != nullptr) ? (inR[index] * invAlpha + inR[index + 1] * alpha) : l;
 
         // envelope & gain
         auto envelopeValue = mAdsr.getNextSample();
@@ -60,11 +67,12 @@ void PapageiVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuffer, int s
 // start streaming the sound
 void PapageiVoice::startNote(int midiNoteNumber, float velocity, juce::SynthesiserSound *s, int currentPitchWheelPosition) {
     if (auto *sound = dynamic_cast<PapageiSound*>(s)) {
+        mLoader.startNote(sound);
         sound->wakeSound();
         mSourceSamplePosition = 0.0;
 
         // pitch & velocity
-        mPitchRatio = sound->getPitchRatio(midiNoteNumber) * sound->getSourceSampleRate() / getSampleRate();
+        mPitchRatio = juce::jmin(sound->getPitchRatio(midiNoteNumber), (double)MAX_SAMPLER_PITCH) * sound->getSourceSampleRate() / getSampleRate();
         mGain = velocity;
 
         // adsr
@@ -83,6 +91,7 @@ void PapageiVoice::stopNote(float velocity, bool allowTailOff) {
     } else {
         clearCurrentNote();
         mAdsr.reset();
+        mLoader.reset();
     }
 }
 

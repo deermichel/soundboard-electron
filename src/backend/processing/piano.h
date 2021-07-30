@@ -31,6 +31,9 @@ public:
 private:
     // sampler
     PapageiSampler mSampler;
+
+    // thread pool for disk streaming
+    std::unique_ptr<juce::ThreadPool> mThreadPool;
 };
 
 } // namespace processing
