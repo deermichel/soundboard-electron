@@ -52,7 +52,7 @@ Piano::Piano() :
 
             // add sound
             const auto sound = new PapageiSound(sampleFile, midiNotes, velocities, sample.rootNote);
-            sound->loadEntireSample();
+            // sound->loadEntireSample();
             mSampler.addSound(sound);
             printf("added sound %s\n", sampleFile.getFileName().toStdString().c_str());
             // const auto sound = new LayeredSamplerSound(sample.path, *audioReader, midiNotes, velocities, sample.rootNote, 0.001, 0.1, maxSampleLengthSeconds);

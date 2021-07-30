@@ -11,10 +11,8 @@ PapageiVoice::PapageiVoice(juce::ThreadPool *backgroundThreadPool) :
 // prepare internal sample buffer
 void PapageiVoice::prepareToPlay(double sampleRate, int samplesPerBlock) {
     if (sampleRate > 0) {
-        mInputBuffer = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH);
-        mOutputBuffer = juce::AudioSampleBuffer(2, samplesPerBlock);
-        mInputBuffer.clear();
-        mOutputBuffer.clear();
+        mSamplesForThisBlock = juce::AudioSampleBuffer(2, samplesPerBlock * MAX_SAMPLER_PITCH + 2);
+        mSamplesForThisBlock.clear();
     }
 }
 
@@ -29,39 +27,50 @@ void PapageiVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuffer, int s
     if (sound == nullptr) return;
 
     // samples calculation
-    int pos = (int)mSourceSamplePosition;
-    int samplesToCopy = mPitchRatio * numSamples + 2; // get a few more for interpolating
+    int offset = (int)mSourceSamplePosition;
+    int samplesToCopy = numSamples * mPitchRatio + 2; // get a few more for linear interpolation
 
     // check if enough samples are available
-    if (!sound->hasEnoughSamplesForBlock(pos + samplesToCopy)) {
+    if (!sound->hasEnoughSamplesForBlock(offset + samplesToCopy)) {
         stopNote(0.0f, false);
         return;
     }
 
     // get buffers
-    // mLoader.fillSampleBlockBuffer(mInputBuffer, samplesToCopy, pos);
-    auto &buffer = sound->getPreloadBuffer();
-    const float *inL = buffer.getReadPointer(0);
-    const float *inR = buffer.getNumChannels() > 1 ? buffer.getReadPointer(1) : nullptr;
-    float *outL = mOutputBuffer.getWritePointer(0);
-    float *outR = mOutputBuffer.getNumChannels() > 1 ? mOutputBuffer.getWritePointer(1) : nullptr;
+    mLoader.fillSampleBlockBuffer(mSamplesForThisBlock, samplesToCopy, offset);
+    const float *inL = mSamplesForThisBlock.getReadPointer(0);
+    const float *inR = mSamplesForThisBlock.getNumChannels() > 1 ? mSamplesForThisBlock.getReadPointer(1) : nullptr;
+    float *outL = outputBuffer.getWritePointer(0, startSample);
+    float *outR = outputBuffer.getNumChannels() > 1 ? outputBuffer.getWritePointer(1, startSample) : nullptr;
 
-    // interpolate
-    mLeftInterpolator.process(mPitchRatio, inL+(int)mSourceSamplePosition, outL, numSamples);
-    if (outR != nullptr) mRightInterpolator.process(mPitchRatio, inR+(int)mSourceSamplePosition, outR, numSamples);
-    // mOutputBuffer.clear();
-    // mOutputBuffer.addFrom(0, 0, inL+(int)mSourceSamplePosition, numSamples);
-    // mOutputBuffer.addFrom(1, 0, inR+(int)mSourceSamplePosition, numSamples);
+    while (--numSamples >= 0) {
+        int pos = (int)mSourceSamplePosition;
+        float alpha = (float)(mSourceSamplePosition - pos);
+        float invAlpha = 1.0f - alpha;
+        int index = pos - offset;
 
-    // envelope
-    mAdsr.applyEnvelopeToBuffer(mOutputBuffer, 0, numSamples);
+        float l = (inL[index] * invAlpha + inL[index + 1] * alpha);
+        float r = (inR != nullptr) ? (inR[index] * invAlpha + inR[index + 1] * alpha) : l;
 
-    // write output
-    outputBuffer.addFrom(0, startSample, outL, numSamples, mGain);
-    outputBuffer.addFrom(1, startSample, outR, numSamples, mGain);
+        auto envelopeValue = mAdsr.getNextSample();
 
-    // increment pos
-    mSourceSamplePosition += numSamples * mPitchRatio;
+        l *= mGain * envelopeValue;
+        r *= mGain * envelopeValue;
+
+        if (outR != nullptr) {
+            *outL++ += l;
+            *outR++ += r;
+        } else {
+            *outL++ += (l + r) * 0.5f;
+        }
+
+        mSourceSamplePosition += mPitchRatio;
+
+        // if (mSourceSamplePosition > sound->getLength()) {
+        //     stopNote(0.0f, false);
+        //     break;
+        // }
+    }
 }
 
 // start streaming the sound
@@ -73,7 +82,7 @@ void PapageiVoice::startNote(int midiNoteNumber, float velocity, juce::Synthesis
 
         // pitch & velocity
         mPitchRatio = juce::jmin(sound->getPitchRatio(midiNoteNumber), (double)MAX_SAMPLER_PITCH) * sound->getSourceSampleRate() / getSampleRate();
-        mGain = velocity;
+        mGain = velocity * 3;
 
         // adsr
         mAdsr.setSampleRate(sound->getSourceSampleRate());

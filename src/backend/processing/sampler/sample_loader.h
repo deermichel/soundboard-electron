@@ -5,7 +5,7 @@
 #include "papagei_sound.h"
 
 // streaming buffer size
-#define STREAMING_BUFFER_SIZE 1024
+#define STREAMING_BUFFER_SIZE 128
 
 namespace soundboard {
 namespace processing {

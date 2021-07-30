@@ -1,0 +1,4962 @@
+{
+  "groups": [
+    {
+      "samples": [
+        {
+          "path": "samples/RR1 A#0 210.wav",
+          "rootNote": 34,
+          "loNote": 33,
+          "hiNote": 34,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 1099285
+        },
+        {
+          "path": "samples/RR1 A#0 208.wav",
+          "rootNote": 34,
+          "loNote": 33,
+          "hiNote": 34,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 703763
+        },
+        {
+          "path": "samples/RR1 A#0 214.wav",
+          "rootNote": 34,
+          "loNote": 33,
+          "hiNote": 34,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 1119131
+        },
+        {
+          "path": "samples/RR1 A#0 217.wav",
+          "rootNote": 34,
+          "loNote": 33,
+          "hiNote": 34,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 1259,
+          "end": 1249500
+        },
+        {
+          "path": "samples/RR1 A#0 221.wav",
+          "rootNote": 34,
+          "loNote": 33,
+          "hiNote": 34,
+          "loVel": 101,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1462650
+        },
+        {
+          "path": "samples/RR1 A#1 295.wav",
+          "rootNote": 46,
+          "loNote": 45,
+          "hiNote": 46,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 456274
+        },
+        {
+          "path": "samples/RR1 A#1 299.wav",
+          "rootNote": 46,
+          "loNote": 45,
+          "hiNote": 46,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 1088719
+        },
+        {
+          "path": "samples/RR1 A#1 301.wav",
+          "rootNote": 46,
+          "loNote": 45,
+          "hiNote": 46,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1414278
+        },
+        {
+          "path": "samples/RR1 A#1 297.wav",
+          "rootNote": 46,
+          "loNote": 45,
+          "hiNote": 46,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 442516
+        },
+        {
+          "path": "samples/RR1 A#2 354.wav",
+          "rootNote": 58,
+          "loNote": 57,
+          "hiNote": 58,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 401494
+        },
+        {
+          "path": "samples/RR1 A#2 350.wav",
+          "rootNote": 58,
+          "loNote": 57,
+          "hiNote": 58,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 318347
+        },
+        {
+          "path": "samples/RR1 A#2 349.wav",
+          "rootNote": 58,
+          "loNote": 57,
+          "hiNote": 58,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 288028
+        },
+        {
+          "path": "samples/RR1 A#2 351.wav",
+          "rootNote": 58,
+          "loNote": 57,
+          "hiNote": 58,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 0,
+          "end": 258950
+        },
+        {
+          "path": "samples/RR1 A#2 353.wav",
+          "rootNote": 58,
+          "loNote": 57,
+          "hiNote": 58,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 410016
+        },
+        {
+          "path": "samples/RR1 A#2 352.wav",
+          "rootNote": 58,
+          "loNote": 57,
+          "hiNote": 58,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 369086
+        },
+        {
+          "path": "samples/RR1 A#3 395.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 42,
+          "hiVel": 55,
+          "start": 0,
+          "end": 300891
+        },
+        {
+          "path": "samples/RR1 A#3 392.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 0,
+          "hiVel": 13,
+          "start": 0,
+          "end": 165375
+        },
+        {
+          "path": "samples/RR1 A#3 397.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 71,
+          "hiVel": 84,
+          "start": 0,
+          "end": 249900
+        },
+        {
+          "path": "samples/RR1 A#3 399.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 99,
+          "hiVel": 112,
+          "start": 0,
+          "end": 294493
+        },
+        {
+          "path": "samples/RR1 A#3 398.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 85,
+          "hiVel": 98,
+          "start": 0,
+          "end": 233897
+        },
+        {
+          "path": "samples/RR1 A#3 396.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 56,
+          "hiVel": 70,
+          "start": 628,
+          "end": 231203
+        },
+        {
+          "path": "samples/RR1 A#3 393.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 14,
+          "hiVel": 27,
+          "start": 0,
+          "end": 167212
+        },
+        {
+          "path": "samples/RR1 A#3 394.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 28,
+          "hiVel": 41,
+          "start": 0,
+          "end": 160322
+        },
+        {
+          "path": "samples/RR1 A#3 400.wav",
+          "rootNote": 70,
+          "loNote": 69,
+          "hiNote": 70,
+          "loVel": 113,
+          "hiVel": 127,
+          "start": 0,
+          "end": 681926
+        },
+        {
+          "path": "samples/RR1 A#4 447.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 109,
+          "hiVel": 127,
+          "start": 0,
+          "end": 382369
+        },
+        {
+          "path": "samples/RR1 A#4 443.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 36,
+          "hiVel": 53,
+          "start": 0,
+          "end": 296182
+        },
+        {
+          "path": "samples/RR1 A#4 442.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 18,
+          "hiVel": 35,
+          "start": 0,
+          "end": 238530
+        },
+        {
+          "path": "samples/RR1 A#4 441.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 0,
+          "hiVel": 17,
+          "start": 0,
+          "end": 224175
+        },
+        {
+          "path": "samples/RR1 A#4 444.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 54,
+          "hiVel": 72,
+          "start": 306,
+          "end": 192593
+        },
+        {
+          "path": "samples/RR1 A#4 445.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 73,
+          "hiVel": 90,
+          "start": 0,
+          "end": 189607
+        },
+        {
+          "path": "samples/RR1 A#4 446.wav",
+          "rootNote": 82,
+          "loNote": 81,
+          "hiNote": 82,
+          "loVel": 91,
+          "hiVel": 108,
+          "start": 0,
+          "end": 232275
+        },
+        {
+          "path": "samples/RR1 A#5 485.wav",
+          "rootNote": 94,
+          "loNote": 93,
+          "hiNote": 94,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 235453
+        },
+        {
+          "path": "samples/RR1 A#5 481.wav",
+          "rootNote": 94,
+          "loNote": 93,
+          "hiNote": 94,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 116635
+        },
+        {
+          "path": "samples/RR1 A#5 482.wav",
+          "rootNote": 94,
+          "loNote": 93,
+          "hiNote": 94,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 156234
+        },
+        {
+          "path": "samples/RR1 A#5 486.wav",
+          "rootNote": 94,
+          "loNote": 93,
+          "hiNote": 94,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 206030
+        },
+        {
+          "path": "samples/RR1 A#5 483.wav",
+          "rootNote": 94,
+          "loNote": 93,
+          "hiNote": 94,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 0,
+          "end": 183281
+        },
+        {
+          "path": "samples/RR1 A#5 484.wav",
+          "rootNote": 94,
+          "loNote": 93,
+          "hiNote": 94,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 231511
+        },
+        {
+          "path": "samples/RR1 A#6 509.wav",
+          "rootNote": 106,
+          "loNote": 105,
+          "hiNote": 106,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 132300
+        },
+        {
+          "path": "samples/RR1 A#6 511.wav",
+          "rootNote": 106,
+          "loNote": 105,
+          "hiNote": 106,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 168931
+        },
+        {
+          "path": "samples/RR1 A#6 512.wav",
+          "rootNote": 106,
+          "loNote": 105,
+          "hiNote": 106,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 287022
+        },
+        {
+          "path": "samples/RR1 A#6 510.wav",
+          "rootNote": 106,
+          "loNote": 105,
+          "hiNote": 106,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 139397
+        },
+        {
+          "path": "samples/RR1 C0 02.wav",
+          "rootNote": 24,
+          "loNote": 12,
+          "hiNote": 24,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 626060
+        },
+        {
+          "path": "samples/RR1 C0 13.wav",
+          "rootNote": 24,
+          "loNote": 12,
+          "hiNote": 24,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 1799120
+        },
+        {
+          "path": "samples/RR1 C0 07.wav",
+          "rootNote": 24,
+          "loNote": 12,
+          "hiNote": 24,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 776344
+        },
+        {
+          "path": "samples/RR1 C0 25.wav",
+          "rootNote": 24,
+          "loNote": 12,
+          "hiNote": 24,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1492050
+        },
+        {
+          "path": "samples/RR1 C1 228.wav",
+          "rootNote": 36,
+          "loNote": 35,
+          "hiNote": 36,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 1030838
+        },
+        {
+          "path": "samples/RR1 C1 235.wav",
+          "rootNote": 36,
+          "loNote": 35,
+          "hiNote": 36,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 929249
+        },
+        {
+          "path": "samples/RR1 C1 232.wav",
+          "rootNote": 36,
+          "loNote": 35,
+          "hiNote": 36,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 2600,
+          "end": 1841175
+        },
+        {
+          "path": "samples/RR1 C1 226.wav",
+          "rootNote": 36,
+          "loNote": 35,
+          "hiNote": 36,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 667516
+        },
+        {
+          "path": "samples/RR1 C1 241.wav",
+          "rootNote": 36,
+          "loNote": 35,
+          "hiNote": 36,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 994065
+        },
+        {
+          "path": "samples/RR1 C1 237.wav",
+          "rootNote": 36,
+          "loNote": 35,
+          "hiNote": 36,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 2225,
+          "end": 884757
+        },
+        {
+          "path": "samples/RR1 C2 307.wav",
+          "rootNote": 48,
+          "loNote": 47,
+          "hiNote": 48,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 540225
+        },
+        {
+          "path": "samples/RR1 C2 308.wav",
+          "rootNote": 48,
+          "loNote": 47,
+          "hiNote": 48,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 0,
+          "end": 483262
+        },
+        {
+          "path": "samples/RR1 C2 312.wav",
+          "rootNote": 48,
+          "loNote": 47,
+          "hiNote": 48,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 897382
+        },
+        {
+          "path": "samples/RR1 C2 305.wav",
+          "rootNote": 48,
+          "loNote": 47,
+          "hiNote": 48,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 395959
+        },
+        {
+          "path": "samples/RR1 C2 310.wav",
+          "rootNote": 48,
+          "loNote": 47,
+          "hiNote": 48,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 819525
+        },
+        {
+          "path": "samples/RR1 C3 356.wav",
+          "rootNote": 60,
+          "loNote": 59,
+          "hiNote": 60,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 349125
+        },
+        {
+          "path": "samples/RR1 C3 355.wav",
+          "rootNote": 60,
+          "loNote": 59,
+          "hiNote": 60,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 241632
+        },
+        {
+          "path": "samples/RR1 C3 357.wav",
+          "rootNote": 60,
+          "loNote": 59,
+          "hiNote": 60,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 0,
+          "end": 368603
+        },
+        {
+          "path": "samples/RR1 C3 360.wav",
+          "rootNote": 60,
+          "loNote": 59,
+          "hiNote": 60,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 785095
+        },
+        {
+          "path": "samples/RR1 C3 358.wav",
+          "rootNote": 60,
+          "loNote": 59,
+          "hiNote": 60,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 452025
+        },
+        {
+          "path": "samples/RR1 C3 359.wav",
+          "rootNote": 60,
+          "loNote": 59,
+          "hiNote": 60,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 519094
+        },
+        {
+          "path": "samples/RR1 C4 406.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 71,
+          "hiVel": 84,
+          "start": 0,
+          "end": 286512
+        },
+        {
+          "path": "samples/RR1 C4 407.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 85,
+          "hiVel": 98,
+          "start": 0,
+          "end": 231663
+        },
+        {
+          "path": "samples/RR1 C4 405.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 56,
+          "hiVel": 70,
+          "start": 0,
+          "end": 184560
+        },
+        {
+          "path": "samples/RR1 C4 404.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 42,
+          "hiVel": 55,
+          "start": 0,
+          "end": 173087
+        },
+        {
+          "path": "samples/RR1 C4 401.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 0,
+          "hiVel": 13,
+          "start": 0,
+          "end": 174998
+        },
+        {
+          "path": "samples/RR1 C4 402.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 14,
+          "hiVel": 27,
+          "start": 0,
+          "end": 190664
+        },
+        {
+          "path": "samples/RR1 C4 403.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 28,
+          "hiVel": 41,
+          "start": 0,
+          "end": 162366
+        },
+        {
+          "path": "samples/RR1 C4 408.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 99,
+          "hiVel": 112,
+          "start": 0,
+          "end": 215906
+        },
+        {
+          "path": "samples/RR1 C4 409.wav",
+          "rootNote": 72,
+          "loNote": 71,
+          "hiNote": 72,
+          "loVel": 113,
+          "hiVel": 127,
+          "start": 0,
+          "end": 574054
+        },
+        {
+          "path": "samples/RR1 C5 450.wav",
+          "rootNote": 84,
+          "loNote": 83,
+          "hiNote": 84,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 0,
+          "end": 161856
+        },
+        {
+          "path": "samples/RR1 C5 452.wav",
+          "rootNote": 84,
+          "loNote": 83,
+          "hiNote": 84,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 217639
+        },
+        {
+          "path": "samples/RR1 C5 448.wav",
+          "rootNote": 84,
+          "loNote": 83,
+          "hiNote": 84,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 138570
+        },
+        {
+          "path": "samples/RR1 C5 451.wav",
+          "rootNote": 84,
+          "loNote": 83,
+          "hiNote": 84,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 186351
+        },
+        {
+          "path": "samples/RR1 C5 453.wav",
+          "rootNote": 84,
+          "loNote": 83,
+          "hiNote": 84,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 363011
+        },
+        {
+          "path": "samples/RR1 C5 449.wav",
+          "rootNote": 84,
+          "loNote": 83,
+          "hiNote": 84,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 201758
+        },
+        {
+          "path": "samples/RR1 C6 490.wav",
+          "rootNote": 96,
+          "loNote": 95,
+          "hiNote": 96,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 304014
+        },
+        {
+          "path": "samples/RR1 C6 488.wav",
+          "rootNote": 96,
+          "loNote": 95,
+          "hiNote": 96,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 150124
+        },
+        {
+          "path": "samples/RR1 C6 487.wav",
+          "rootNote": 96,
+          "loNote": 95,
+          "hiNote": 96,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 105656
+        },
+        {
+          "path": "samples/RR1 C6 489.wav",
+          "rootNote": 96,
+          "loNote": 95,
+          "hiNote": 96,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 243101
+        },
+        {
+          "path": "samples/RR1 C7 516.wav",
+          "rootNote": 108,
+          "loNote": 107,
+          "hiNote": 120,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 109469
+        },
+        {
+          "path": "samples/RR1 C7 514.wav",
+          "rootNote": 108,
+          "loNote": 107,
+          "hiNote": 120,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 93644
+        },
+        {
+          "path": "samples/RR1 C7 515.wav",
+          "rootNote": 108,
+          "loNote": 107,
+          "hiNote": 120,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 0,
+          "end": 103221
+        },
+        {
+          "path": "samples/RR1 C7 517.wav",
+          "rootNote": 108,
+          "loNote": 107,
+          "hiNote": 120,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 221948
+        },
+        {
+          "path": "samples/RR1 C7 513.wav",
+          "rootNote": 108,
+          "loNote": 107,
+          "hiNote": 120,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 116681
+        },
+        {
+          "path": "samples/RR1 D0 86.wav",
+          "rootNote": 26,
+          "loNote": 25,
+          "hiNote": 26,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 951825
+        },
+        {
+          "path": "samples/RR1 D0 71.wav",
+          "rootNote": 26,
+          "loNote": 25,
+          "hiNote": 26,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 1245825
+        },
+        {
+          "path": "samples/RR1 D0 58.wav",
+          "rootNote": 26,
+          "loNote": 25,
+          "hiNote": 26,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 1813613
+        },
+        {
+          "path": "samples/RR1 D0 48.wav",
+          "rootNote": 26,
+          "loNote": 25,
+          "hiNote": 26,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 847088
+        },
+        {
+          "path": "samples/RR1 D1 254.wav",
+          "rootNote": 38,
+          "loNote": 37,
+          "hiNote": 38,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1270081
+        },
+        {
+          "path": "samples/RR1 D1 244.wav",
+          "rootNote": 38,
+          "loNote": 37,
+          "hiNote": 38,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 787370
+        },
+        {
+          "path": "samples/RR1 D1 249.wav",
+          "rootNote": 38,
+          "loNote": 37,
+          "hiNote": 38,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 0,
+          "end": 678429
+        },
+        {
+          "path": "samples/RR1 D1 247.wav",
+          "rootNote": 38,
+          "loNote": 37,
+          "hiNote": 38,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 788540
+        },
+        {
+          "path": "samples/RR1 D1 251.wav",
+          "rootNote": 38,
+          "loNote": 37,
+          "hiNote": 38,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 815850
+        },
+        {
+          "path": "samples/RR1 D2 319.wav",
+          "rootNote": 50,
+          "loNote": 49,
+          "hiNote": 50,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 474994
+        },
+        {
+          "path": "samples/RR1 D2 320.wav",
+          "rootNote": 50,
+          "loNote": 49,
+          "hiNote": 50,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 619560
+        },
+        {
+          "path": "samples/RR1 D2 321.wav",
+          "rootNote": 50,
+          "loNote": 49,
+          "hiNote": 50,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 712950
+        },
+        {
+          "path": "samples/RR1 D2 315.wav",
+          "rootNote": 50,
+          "loNote": 49,
+          "hiNote": 50,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 209475
+        },
+        {
+          "path": "samples/RR1 D2 316.wav",
+          "rootNote": 50,
+          "loNote": 49,
+          "hiNote": 50,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 2506,
+          "end": 294895
+        },
+        {
+          "path": "samples/RR1 D2 318.wav",
+          "rootNote": 50,
+          "loNote": 49,
+          "hiNote": 50,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 903,
+          "end": 391388
+        },
+        {
+          "path": "samples/RR1 D3 361.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 0,
+          "hiVel": 15,
+          "start": 0,
+          "end": 233363
+        },
+        {
+          "path": "samples/RR1 D3 365.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 64,
+          "hiVel": 79,
+          "start": 0,
+          "end": 364261
+        },
+        {
+          "path": "samples/RR1 D3 367.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 96,
+          "hiVel": 111,
+          "start": 0,
+          "end": 454782
+        },
+        {
+          "path": "samples/RR1 D3 368.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 112,
+          "hiVel": 127,
+          "start": 0,
+          "end": 526444
+        },
+        {
+          "path": "samples/RR1 D3 364.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 48,
+          "hiVel": 63,
+          "start": 0,
+          "end": 329349
+        },
+        {
+          "path": "samples/RR1 D3 366.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 80,
+          "hiVel": 95,
+          "start": 0,
+          "end": 369797
+        },
+        {
+          "path": "samples/RR1 D3 362.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 16,
+          "hiVel": 31,
+          "start": 0,
+          "end": 282057
+        },
+        {
+          "path": "samples/RR1 D3 363.wav",
+          "rootNote": 62,
+          "loNote": 61,
+          "hiNote": 62,
+          "loVel": 32,
+          "hiVel": 47,
+          "start": 0,
+          "end": 350962
+        },
+        {
+          "path": "samples/RR1 D4 415.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 91,
+          "hiVel": 108,
+          "start": 0,
+          "end": 283894
+        },
+        {
+          "path": "samples/RR1 D4 413.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 54,
+          "hiVel": 72,
+          "start": 0,
+          "end": 260925
+        },
+        {
+          "path": "samples/RR1 D4 411.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 18,
+          "hiVel": 35,
+          "start": 0,
+          "end": 201276
+        },
+        {
+          "path": "samples/RR1 D4 410.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 0,
+          "hiVel": 17,
+          "start": 0,
+          "end": 156834
+        },
+        {
+          "path": "samples/RR1 D4 416.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 109,
+          "hiVel": 127,
+          "start": 0,
+          "end": 452025
+        },
+        {
+          "path": "samples/RR1 D4 412.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 36,
+          "hiVel": 53,
+          "start": 0,
+          "end": 246592
+        },
+        {
+          "path": "samples/RR1 D4 414.wav",
+          "rootNote": 74,
+          "loNote": 73,
+          "hiNote": 74,
+          "loVel": 73,
+          "hiVel": 90,
+          "start": 0,
+          "end": 289406
+        },
+        {
+          "path": "samples/RR1 D5 458.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 56,
+          "hiVel": 70,
+          "start": 0,
+          "end": 184853
+        },
+        {
+          "path": "samples/RR1 D5 460.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 85,
+          "hiVel": 98,
+          "start": 0,
+          "end": 169210
+        },
+        {
+          "path": "samples/RR1 D5 454.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 0,
+          "hiVel": 13,
+          "start": 0,
+          "end": 152512
+        },
+        {
+          "path": "samples/RR1 D5 457.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 42,
+          "hiVel": 55,
+          "start": 0,
+          "end": 191163
+        },
+        {
+          "path": "samples/RR1 D5 456.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 28,
+          "hiVel": 41,
+          "start": 0,
+          "end": 188493
+        },
+        {
+          "path": "samples/RR1 D5 459.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 71,
+          "hiVel": 84,
+          "start": 0,
+          "end": 162527
+        },
+        {
+          "path": "samples/RR1 D5 461.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 99,
+          "hiVel": 112,
+          "start": 0,
+          "end": 264532
+        },
+        {
+          "path": "samples/RR1 D5 462.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 113,
+          "hiVel": 127,
+          "start": 0,
+          "end": 423543
+        },
+        {
+          "path": "samples/RR1 D5 455.wav",
+          "rootNote": 86,
+          "loNote": 85,
+          "hiNote": 86,
+          "loVel": 14,
+          "hiVel": 27,
+          "start": 0,
+          "end": 149360
+        },
+        {
+          "path": "samples/RR1 D6 494.wav",
+          "rootNote": 98,
+          "loNote": 97,
+          "hiNote": 98,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 192937
+        },
+        {
+          "path": "samples/RR1 D6 493.wav",
+          "rootNote": 98,
+          "loNote": 97,
+          "hiNote": 98,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 0,
+          "end": 178238
+        },
+        {
+          "path": "samples/RR1 D6 492.wav",
+          "rootNote": 98,
+          "loNote": 97,
+          "hiNote": 98,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 178237
+        },
+        {
+          "path": "samples/RR1 D6 495.wav",
+          "rootNote": 98,
+          "loNote": 97,
+          "hiNote": 98,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 637613
+        },
+        {
+          "path": "samples/RR1 D6 491.wav",
+          "rootNote": 98,
+          "loNote": 97,
+          "hiNote": 98,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 141580
+        },
+        {
+          "path": "samples/RR1 E0 105.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 18,
+          "hiVel": 35,
+          "start": 0,
+          "end": 961793
+        },
+        {
+          "path": "samples/RR1 E0 99.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 0,
+          "hiVel": 17,
+          "start": 0,
+          "end": 788265
+        },
+        {
+          "path": "samples/RR1 E0 112.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 36,
+          "hiVel": 53,
+          "start": 3309,
+          "end": 1105647
+        },
+        {
+          "path": "samples/RR1 E0 121.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 54,
+          "hiVel": 72,
+          "start": 0,
+          "end": 1483092
+        },
+        {
+          "path": "samples/RR1 E0 144.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 109,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1219342
+        },
+        {
+          "path": "samples/RR1 E0 135.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 91,
+          "hiVel": 108,
+          "start": 0,
+          "end": 1145866
+        },
+        {
+          "path": "samples/RR1 E0 131.wav",
+          "rootNote": 28,
+          "loNote": 27,
+          "hiNote": 28,
+          "loVel": 73,
+          "hiVel": 90,
+          "start": 0,
+          "end": 1197132
+        },
+        {
+          "path": "samples/RR1 E1 260.wav",
+          "rootNote": 40,
+          "loNote": 39,
+          "hiNote": 40,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 733415
+        },
+        {
+          "path": "samples/RR1 E1 261.wav",
+          "rootNote": 40,
+          "loNote": 39,
+          "hiNote": 40,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 2132,
+          "end": 966502
+        },
+        {
+          "path": "samples/RR1 E1 258.wav",
+          "rootNote": 40,
+          "loNote": 39,
+          "hiNote": 40,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 539880
+        },
+        {
+          "path": "samples/RR1 E1 265.wav",
+          "rootNote": 40,
+          "loNote": 39,
+          "hiNote": 40,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 1003275
+        },
+        {
+          "path": "samples/RR1 E1 268.wav",
+          "rootNote": 40,
+          "loNote": 39,
+          "hiNote": 40,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1444275
+        },
+        {
+          "path": "samples/RR1 E2 328.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 73,
+          "hiVel": 90,
+          "start": 0,
+          "end": 382085
+        },
+        {
+          "path": "samples/RR1 E2 325.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 36,
+          "hiVel": 53,
+          "start": 0,
+          "end": 308700
+        },
+        {
+          "path": "samples/RR1 E2 331.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 109,
+          "hiVel": 127,
+          "start": 0,
+          "end": 395063
+        },
+        {
+          "path": "samples/RR1 E2 327.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 54,
+          "hiVel": 72,
+          "start": 0,
+          "end": 361230
+        },
+        {
+          "path": "samples/RR1 E2 324.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 18,
+          "hiVel": 35,
+          "start": 0,
+          "end": 396900
+        },
+        {
+          "path": "samples/RR1 E2 330.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 91,
+          "hiVel": 108,
+          "start": 0,
+          "end": 374483
+        },
+        {
+          "path": "samples/RR1 E2 322.wav",
+          "rootNote": 52,
+          "loNote": 51,
+          "hiNote": 52,
+          "loVel": 0,
+          "hiVel": 17,
+          "start": 0,
+          "end": 297675
+        },
+        {
+          "path": "samples/RR1 E3 370.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 16,
+          "hiVel": 31,
+          "start": 0,
+          "end": 271032
+        },
+        {
+          "path": "samples/RR1 E3 376.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 112,
+          "hiVel": 127,
+          "start": 0,
+          "end": 555844
+        },
+        {
+          "path": "samples/RR1 E3 369.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 0,
+          "hiVel": 15,
+          "start": 0,
+          "end": 182832
+        },
+        {
+          "path": "samples/RR1 E3 372.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 48,
+          "hiVel": 63,
+          "start": 0,
+          "end": 367018
+        },
+        {
+          "path": "samples/RR1 E3 373.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 64,
+          "hiVel": 79,
+          "start": 0,
+          "end": 353168
+        },
+        {
+          "path": "samples/RR1 E3 371.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 32,
+          "hiVel": 47,
+          "start": 0,
+          "end": 282975
+        },
+        {
+          "path": "samples/RR1 E3 375.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 96,
+          "hiVel": 111,
+          "start": 0,
+          "end": 502648
+        },
+        {
+          "path": "samples/RR1 E3 374.wav",
+          "rootNote": 64,
+          "loNote": 63,
+          "hiNote": 64,
+          "loVel": 80,
+          "hiVel": 95,
+          "start": 0,
+          "end": 321268
+        },
+        {
+          "path": "samples/RR1 E4 417.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 0,
+          "hiVel": 13,
+          "start": 0,
+          "end": 144244
+        },
+        {
+          "path": "samples/RR1 E4 422.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 71,
+          "hiVel": 84,
+          "start": 0,
+          "end": 182709
+        },
+        {
+          "path": "samples/RR1 E4 425.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 113,
+          "hiVel": 127,
+          "start": 0,
+          "end": 503475
+        },
+        {
+          "path": "samples/RR1 E4 419.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 28,
+          "hiVel": 41,
+          "start": 0,
+          "end": 169326
+        },
+        {
+          "path": "samples/RR1 E4 424.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 99,
+          "hiVel": 112,
+          "start": 0,
+          "end": 337181
+        },
+        {
+          "path": "samples/RR1 E4 423.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 85,
+          "hiVel": 98,
+          "start": 0,
+          "end": 229275
+        },
+        {
+          "path": "samples/RR1 E4 420.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 42,
+          "hiVel": 55,
+          "start": 0,
+          "end": 160505
+        },
+        {
+          "path": "samples/RR1 E4 418.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 14,
+          "hiVel": 27,
+          "start": 0,
+          "end": 143325
+        },
+        {
+          "path": "samples/RR1 E4 421.wav",
+          "rootNote": 76,
+          "loNote": 75,
+          "hiNote": 76,
+          "loVel": 56,
+          "hiVel": 70,
+          "start": 0,
+          "end": 188879
+        },
+        {
+          "path": "samples/RR1 E5 469.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 76,
+          "hiVel": 88,
+          "start": 0,
+          "end": 244158
+        },
+        {
+          "path": "samples/RR1 E5 468.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 64,
+          "hiVel": 75,
+          "start": 0,
+          "end": 204101
+        },
+        {
+          "path": "samples/RR1 E5 464.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 12,
+          "hiVel": 24,
+          "start": 0,
+          "end": 175481
+        },
+        {
+          "path": "samples/RR1 E5 470.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 89,
+          "hiVel": 101,
+          "start": 0,
+          "end": 204559
+        },
+        {
+          "path": "samples/RR1 E5 465.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 25,
+          "hiVel": 37,
+          "start": 0,
+          "end": 179041
+        },
+        {
+          "path": "samples/RR1 E5 467.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 51,
+          "hiVel": 63,
+          "start": 0,
+          "end": 187448
+        },
+        {
+          "path": "samples/RR1 E5 471.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 102,
+          "hiVel": 114,
+          "start": 0,
+          "end": 642919
+        },
+        {
+          "path": "samples/RR1 E5 466.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 38,
+          "hiVel": 50,
+          "start": 0,
+          "end": 198955
+        },
+        {
+          "path": "samples/RR1 E5 472.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 115,
+          "hiVel": 127,
+          "start": 0,
+          "end": 602562
+        },
+        {
+          "path": "samples/RR1 E5 463.wav",
+          "rootNote": 88,
+          "loNote": 87,
+          "hiNote": 88,
+          "loVel": 0,
+          "hiVel": 11,
+          "start": 0,
+          "end": 168132
+        },
+        {
+          "path": "samples/RR1 E6 497.wav",
+          "rootNote": 100,
+          "loNote": 99,
+          "hiNote": 100,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 116934
+        },
+        {
+          "path": "samples/RR1 E6 496.wav",
+          "rootNote": 100,
+          "loNote": 99,
+          "hiNote": 100,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 158805
+        },
+        {
+          "path": "samples/RR1 E6 499.wav",
+          "rootNote": 100,
+          "loNote": 99,
+          "hiNote": 100,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 175895
+        },
+        {
+          "path": "samples/RR1 E6 498.wav",
+          "rootNote": 100,
+          "loNote": 99,
+          "hiNote": 100,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 0,
+          "end": 94838
+        },
+        {
+          "path": "samples/RR1 E6 500.wav",
+          "rootNote": 100,
+          "loNote": 99,
+          "hiNote": 100,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 310538
+        },
+        {
+          "path": "samples/RR1 F#0 164.wav",
+          "rootNote": 30,
+          "loNote": 29,
+          "hiNote": 30,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 1185189
+        },
+        {
+          "path": "samples/RR1 F#0 173.wav",
+          "rootNote": 30,
+          "loNote": 29,
+          "hiNote": 30,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 1145063
+        },
+        {
+          "path": "samples/RR1 F#0 167.wav",
+          "rootNote": 30,
+          "loNote": 29,
+          "hiNote": 30,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 908391
+        },
+        {
+          "path": "samples/RR1 F#0 178.wav",
+          "rootNote": 30,
+          "loNote": 29,
+          "hiNote": 30,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1220100
+        },
+        {
+          "path": "samples/RR1 F#1 276.wav",
+          "rootNote": 42,
+          "loNote": 41,
+          "hiNote": 42,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 697332
+        },
+        {
+          "path": "samples/RR1 F#1 271.wav",
+          "rootNote": 42,
+          "loNote": 41,
+          "hiNote": 42,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 584325
+        },
+        {
+          "path": "samples/RR1 F#1 273.wav",
+          "rootNote": 42,
+          "loNote": 41,
+          "hiNote": 42,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 0,
+          "end": 683550
+        },
+        {
+          "path": "samples/RR1 F#1 280.wav",
+          "rootNote": 42,
+          "loNote": 41,
+          "hiNote": 42,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 787714
+        },
+        {
+          "path": "samples/RR1 F#1 270.wav",
+          "rootNote": 42,
+          "loNote": 41,
+          "hiNote": 42,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 523688
+        },
+        {
+          "path": "samples/RR1 F#1 278.wav",
+          "rootNote": 42,
+          "loNote": 41,
+          "hiNote": 42,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 823614
+        },
+        {
+          "path": "samples/RR1 F#2 333.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 0,
+          "hiVel": 15,
+          "start": 0,
+          "end": 192938
+        },
+        {
+          "path": "samples/RR1 F#2 343.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 112,
+          "hiVel": 127,
+          "start": 0,
+          "end": 529913
+        },
+        {
+          "path": "samples/RR1 F#2 335.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 16,
+          "hiVel": 31,
+          "start": 0,
+          "end": 329418
+        },
+        {
+          "path": "samples/RR1 F#2 338.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 48,
+          "hiVel": 63,
+          "start": 0,
+          "end": 311457
+        },
+        {
+          "path": "samples/RR1 F#2 341.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 80,
+          "hiVel": 95,
+          "start": 0,
+          "end": 395062
+        },
+        {
+          "path": "samples/RR1 F#2 342.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 96,
+          "hiVel": 111,
+          "start": 0,
+          "end": 455700
+        },
+        {
+          "path": "samples/RR1 F#2 340.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 64,
+          "hiVel": 79,
+          "start": 0,
+          "end": 394144
+        },
+        {
+          "path": "samples/RR1 F#2 337.wav",
+          "rootNote": 54,
+          "loNote": 53,
+          "hiNote": 54,
+          "loVel": 32,
+          "hiVel": 47,
+          "start": 0,
+          "end": 391386
+        },
+        {
+          "path": "samples/RR1 F#3 383.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 109,
+          "hiVel": 127,
+          "start": 0,
+          "end": 412634
+        },
+        {
+          "path": "samples/RR1 F#3 377.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 0,
+          "hiVel": 17,
+          "start": 0,
+          "end": 201220
+        },
+        {
+          "path": "samples/RR1 F#3 380.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 54,
+          "hiVel": 72,
+          "start": 0,
+          "end": 225439
+        },
+        {
+          "path": "samples/RR1 F#3 378.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 18,
+          "hiVel": 35,
+          "start": 0,
+          "end": 197026
+        },
+        {
+          "path": "samples/RR1 F#3 381.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 73,
+          "hiVel": 90,
+          "start": 0,
+          "end": 257434
+        },
+        {
+          "path": "samples/RR1 F#3 382.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 91,
+          "hiVel": 108,
+          "start": 0,
+          "end": 247525
+        },
+        {
+          "path": "samples/RR1 F#3 379.wav",
+          "rootNote": 66,
+          "loNote": 65,
+          "hiNote": 66,
+          "loVel": 36,
+          "hiVel": 53,
+          "start": 0,
+          "end": 241333
+        },
+        {
+          "path": "samples/RR1 F#4 429.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 54,
+          "hiVel": 72,
+          "start": 502,
+          "end": 230607
+        },
+        {
+          "path": "samples/RR1 F#4 427.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 18,
+          "hiVel": 35,
+          "start": 0,
+          "end": 210394
+        },
+        {
+          "path": "samples/RR1 F#4 430.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 73,
+          "hiVel": 90,
+          "start": 0,
+          "end": 243468
+        },
+        {
+          "path": "samples/RR1 F#4 426.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 0,
+          "hiVel": 17,
+          "start": 0,
+          "end": 216825
+        },
+        {
+          "path": "samples/RR1 F#4 432.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 109,
+          "hiVel": 127,
+          "start": 0,
+          "end": 576355
+        },
+        {
+          "path": "samples/RR1 F#4 431.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 91,
+          "hiVel": 108,
+          "start": 0,
+          "end": 231227
+        },
+        {
+          "path": "samples/RR1 F#4 428.wav",
+          "rootNote": 78,
+          "loNote": 77,
+          "hiNote": 78,
+          "loVel": 36,
+          "hiVel": 53,
+          "start": 819,
+          "end": 228768
+        },
+        {
+          "path": "samples/RR1 F#5 474.wav",
+          "rootNote": 90,
+          "loNote": 89,
+          "hiNote": 90,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 163836
+        },
+        {
+          "path": "samples/RR1 F#5 475.wav",
+          "rootNote": 90,
+          "loNote": 89,
+          "hiNote": 90,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 188160
+        },
+        {
+          "path": "samples/RR1 F#5 476.wav",
+          "rootNote": 90,
+          "loNote": 89,
+          "hiNote": 90,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 319243
+        },
+        {
+          "path": "samples/RR1 F#5 473.wav",
+          "rootNote": 90,
+          "loNote": 89,
+          "hiNote": 90,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 128969
+        },
+        {
+          "path": "samples/RR1 F#6 502.wav",
+          "rootNote": 102,
+          "loNote": 101,
+          "hiNote": 102,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 158025
+        },
+        {
+          "path": "samples/RR1 F#6 503.wav",
+          "rootNote": 102,
+          "loNote": 101,
+          "hiNote": 102,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 134138
+        },
+        {
+          "path": "samples/RR1 F#6 504.wav",
+          "rootNote": 102,
+          "loNote": 101,
+          "hiNote": 102,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 176584
+        },
+        {
+          "path": "samples/RR1 F#6 501.wav",
+          "rootNote": 102,
+          "loNote": 101,
+          "hiNote": 102,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 145162
+        },
+        {
+          "path": "samples/RR1 G#0 192.wav",
+          "rootNote": 32,
+          "loNote": 31,
+          "hiNote": 32,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 841162
+        },
+        {
+          "path": "samples/RR1 G#0 189.wav",
+          "rootNote": 32,
+          "loNote": 31,
+          "hiNote": 32,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 817688
+        },
+        {
+          "path": "samples/RR1 G#0 195.wav",
+          "rootNote": 32,
+          "loNote": 31,
+          "hiNote": 32,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 1748887
+        },
+        {
+          "path": "samples/RR1 G#0 201.wav",
+          "rootNote": 32,
+          "loNote": 31,
+          "hiNote": 32,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1135828
+        },
+        {
+          "path": "samples/RR1 G#1 290.wav",
+          "rootNote": 44,
+          "loNote": 43,
+          "hiNote": 44,
+          "loVel": 85,
+          "hiVel": 105,
+          "start": 0,
+          "end": 614713
+        },
+        {
+          "path": "samples/RR1 G#1 292.wav",
+          "rootNote": 44,
+          "loNote": 43,
+          "hiNote": 44,
+          "loVel": 106,
+          "hiVel": 127,
+          "start": 0,
+          "end": 804688
+        },
+        {
+          "path": "samples/RR1 G#1 288.wav",
+          "rootNote": 44,
+          "loNote": 43,
+          "hiNote": 44,
+          "loVel": 64,
+          "hiVel": 84,
+          "start": 0,
+          "end": 559083
+        },
+        {
+          "path": "samples/RR1 G#1 285.wav",
+          "rootNote": 44,
+          "loNote": 43,
+          "hiNote": 44,
+          "loVel": 21,
+          "hiVel": 41,
+          "start": 0,
+          "end": 435487
+        },
+        {
+          "path": "samples/RR1 G#1 283.wav",
+          "rootNote": 44,
+          "loNote": 43,
+          "hiNote": 44,
+          "loVel": 0,
+          "hiVel": 20,
+          "start": 0,
+          "end": 463050
+        },
+        {
+          "path": "samples/RR1 G#1 286.wav",
+          "rootNote": 44,
+          "loNote": 43,
+          "hiNote": 44,
+          "loVel": 42,
+          "hiVel": 63,
+          "start": 0,
+          "end": 475477
+        },
+        {
+          "path": "samples/RR1 G#2 344.wav",
+          "rootNote": 56,
+          "loNote": 55,
+          "hiNote": 56,
+          "loVel": 0,
+          "hiVel": 24,
+          "start": 0,
+          "end": 387001
+        },
+        {
+          "path": "samples/RR1 G#2 348.wav",
+          "rootNote": 56,
+          "loNote": 55,
+          "hiNote": 56,
+          "loVel": 102,
+          "hiVel": 127,
+          "start": 0,
+          "end": 695494
+        },
+        {
+          "path": "samples/RR1 G#2 346.wav",
+          "rootNote": 56,
+          "loNote": 55,
+          "hiNote": 56,
+          "loVel": 51,
+          "hiVel": 75,
+          "start": 0,
+          "end": 512663
+        },
+        {
+          "path": "samples/RR1 G#2 347.wav",
+          "rootNote": 56,
+          "loNote": 55,
+          "hiNote": 56,
+          "loVel": 76,
+          "hiVel": 101,
+          "start": 0,
+          "end": 595465
+        },
+        {
+          "path": "samples/RR1 G#2 345.wav",
+          "rootNote": 56,
+          "loNote": 55,
+          "hiNote": 56,
+          "loVel": 25,
+          "hiVel": 50,
+          "start": 0,
+          "end": 438244
+        },
+        {
+          "path": "samples/RR1 G#3 388.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 64,
+          "hiVel": 79,
+          "start": 0,
+          "end": 269875
+        },
+        {
+          "path": "samples/RR1 G#3 384.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 0,
+          "hiVel": 15,
+          "start": 0,
+          "end": 155269
+        },
+        {
+          "path": "samples/RR1 G#3 391.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 112,
+          "hiVel": 127,
+          "start": 0,
+          "end": 424738
+        },
+        {
+          "path": "samples/RR1 G#3 385.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 16,
+          "hiVel": 31,
+          "start": 0,
+          "end": 338238
+        },
+        {
+          "path": "samples/RR1 G#3 386.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 32,
+          "hiVel": 47,
+          "start": 0,
+          "end": 242824
+        },
+        {
+          "path": "samples/RR1 G#3 389.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 80,
+          "hiVel": 95,
+          "start": 0,
+          "end": 285785
+        },
+        {
+          "path": "samples/RR1 G#3 387.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 48,
+          "hiVel": 63,
+          "start": 0,
+          "end": 281438
+        },
+        {
+          "path": "samples/RR1 G#3 390.wav",
+          "rootNote": 68,
+          "loNote": 67,
+          "hiNote": 68,
+          "loVel": 96,
+          "hiVel": 111,
+          "start": 0,
+          "end": 352272
+        },
+        {
+          "path": "samples/RR1 G#4 439.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 96,
+          "hiVel": 111,
+          "start": 0,
+          "end": 329747
+        },
+        {
+          "path": "samples/RR1 G#4 435.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 32,
+          "hiVel": 47,
+          "start": 0,
+          "end": 175228
+        },
+        {
+          "path": "samples/RR1 G#4 440.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 112,
+          "hiVel": 127,
+          "start": 0,
+          "end": 1101053
+        },
+        {
+          "path": "samples/RR1 G#4 433.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 0,
+          "hiVel": 15,
+          "start": 0,
+          "end": 166707
+        },
+        {
+          "path": "samples/RR1 G#4 437.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 64,
+          "hiVel": 79,
+          "start": 0,
+          "end": 226012
+        },
+        {
+          "path": "samples/RR1 G#4 436.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 48,
+          "hiVel": 63,
+          "start": 0,
+          "end": 177572
+        },
+        {
+          "path": "samples/RR1 G#4 434.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 16,
+          "hiVel": 31,
+          "start": 0,
+          "end": 159449
+        },
+        {
+          "path": "samples/RR1 G#4 438.wav",
+          "rootNote": 80,
+          "loNote": 79,
+          "hiNote": 80,
+          "loVel": 80,
+          "hiVel": 95,
+          "start": 0,
+          "end": 412213
+        },
+        {
+          "path": "samples/RR1 G#5 477.wav",
+          "rootNote": 92,
+          "loNote": 91,
+          "hiNote": 92,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 121505
+        },
+        {
+          "path": "samples/RR1 G#5 480.wav",
+          "rootNote": 92,
+          "loNote": 91,
+          "hiNote": 92,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 203044
+        },
+        {
+          "path": "samples/RR1 G#5 478.wav",
+          "rootNote": 92,
+          "loNote": 91,
+          "hiNote": 92,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 106253
+        },
+        {
+          "path": "samples/RR1 G#5 479.wav",
+          "rootNote": 92,
+          "loNote": 91,
+          "hiNote": 92,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 116222
+        },
+        {
+          "path": "samples/RR1 G#6 507.wav",
+          "rootNote": 104,
+          "loNote": 103,
+          "hiNote": 104,
+          "loVel": 64,
+          "hiVel": 95,
+          "start": 0,
+          "end": 186184
+        },
+        {
+          "path": "samples/RR1 G#6 506.wav",
+          "rootNote": 104,
+          "loNote": 103,
+          "hiNote": 104,
+          "loVel": 32,
+          "hiVel": 63,
+          "start": 0,
+          "end": 170888
+        },
+        {
+          "path": "samples/RR1 G#6 508.wav",
+          "rootNote": 104,
+          "loNote": 103,
+          "hiNote": 104,
+          "loVel": 96,
+          "hiVel": 127,
+          "start": 0,
+          "end": 184072
+        },
+        {
+          "path": "samples/RR1 G#6 505.wav",
+          "rootNote": 104,
+          "loNote": 103,
+          "hiNote": 104,
+          "loVel": 0,
+          "hiVel": 31,
+          "start": 0,
+          "end": 123112
+        }
+      ]
+    },
+    {
+      "samples": [
+        {
+          "path": "samples/RR2 A0 300.wav",
+          "rootNote": 33,
+          "loNote": 32,
+          "hiNote": 33,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 1625016
+        },
+        {
+          "path": "samples/RR2 A0 294.wav",
+          "rootNote": 33,
+          "loNote": 32,
+          "hiNote": 33,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 0,
+          "end": 332588
+        },
+        {
+          "path": "samples/RR2 A0 296.wav",
+          "rootNote": 33,
+          "loNote": 32,
+          "hiNote": 33,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 0,
+          "end": 496125
+        },
+        {
+          "path": "samples/RR2 A0 298.wav",
+          "rootNote": 33,
+          "loNote": 32,
+          "hiNote": 33,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 0,
+          "end": 478921
+        },
+        {
+          "path": "samples/RR2 A1 239.wav",
+          "rootNote": 45,
+          "loNote": 44,
+          "hiNote": 45,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 556326
+        },
+        {
+          "path": "samples/RR2 A1 236.wav",
+          "rootNote": 45,
+          "loNote": 44,
+          "hiNote": 45,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 236850
+        },
+        {
+          "path": "samples/RR2 A1 242.wav",
+          "rootNote": 45,
+          "loNote": 44,
+          "hiNote": 45,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 598473
+        },
+        {
+          "path": "samples/RR2 A1 240.wav",
+          "rootNote": 45,
+          "loNote": 44,
+          "hiNote": 45,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 453932
+        },
+        {
+          "path": "samples/RR2 A1 238.wav",
+          "rootNote": 45,
+          "loNote": 44,
+          "hiNote": 45,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 468750
+        },
+        {
+          "path": "samples/RR2 A1 243.wav",
+          "rootNote": 45,
+          "loNote": 44,
+          "hiNote": 45,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 748782
+        },
+        {
+          "path": "samples/RR2 A2 191.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 108,
+          "hiVel": 126,
+          "start": 0,
+          "end": 879244
+        },
+        {
+          "path": "samples/RR2 A2 188.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 72,
+          "hiVel": 89,
+          "start": 0,
+          "end": 450188
+        },
+        {
+          "path": "samples/RR2 A2 184.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 0,
+          "hiVel": 16,
+          "start": 0,
+          "end": 209475
+        },
+        {
+          "path": "samples/RR2 A2 185.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 17,
+          "hiVel": 34,
+          "start": 0,
+          "end": 305025
+        },
+        {
+          "path": "samples/RR2 A2 186.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 35,
+          "hiVel": 52,
+          "start": 0,
+          "end": 334425
+        },
+        {
+          "path": "samples/RR2 A2 187.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 53,
+          "hiVel": 71,
+          "start": 0,
+          "end": 329831
+        },
+        {
+          "path": "samples/RR2 A2 190.wav",
+          "rootNote": 57,
+          "loNote": 56,
+          "hiNote": 57,
+          "loVel": 90,
+          "hiVel": 107,
+          "start": 0,
+          "end": 437325
+        },
+        {
+          "path": "samples/RR2 A3 137.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 24,
+          "hiVel": 36,
+          "start": 0,
+          "end": 211818
+        },
+        {
+          "path": "samples/RR2 A3 136.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 11,
+          "hiVel": 23,
+          "start": 0,
+          "end": 201872
+        },
+        {
+          "path": "samples/RR2 A3 134.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 0,
+          "hiVel": 10,
+          "start": 0,
+          "end": 153432
+        },
+        {
+          "path": "samples/RR2 A3 140.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 63,
+          "hiVel": 74,
+          "start": 0,
+          "end": 232857
+        },
+        {
+          "path": "samples/RR2 A3 141.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 75,
+          "hiVel": 87,
+          "start": 0,
+          "end": 240552
+        },
+        {
+          "path": "samples/RR2 A3 138.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 37,
+          "hiVel": 49,
+          "start": 0,
+          "end": 218410
+        },
+        {
+          "path": "samples/RR2 A3 142.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 88,
+          "hiVel": 100,
+          "start": 0,
+          "end": 247511
+        },
+        {
+          "path": "samples/RR2 A3 145.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 114,
+          "hiVel": 126,
+          "start": 0,
+          "end": 563572
+        },
+        {
+          "path": "samples/RR2 A3 139.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 50,
+          "hiVel": 62,
+          "start": 0,
+          "end": 244387
+        },
+        {
+          "path": "samples/RR2 A3 143.wav",
+          "rootNote": 69,
+          "loNote": 68,
+          "hiNote": 69,
+          "loVel": 101,
+          "hiVel": 113,
+          "start": 0,
+          "end": 247006
+        },
+        {
+          "path": "samples/RR2 A4 82.wav",
+          "rootNote": 81,
+          "loNote": 80,
+          "hiNote": 81,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 245375
+        },
+        {
+          "path": "samples/RR2 A4 80.wav",
+          "rootNote": 81,
+          "loNote": 80,
+          "hiNote": 81,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 156187
+        },
+        {
+          "path": "samples/RR2 A4 84.wav",
+          "rootNote": 81,
+          "loNote": 80,
+          "hiNote": 81,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 217399
+        },
+        {
+          "path": "samples/RR2 A4 85.wav",
+          "rootNote": 81,
+          "loNote": 80,
+          "hiNote": 81,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 0,
+          "end": 335298
+        },
+        {
+          "path": "samples/RR2 A4 81.wav",
+          "rootNote": 81,
+          "loNote": 80,
+          "hiNote": 81,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 180489
+        },
+        {
+          "path": "samples/RR2 A5 36.wav",
+          "rootNote": 93,
+          "loNote": 92,
+          "hiNote": 93,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 141487
+        },
+        {
+          "path": "samples/RR2 A5 38.wav",
+          "rootNote": 93,
+          "loNote": 92,
+          "hiNote": 93,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 182211
+        },
+        {
+          "path": "samples/RR2 A5 40.wav",
+          "rootNote": 93,
+          "loNote": 92,
+          "hiNote": 93,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 1284,
+          "end": 367500
+        },
+        {
+          "path": "samples/RR2 A5 39.wav",
+          "rootNote": 93,
+          "loNote": 92,
+          "hiNote": 93,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 198450
+        },
+        {
+          "path": "samples/RR2 A5 37.wav",
+          "rootNote": 93,
+          "loNote": 92,
+          "hiNote": 93,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 148539
+        },
+        {
+          "path": "samples/RR2 A6 10.wav",
+          "rootNote": 105,
+          "loNote": 104,
+          "hiNote": 105,
+          "loVel": 63,
+          "hiVel": 126,
+          "start": 0,
+          "end": 343613
+        },
+        {
+          "path": "samples/RR2 A6 08.wav",
+          "rootNote": 105,
+          "loNote": 104,
+          "hiNote": 105,
+          "loVel": 0,
+          "hiVel": 62,
+          "start": 0,
+          "end": 143325
+        },
+        {
+          "path": "samples/RR2 B0 287.wav",
+          "rootNote": 35,
+          "loNote": 34,
+          "hiNote": 35,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 0,
+          "end": 488775
+        },
+        {
+          "path": "samples/RR2 B0 289.wav",
+          "rootNote": 35,
+          "loNote": 34,
+          "hiNote": 35,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 0,
+          "end": 662418
+        },
+        {
+          "path": "samples/RR2 B0 293.wav",
+          "rootNote": 35,
+          "loNote": 34,
+          "hiNote": 35,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 1402449
+        },
+        {
+          "path": "samples/RR2 B0 291.wav",
+          "rootNote": 35,
+          "loNote": 34,
+          "hiNote": 35,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 0,
+          "end": 851245
+        },
+        {
+          "path": "samples/RR2 B1 230.wav",
+          "rootNote": 47,
+          "loNote": 46,
+          "hiNote": 47,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 340512
+        },
+        {
+          "path": "samples/RR2 B1 234.wav",
+          "rootNote": 47,
+          "loNote": 46,
+          "hiNote": 47,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 1475972
+        },
+        {
+          "path": "samples/RR2 B1 233.wav",
+          "rootNote": 47,
+          "loNote": 46,
+          "hiNote": 47,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 534851
+        },
+        {
+          "path": "samples/RR2 B1 231.wav",
+          "rootNote": 47,
+          "loNote": 46,
+          "hiNote": 47,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 924906
+        },
+        {
+          "path": "samples/RR2 B1 227.wav",
+          "rootNote": 47,
+          "loNote": 46,
+          "hiNote": 47,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 130463
+        },
+        {
+          "path": "samples/RR2 B1 229.wav",
+          "rootNote": 47,
+          "loNote": 46,
+          "hiNote": 47,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 297675
+        },
+        {
+          "path": "samples/RR2 B2 182.wav",
+          "rootNote": 59,
+          "loNote": 58,
+          "hiNote": 59,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 318668
+        },
+        {
+          "path": "samples/RR2 B2 179.wav",
+          "rootNote": 59,
+          "loNote": 58,
+          "hiNote": 59,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 214988
+        },
+        {
+          "path": "samples/RR2 B2 181.wav",
+          "rootNote": 59,
+          "loNote": 58,
+          "hiNote": 59,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 266438
+        },
+        {
+          "path": "samples/RR2 B2 183.wav",
+          "rootNote": 59,
+          "loNote": 58,
+          "hiNote": 59,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 0,
+          "end": 616619
+        },
+        {
+          "path": "samples/RR2 B2 180.wav",
+          "rootNote": 59,
+          "loNote": 58,
+          "hiNote": 59,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 270112
+        },
+        {
+          "path": "samples/RR2 B3 123.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 33,
+          "hiVel": 44,
+          "start": 935,
+          "end": 228768
+        },
+        {
+          "path": "samples/RR2 B3 118.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 0,
+          "hiVel": 9,
+          "start": 0,
+          "end": 133218
+        },
+        {
+          "path": "samples/RR2 B3 126.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 57,
+          "hiVel": 67,
+          "start": 0,
+          "end": 275625
+        },
+        {
+          "path": "samples/RR2 B3 130.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 92,
+          "hiVel": 102,
+          "start": 0,
+          "end": 334861
+        },
+        {
+          "path": "samples/RR2 B3 128.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 68,
+          "hiVel": 79,
+          "start": 0,
+          "end": 282515
+        },
+        {
+          "path": "samples/RR2 B3 120.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 10,
+          "hiVel": 21,
+          "start": 0,
+          "end": 164457
+        },
+        {
+          "path": "samples/RR2 B3 129.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 80,
+          "hiVel": 91,
+          "start": 0,
+          "end": 354569
+        },
+        {
+          "path": "samples/RR2 B3 124.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 45,
+          "hiVel": 56,
+          "start": 1863,
+          "end": 233363
+        },
+        {
+          "path": "samples/RR2 B3 132.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 103,
+          "hiVel": 114,
+          "start": 0,
+          "end": 349608
+        },
+        {
+          "path": "samples/RR2 B3 122.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 22,
+          "hiVel": 32,
+          "start": 935,
+          "end": 209475
+        },
+        {
+          "path": "samples/RR2 B3 133.wav",
+          "rootNote": 71,
+          "loNote": 70,
+          "hiNote": 71,
+          "loVel": 115,
+          "hiVel": 126,
+          "start": 0,
+          "end": 561884
+        },
+        {
+          "path": "samples/RR2 B4 78.wav",
+          "rootNote": 83,
+          "loNote": 82,
+          "hiNote": 83,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 264600
+        },
+        {
+          "path": "samples/RR2 B4 72.wav",
+          "rootNote": 83,
+          "loNote": 82,
+          "hiNote": 83,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 125869
+        },
+        {
+          "path": "samples/RR2 B4 74.wav",
+          "rootNote": 83,
+          "loNote": 82,
+          "hiNote": 83,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 159863
+        },
+        {
+          "path": "samples/RR2 B4 77.wav",
+          "rootNote": 83,
+          "loNote": 82,
+          "hiNote": 83,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 180075
+        },
+        {
+          "path": "samples/RR2 B4 76.wav",
+          "rootNote": 83,
+          "loNote": 82,
+          "hiNote": 83,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 765,
+          "end": 162619
+        },
+        {
+          "path": "samples/RR2 B4 75.wav",
+          "rootNote": 83,
+          "loNote": 82,
+          "hiNote": 83,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 163537
+        },
+        {
+          "path": "samples/RR2 B5 32.wav",
+          "rootNote": 95,
+          "loNote": 94,
+          "hiNote": 95,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 184669
+        },
+        {
+          "path": "samples/RR2 B5 30.wav",
+          "rootNote": 95,
+          "loNote": 94,
+          "hiNote": 95,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 148929
+        },
+        {
+          "path": "samples/RR2 B5 29.wav",
+          "rootNote": 95,
+          "loNote": 94,
+          "hiNote": 95,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 137491
+        },
+        {
+          "path": "samples/RR2 B5 33.wav",
+          "rootNote": 95,
+          "loNote": 94,
+          "hiNote": 95,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 205593
+        },
+        {
+          "path": "samples/RR2 B5 34.wav",
+          "rootNote": 95,
+          "loNote": 94,
+          "hiNote": 95,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 381488
+        },
+        {
+          "path": "samples/RR2 B5 31.wav",
+          "rootNote": 95,
+          "loNote": 94,
+          "hiNote": 95,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 153960
+        },
+        {
+          "path": "samples/RR2 B6 05.wav",
+          "rootNote": 107,
+          "loNote": 106,
+          "hiNote": 120,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 0,
+          "end": 175826
+        },
+        {
+          "path": "samples/RR2 B6 06.wav",
+          "rootNote": 107,
+          "loNote": 106,
+          "hiNote": 120,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 364881
+        },
+        {
+          "path": "samples/RR2 B6 03.wav",
+          "rootNote": 107,
+          "loNote": 106,
+          "hiNote": 120,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 0,
+          "end": 174563
+        },
+        {
+          "path": "samples/RR2 B6 04.wav",
+          "rootNote": 107,
+          "loNote": 106,
+          "hiNote": 120,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 0,
+          "end": 147436
+        },
+        {
+          "path": "samples/RR2 C#0 334.wav",
+          "rootNote": 25,
+          "loNote": 12,
+          "hiNote": 25,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 754,
+          "end": 383119
+        },
+        {
+          "path": "samples/RR2 C#0 336.wav",
+          "rootNote": 25,
+          "loNote": 12,
+          "hiNote": 25,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 2915,
+          "end": 545738
+        },
+        {
+          "path": "samples/RR2 C#0 332.wav",
+          "rootNote": 25,
+          "loNote": 12,
+          "hiNote": 25,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 2594,
+          "end": 394143
+        },
+        {
+          "path": "samples/RR2 C#0 339.wav",
+          "rootNote": 25,
+          "loNote": 12,
+          "hiNote": 25,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 679853
+        },
+        {
+          "path": "samples/RR2 C#1 272.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 0,
+          "hiVel": 14,
+          "start": 0,
+          "end": 413437
+        },
+        {
+          "path": "samples/RR2 C#1 277.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 47,
+          "hiVel": 62,
+          "start": 0,
+          "end": 934024
+        },
+        {
+          "path": "samples/RR2 C#1 281.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 79,
+          "hiVel": 94,
+          "start": 0,
+          "end": 603137
+        },
+        {
+          "path": "samples/RR2 C#1 275.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 31,
+          "hiVel": 46,
+          "start": 3134,
+          "end": 425381
+        },
+        {
+          "path": "samples/RR2 C#1 279.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 63,
+          "hiVel": 78,
+          "start": 0,
+          "end": 1122621
+        },
+        {
+          "path": "samples/RR2 C#1 284.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 111,
+          "hiVel": 126,
+          "start": 0,
+          "end": 888271
+        },
+        {
+          "path": "samples/RR2 C#1 274.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 15,
+          "hiVel": 30,
+          "start": 0,
+          "end": 341775
+        },
+        {
+          "path": "samples/RR2 C#1 282.wav",
+          "rootNote": 37,
+          "loNote": 36,
+          "hiNote": 37,
+          "loVel": 95,
+          "hiVel": 110,
+          "start": 0,
+          "end": 669929
+        },
+        {
+          "path": "samples/RR2 C#2 218.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 0,
+          "hiVel": 16,
+          "start": 0,
+          "end": 205800
+        },
+        {
+          "path": "samples/RR2 C#2 223.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 72,
+          "hiVel": 89,
+          "start": 0,
+          "end": 573414
+        },
+        {
+          "path": "samples/RR2 C#2 222.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 53,
+          "hiVel": 71,
+          "start": 0,
+          "end": 339938
+        },
+        {
+          "path": "samples/RR2 C#2 220.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 35,
+          "hiVel": 52,
+          "start": 0,
+          "end": 643607
+        },
+        {
+          "path": "samples/RR2 C#2 219.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 17,
+          "hiVel": 34,
+          "start": 0,
+          "end": 264118
+        },
+        {
+          "path": "samples/RR2 C#2 224.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 90,
+          "hiVel": 107,
+          "start": 0,
+          "end": 468586
+        },
+        {
+          "path": "samples/RR2 C#2 225.wav",
+          "rootNote": 49,
+          "loNote": 48,
+          "hiNote": 49,
+          "loVel": 108,
+          "hiVel": 126,
+          "start": 0,
+          "end": 889212
+        },
+        {
+          "path": "samples/RR2 C#3 172.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 55,
+          "hiVel": 69,
+          "start": 0,
+          "end": 316900
+        },
+        {
+          "path": "samples/RR2 C#3 168.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 0,
+          "hiVel": 12,
+          "start": 0,
+          "end": 191582
+        },
+        {
+          "path": "samples/RR2 C#3 171.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 41,
+          "hiVel": 54,
+          "start": 711,
+          "end": 255918
+        },
+        {
+          "path": "samples/RR2 C#3 175.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 84,
+          "hiVel": 97,
+          "start": 0,
+          "end": 342648
+        },
+        {
+          "path": "samples/RR2 C#3 169.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 13,
+          "hiVel": 26,
+          "start": 0,
+          "end": 249900
+        },
+        {
+          "path": "samples/RR2 C#3 176.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 98,
+          "hiVel": 111,
+          "start": 0,
+          "end": 361666
+        },
+        {
+          "path": "samples/RR2 C#3 177.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 112,
+          "hiVel": 126,
+          "start": 0,
+          "end": 604537
+        },
+        {
+          "path": "samples/RR2 C#3 174.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 70,
+          "hiVel": 83,
+          "start": 0,
+          "end": 290256
+        },
+        {
+          "path": "samples/RR2 C#3 170.wav",
+          "rootNote": 61,
+          "loNote": 60,
+          "hiNote": 61,
+          "loVel": 27,
+          "hiVel": 40,
+          "start": 0,
+          "end": 202125
+        },
+        {
+          "path": "samples/RR2 C#4 117.wav",
+          "rootNote": 73,
+          "loNote": 72,
+          "hiNote": 73,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 0,
+          "end": 297675
+        },
+        {
+          "path": "samples/RR2 C#4 111.wav",
+          "rootNote": 73,
+          "loNote": 72,
+          "hiNote": 73,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 160644
+        },
+        {
+          "path": "samples/RR2 C#4 114.wav",
+          "rootNote": 73,
+          "loNote": 72,
+          "hiNote": 73,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 192018
+        },
+        {
+          "path": "samples/RR2 C#4 115.wav",
+          "rootNote": 73,
+          "loNote": 72,
+          "hiNote": 73,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 196866
+        },
+        {
+          "path": "samples/RR2 C#4 113.wav",
+          "rootNote": 73,
+          "loNote": 72,
+          "hiNote": 73,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 169211
+        },
+        {
+          "path": "samples/RR2 C#5 66.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 70,
+          "hiVel": 83,
+          "start": 0,
+          "end": 200908
+        },
+        {
+          "path": "samples/RR2 C#5 67.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 84,
+          "hiVel": 97,
+          "start": 0,
+          "end": 208120
+        },
+        {
+          "path": "samples/RR2 C#5 64.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 41,
+          "hiVel": 54,
+          "start": 487,
+          "end": 210393
+        },
+        {
+          "path": "samples/RR2 C#5 60.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 0,
+          "hiVel": 12,
+          "start": 0,
+          "end": 164985
+        },
+        {
+          "path": "samples/RR2 C#5 65.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 55,
+          "hiVel": 69,
+          "start": 0,
+          "end": 205800
+        },
+        {
+          "path": "samples/RR2 C#5 62.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 27,
+          "hiVel": 40,
+          "start": 0,
+          "end": 219168
+        },
+        {
+          "path": "samples/RR2 C#5 61.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 13,
+          "hiVel": 26,
+          "start": 0,
+          "end": 216710
+        },
+        {
+          "path": "samples/RR2 C#5 69.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 98,
+          "hiVel": 111,
+          "start": 0,
+          "end": 214834
+        },
+        {
+          "path": "samples/RR2 C#5 70.wav",
+          "rootNote": 85,
+          "loNote": 84,
+          "hiNote": 85,
+          "loVel": 112,
+          "hiVel": 126,
+          "start": 0,
+          "end": 287538
+        },
+        {
+          "path": "samples/RR2 C#6 26.wav",
+          "rootNote": 97,
+          "loNote": 96,
+          "hiNote": 97,
+          "loVel": 41,
+          "hiVel": 83,
+          "start": 0,
+          "end": 180075
+        },
+        {
+          "path": "samples/RR2 C#6 24.wav",
+          "rootNote": 97,
+          "loNote": 96,
+          "hiNote": 97,
+          "loVel": 0,
+          "hiVel": 40,
+          "start": 0,
+          "end": 148401
+        },
+        {
+          "path": "samples/RR2 C#6 27.wav",
+          "rootNote": 97,
+          "loNote": 96,
+          "hiNote": 97,
+          "loVel": 84,
+          "hiVel": 126,
+          "start": 0,
+          "end": 299650
+        },
+        {
+          "path": "samples/RR2 D#0 323.wav",
+          "rootNote": 27,
+          "loNote": 26,
+          "hiNote": 27,
+          "loVel": 0,
+          "hiVel": 40,
+          "start": 0,
+          "end": 574219
+        },
+        {
+          "path": "samples/RR2 D#0 329.wav",
+          "rootNote": 27,
+          "loNote": 26,
+          "hiNote": 27,
+          "loVel": 84,
+          "hiVel": 126,
+          "start": 0,
+          "end": 1216425
+        },
+        {
+          "path": "samples/RR2 D#0 326.wav",
+          "rootNote": 27,
+          "loNote": 26,
+          "hiNote": 27,
+          "loVel": 41,
+          "hiVel": 83,
+          "start": 0,
+          "end": 651394
+        },
+        {
+          "path": "samples/RR2 D#1 264.wav",
+          "rootNote": 39,
+          "loNote": 38,
+          "hiNote": 39,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 652841
+        },
+        {
+          "path": "samples/RR2 D#1 267.wav",
+          "rootNote": 39,
+          "loNote": 38,
+          "hiNote": 39,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 786450
+        },
+        {
+          "path": "samples/RR2 D#1 262.wav",
+          "rootNote": 39,
+          "loNote": 38,
+          "hiNote": 39,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 214988
+        },
+        {
+          "path": "samples/RR2 D#1 266.wav",
+          "rootNote": 39,
+          "loNote": 38,
+          "hiNote": 39,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 651784
+        },
+        {
+          "path": "samples/RR2 D#1 269.wav",
+          "rootNote": 39,
+          "loNote": 38,
+          "hiNote": 39,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 830550
+        },
+        {
+          "path": "samples/RR2 D#1 263.wav",
+          "rootNote": 39,
+          "loNote": 38,
+          "hiNote": 39,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 413437
+        },
+        {
+          "path": "samples/RR2 D#2 209.wav",
+          "rootNote": 51,
+          "loNote": 50,
+          "hiNote": 51,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 311915
+        },
+        {
+          "path": "samples/RR2 D#2 211.wav",
+          "rootNote": 51,
+          "loNote": 50,
+          "hiNote": 51,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 478210
+        },
+        {
+          "path": "samples/RR2 D#2 213.wav",
+          "rootNote": 51,
+          "loNote": 50,
+          "hiNote": 51,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 565399
+        },
+        {
+          "path": "samples/RR2 D#2 215.wav",
+          "rootNote": 51,
+          "loNote": 50,
+          "hiNote": 51,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 570314
+        },
+        {
+          "path": "samples/RR2 D#2 212.wav",
+          "rootNote": 51,
+          "loNote": 50,
+          "hiNote": 51,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 487419
+        },
+        {
+          "path": "samples/RR2 D#2 216.wav",
+          "rootNote": 51,
+          "loNote": 50,
+          "hiNote": 51,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 943855
+        },
+        {
+          "path": "samples/RR2 D#3 161.wav",
+          "rootNote": 63,
+          "loNote": 62,
+          "hiNote": 63,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 304107
+        },
+        {
+          "path": "samples/RR2 D#3 165.wav",
+          "rootNote": 63,
+          "loNote": 62,
+          "hiNote": 63,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 574448
+        },
+        {
+          "path": "samples/RR2 D#3 163.wav",
+          "rootNote": 63,
+          "loNote": 62,
+          "hiNote": 63,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 512662
+        },
+        {
+          "path": "samples/RR2 D#3 162.wav",
+          "rootNote": 63,
+          "loNote": 62,
+          "hiNote": 63,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 2260,
+          "end": 374850
+        },
+        {
+          "path": "samples/RR2 D#3 166.wav",
+          "rootNote": 63,
+          "loNote": 62,
+          "hiNote": 63,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 582695
+        },
+        {
+          "path": "samples/RR2 D#3 160.wav",
+          "rootNote": 63,
+          "loNote": 62,
+          "hiNote": 63,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 261843
+        },
+        {
+          "path": "samples/RR2 D#4 108.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 90,
+          "hiVel": 107,
+          "start": 0,
+          "end": 195211
+        },
+        {
+          "path": "samples/RR2 D#4 102.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 17,
+          "hiVel": 34,
+          "start": 0,
+          "end": 177043
+        },
+        {
+          "path": "samples/RR2 D#4 101.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 0,
+          "hiVel": 16,
+          "start": 0,
+          "end": 153064
+        },
+        {
+          "path": "samples/RR2 D#4 106.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 53,
+          "hiVel": 71,
+          "start": 0,
+          "end": 182191
+        },
+        {
+          "path": "samples/RR2 D#4 107.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 72,
+          "hiVel": 89,
+          "start": 0,
+          "end": 198447
+        },
+        {
+          "path": "samples/RR2 D#4 104.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 35,
+          "hiVel": 52,
+          "start": 0,
+          "end": 173093
+        },
+        {
+          "path": "samples/RR2 D#4 109.wav",
+          "rootNote": 75,
+          "loNote": 74,
+          "hiNote": 75,
+          "loVel": 108,
+          "hiVel": 126,
+          "start": 0,
+          "end": 307069
+        },
+        {
+          "path": "samples/RR2 D#5 56.wav",
+          "rootNote": 87,
+          "loNote": 86,
+          "hiNote": 87,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 199431
+        },
+        {
+          "path": "samples/RR2 D#5 57.wav",
+          "rootNote": 87,
+          "loNote": 86,
+          "hiNote": 87,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 218945
+        },
+        {
+          "path": "samples/RR2 D#5 59.wav",
+          "rootNote": 87,
+          "loNote": 86,
+          "hiNote": 87,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 299512
+        },
+        {
+          "path": "samples/RR2 D#5 54.wav",
+          "rootNote": 87,
+          "loNote": 86,
+          "hiNote": 87,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 161700
+        },
+        {
+          "path": "samples/RR2 D#5 55.wav",
+          "rootNote": 87,
+          "loNote": 86,
+          "hiNote": 87,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 173299
+        },
+        {
+          "path": "samples/RR2 D#5 53.wav",
+          "rootNote": 87,
+          "loNote": 86,
+          "hiNote": 87,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 134138
+        },
+        {
+          "path": "samples/RR2 D#6 21.wav",
+          "rootNote": 99,
+          "loNote": 98,
+          "hiNote": 99,
+          "loVel": 41,
+          "hiVel": 83,
+          "start": 0,
+          "end": 178788
+        },
+        {
+          "path": "samples/RR2 D#6 23.wav",
+          "rootNote": 99,
+          "loNote": 98,
+          "hiNote": 99,
+          "loVel": 84,
+          "hiVel": 126,
+          "start": 0,
+          "end": 357762
+        },
+        {
+          "path": "samples/RR2 D#6 20.wav",
+          "rootNote": 99,
+          "loNote": 98,
+          "hiNote": 99,
+          "loVel": 0,
+          "hiVel": 40,
+          "start": 0,
+          "end": 146082
+        },
+        {
+          "path": "samples/RR2 F0 317.wav",
+          "rootNote": 29,
+          "loNote": 28,
+          "hiNote": 29,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 2936325
+        },
+        {
+          "path": "samples/RR2 F0 311.wav",
+          "rootNote": 29,
+          "loNote": 28,
+          "hiNote": 29,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 0,
+          "end": 398738
+        },
+        {
+          "path": "samples/RR2 F0 313.wav",
+          "rootNote": 29,
+          "loNote": 28,
+          "hiNote": 29,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 0,
+          "end": 325237
+        },
+        {
+          "path": "samples/RR2 F0 314.wav",
+          "rootNote": 29,
+          "loNote": 28,
+          "hiNote": 29,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 2528,
+          "end": 922425
+        },
+        {
+          "path": "samples/RR2 F1 255.wav",
+          "rootNote": 41,
+          "loNote": 40,
+          "hiNote": 41,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 682631
+        },
+        {
+          "path": "samples/RR2 F1 252.wav",
+          "rootNote": 41,
+          "loNote": 40,
+          "hiNote": 41,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 474075
+        },
+        {
+          "path": "samples/RR2 F1 257.wav",
+          "rootNote": 41,
+          "loNote": 40,
+          "hiNote": 41,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 825956
+        },
+        {
+          "path": "samples/RR2 F1 253.wav",
+          "rootNote": 41,
+          "loNote": 40,
+          "hiNote": 41,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 632100
+        },
+        {
+          "path": "samples/RR2 F1 259.wav",
+          "rootNote": 41,
+          "loNote": 40,
+          "hiNote": 41,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 1090556
+        },
+        {
+          "path": "samples/RR2 F1 256.wav",
+          "rootNote": 41,
+          "loNote": 40,
+          "hiNote": 41,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 649557
+        },
+        {
+          "path": "samples/RR2 F2 205.wav",
+          "rootNote": 53,
+          "loNote": 52,
+          "hiNote": 53,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 584700
+        },
+        {
+          "path": "samples/RR2 F2 207.wav",
+          "rootNote": 53,
+          "loNote": 52,
+          "hiNote": 53,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 801150
+        },
+        {
+          "path": "samples/RR2 F2 206.wav",
+          "rootNote": 53,
+          "loNote": 52,
+          "hiNote": 53,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 680419
+        },
+        {
+          "path": "samples/RR2 F2 203.wav",
+          "rootNote": 53,
+          "loNote": 52,
+          "hiNote": 53,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 357393
+        },
+        {
+          "path": "samples/RR2 F2 202.wav",
+          "rootNote": 53,
+          "loNote": 52,
+          "hiNote": 53,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 292163
+        },
+        {
+          "path": "samples/RR2 F2 204.wav",
+          "rootNote": 53,
+          "loNote": 52,
+          "hiNote": 53,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 409763
+        },
+        {
+          "path": "samples/RR2 F3 156.wav",
+          "rootNote": 65,
+          "loNote": 64,
+          "hiNote": 65,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 376068
+        },
+        {
+          "path": "samples/RR2 F3 157.wav",
+          "rootNote": 65,
+          "loNote": 64,
+          "hiNote": 65,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 425381
+        },
+        {
+          "path": "samples/RR2 F3 155.wav",
+          "rootNote": 65,
+          "loNote": 64,
+          "hiNote": 65,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 282676
+        },
+        {
+          "path": "samples/RR2 F3 154.wav",
+          "rootNote": 65,
+          "loNote": 64,
+          "hiNote": 65,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 149756
+        },
+        {
+          "path": "samples/RR2 F3 159.wav",
+          "rootNote": 65,
+          "loNote": 64,
+          "hiNote": 65,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 546427
+        },
+        {
+          "path": "samples/RR2 F3 158.wav",
+          "rootNote": 65,
+          "loNote": 64,
+          "hiNote": 65,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 477061
+        },
+        {
+          "path": "samples/RR2 F4 96.wav",
+          "rootNote": 77,
+          "loNote": 76,
+          "hiNote": 77,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 216388
+        },
+        {
+          "path": "samples/RR2 F4 100.wav",
+          "rootNote": 77,
+          "loNote": 76,
+          "hiNote": 77,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 0,
+          "end": 300821
+        },
+        {
+          "path": "samples/RR2 F4 95.wav",
+          "rootNote": 77,
+          "loNote": 76,
+          "hiNote": 77,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 211749
+        },
+        {
+          "path": "samples/RR2 F4 98.wav",
+          "rootNote": 77,
+          "loNote": 76,
+          "hiNote": 77,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 254104
+        },
+        {
+          "path": "samples/RR2 F4 94.wav",
+          "rootNote": 77,
+          "loNote": 76,
+          "hiNote": 77,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 175481
+        },
+        {
+          "path": "samples/RR2 F5 51.wav",
+          "rootNote": 89,
+          "loNote": 88,
+          "hiNote": 89,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 0,
+          "end": 261844
+        },
+        {
+          "path": "samples/RR2 F5 47.wav",
+          "rootNote": 89,
+          "loNote": 88,
+          "hiNote": 89,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 0,
+          "end": 140569
+        },
+        {
+          "path": "samples/RR2 F5 46.wav",
+          "rootNote": 89,
+          "loNote": 88,
+          "hiNote": 89,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 127706
+        },
+        {
+          "path": "samples/RR2 F5 49.wav",
+          "rootNote": 89,
+          "loNote": 88,
+          "hiNote": 89,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 0,
+          "end": 158025
+        },
+        {
+          "path": "samples/RR2 F5 50.wav",
+          "rootNote": 89,
+          "loNote": 88,
+          "hiNote": 89,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 196612
+        },
+        {
+          "path": "samples/RR2 F6 16.wav",
+          "rootNote": 101,
+          "loNote": 100,
+          "hiNote": 101,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 0,
+          "end": 136411
+        },
+        {
+          "path": "samples/RR2 F6 18.wav",
+          "rootNote": 101,
+          "loNote": 100,
+          "hiNote": 101,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 0,
+          "end": 122837
+        },
+        {
+          "path": "samples/RR2 F6 17.wav",
+          "rootNote": 101,
+          "loNote": 100,
+          "hiNote": 101,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 0,
+          "end": 136457
+        },
+        {
+          "path": "samples/RR2 F6 19.wav",
+          "rootNote": 101,
+          "loNote": 100,
+          "hiNote": 101,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 193214
+        },
+        {
+          "path": "samples/RR2 G0 302.wav",
+          "rootNote": 31,
+          "loNote": 30,
+          "hiNote": 31,
+          "loVel": 0,
+          "hiVel": 23,
+          "start": 0,
+          "end": 380363
+        },
+        {
+          "path": "samples/RR2 G0 303.wav",
+          "rootNote": 31,
+          "loNote": 30,
+          "hiNote": 31,
+          "loVel": 24,
+          "hiVel": 49,
+          "start": 2985,
+          "end": 474075
+        },
+        {
+          "path": "samples/RR2 G0 309.wav",
+          "rootNote": 31,
+          "loNote": 30,
+          "hiNote": 31,
+          "loVel": 101,
+          "hiVel": 126,
+          "start": 0,
+          "end": 1070780
+        },
+        {
+          "path": "samples/RR2 G0 304.wav",
+          "rootNote": 31,
+          "loNote": 30,
+          "hiNote": 31,
+          "loVel": 50,
+          "hiVel": 74,
+          "start": 3003,
+          "end": 646800
+        },
+        {
+          "path": "samples/RR2 G0 306.wav",
+          "rootNote": 31,
+          "loNote": 30,
+          "hiNote": 31,
+          "loVel": 75,
+          "hiVel": 100,
+          "start": 0,
+          "end": 981707
+        },
+        {
+          "path": "samples/RR2 G1 250.wav",
+          "rootNote": 43,
+          "loNote": 42,
+          "hiNote": 43,
+          "loVel": 95,
+          "hiVel": 126,
+          "start": 0,
+          "end": 929775
+        },
+        {
+          "path": "samples/RR2 G1 246.wav",
+          "rootNote": 43,
+          "loNote": 42,
+          "hiNote": 43,
+          "loVel": 31,
+          "hiVel": 62,
+          "start": 0,
+          "end": 702408
+        },
+        {
+          "path": "samples/RR2 G1 245.wav",
+          "rootNote": 43,
+          "loNote": 42,
+          "hiNote": 43,
+          "loVel": 0,
+          "hiVel": 30,
+          "start": 0,
+          "end": 571347
+        },
+        {
+          "path": "samples/RR2 G1 248.wav",
+          "rootNote": 43,
+          "loNote": 42,
+          "hiNote": 43,
+          "loVel": 63,
+          "hiVel": 94,
+          "start": 0,
+          "end": 554557
+        },
+        {
+          "path": "samples/RR2 G2 194.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 17,
+          "hiVel": 34,
+          "start": 0,
+          "end": 328912
+        },
+        {
+          "path": "samples/RR2 G2 198.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 72,
+          "hiVel": 89,
+          "start": 0,
+          "end": 387713
+        },
+        {
+          "path": "samples/RR2 G2 193.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 0,
+          "hiVel": 16,
+          "start": 0,
+          "end": 197531
+        },
+        {
+          "path": "samples/RR2 G2 196.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 35,
+          "hiVel": 52,
+          "start": 0,
+          "end": 418950
+        },
+        {
+          "path": "samples/RR2 G2 197.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 53,
+          "hiVel": 71,
+          "start": 0,
+          "end": 323400
+        },
+        {
+          "path": "samples/RR2 G2 199.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 90,
+          "hiVel": 107,
+          "start": 0,
+          "end": 396417
+        },
+        {
+          "path": "samples/RR2 G2 200.wav",
+          "rootNote": 55,
+          "loNote": 54,
+          "hiNote": 55,
+          "loVel": 108,
+          "hiVel": 126,
+          "start": 0,
+          "end": 488339
+        },
+        {
+          "path": "samples/RR2 G3 152.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 95,
+          "hiVel": 110,
+          "start": 0,
+          "end": 230044
+        },
+        {
+          "path": "samples/RR2 G3 146.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 0,
+          "hiVel": 14,
+          "start": 0,
+          "end": 171865
+        },
+        {
+          "path": "samples/RR2 G3 151.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 79,
+          "hiVel": 94,
+          "start": 0,
+          "end": 231296
+        },
+        {
+          "path": "samples/RR2 G3 153.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 111,
+          "hiVel": 126,
+          "start": 0,
+          "end": 329911
+        },
+        {
+          "path": "samples/RR2 G3 150.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 63,
+          "hiVel": 78,
+          "start": 0,
+          "end": 218823
+        },
+        {
+          "path": "samples/RR2 G3 149.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 47,
+          "hiVel": 62,
+          "start": 0,
+          "end": 214620
+        },
+        {
+          "path": "samples/RR2 G3 147.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 15,
+          "hiVel": 30,
+          "start": 0,
+          "end": 192018
+        },
+        {
+          "path": "samples/RR2 G3 148.wav",
+          "rootNote": 67,
+          "loNote": 66,
+          "hiNote": 67,
+          "loVel": 31,
+          "hiVel": 46,
+          "start": 0,
+          "end": 210394
+        },
+        {
+          "path": "samples/RR2 G4 89.wav",
+          "rootNote": 79,
+          "loNote": 78,
+          "hiNote": 79,
+          "loVel": 41,
+          "hiVel": 62,
+          "start": 0,
+          "end": 207017
+        },
+        {
+          "path": "samples/RR2 G4 93.wav",
+          "rootNote": 79,
+          "loNote": 78,
+          "hiNote": 79,
+          "loVel": 105,
+          "hiVel": 126,
+          "start": 0,
+          "end": 328155
+        },
+        {
+          "path": "samples/RR2 G4 91.wav",
+          "rootNote": 79,
+          "loNote": 78,
+          "hiNote": 79,
+          "loVel": 63,
+          "hiVel": 83,
+          "start": 0,
+          "end": 229144
+        },
+        {
+          "path": "samples/RR2 G4 92.wav",
+          "rootNote": 79,
+          "loNote": 78,
+          "hiNote": 79,
+          "loVel": 84,
+          "hiVel": 104,
+          "start": 0,
+          "end": 265603
+        },
+        {
+          "path": "samples/RR2 G4 87.wav",
+          "rootNote": 79,
+          "loNote": 78,
+          "hiNote": 79,
+          "loVel": 0,
+          "hiVel": 19,
+          "start": 0,
+          "end": 121183
+        },
+        {
+          "path": "samples/RR2 G4 88.wav",
+          "rootNote": 79,
+          "loNote": 78,
+          "hiNote": 79,
+          "loVel": 20,
+          "hiVel": 40,
+          "start": 0,
+          "end": 155269
+        },
+        {
+          "path": "samples/RR2 G5 44.wav",
+          "rootNote": 91,
+          "loNote": 90,
+          "hiNote": 91,
+          "loVel": 84,
+          "hiVel": 126,
+          "start": 0,
+          "end": 263498
+        },
+        {
+          "path": "samples/RR2 G5 42.wav",
+          "rootNote": 91,
+          "loNote": 90,
+          "hiNote": 91,
+          "loVel": 0,
+          "hiVel": 40,
+          "start": 468,
+          "end": 149757
+        },
+        {
+          "path": "samples/RR2 G5 43.wav",
+          "rootNote": 91,
+          "loNote": 90,
+          "hiNote": 91,
+          "loVel": 41,
+          "hiVel": 83,
+          "start": 0,
+          "end": 150858
+        },
+        {
+          "path": "samples/RR2 G6 14.wav",
+          "rootNote": 103,
+          "loNote": 102,
+          "hiNote": 103,
+          "loVel": 84,
+          "hiVel": 126,
+          "start": 0,
+          "end": 426300
+        },
+        {
+          "path": "samples/RR2 G6 11.wav",
+          "rootNote": 103,
+          "loNote": 102,
+          "hiNote": 103,
+          "loVel": 0,
+          "hiVel": 40,
+          "start": 0,
+          "end": 136526
+        },
+        {
+          "path": "samples/RR2 G6 12.wav",
+          "rootNote": 103,
+          "loNote": 102,
+          "hiNote": 103,
+          "loVel": 41,
+          "hiVel": 83,
+          "start": 0,
+          "end": 162068
+        }
+      ]
+    }
+  ]
+}

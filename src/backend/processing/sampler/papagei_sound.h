@@ -5,7 +5,7 @@
 #include <juce_audio_formats/juce_audio_formats.h>
 
 // preload buffer size
-#define PRELOAD_BUFFER_SIZE 1024
+#define PRELOAD_BUFFER_SIZE 128
 
 namespace soundboard {
 namespace processing {

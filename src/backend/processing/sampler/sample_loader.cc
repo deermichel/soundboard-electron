@@ -112,12 +112,12 @@ void SampleLoader::fillInactiveBuffer() {
 void SampleLoader::requestNewData() {
     mWriteBufferIsBeingFilled = true; // mutex
 
-#if LOAD_SAMPLES_IN_AUDIO_THREAD
-    runJob(); // run synchronously
-#else
+// #if LOAD_SAMPLES_IN_AUDIO_THREAD
+//     runJob(); // run synchronously
+// #else
     jassert(!mThreadPool->contains(this)); // check if the background thread is already loading this sound
     mThreadPool->addJob(this, false);
-#endif
+// #endif
 }
 
 // swap buffers
