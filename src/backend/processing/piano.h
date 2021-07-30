@@ -3,7 +3,7 @@
 
 #include <juce_audio_basics/juce_audio_basics.h>
 #include "base_processor.h"
-#include "layered_sampler.h"
+#include "sampler/papagei_sampler.h"
 
 namespace soundboard {
 namespace processing {
@@ -30,7 +30,7 @@ public:
 
 private:
     // sampler
-    LayeredSampler mSampler;
+    PapageiSampler mSampler;
 };
 
 } // namespace processing

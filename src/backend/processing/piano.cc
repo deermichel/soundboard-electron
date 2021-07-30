@@ -1,7 +1,8 @@
 #include <juce_audio_formats/juce_audio_formats.h>
 #include <nlohmann/json.h>
-#include "layered_sampler_sound.h"
 #include "piano.h"
+#include "sampler/papagei_sound.h"
+#include "sampler/papagei_voice.h"
 
 namespace soundboard {
 namespace processing {
@@ -35,21 +36,24 @@ Piano::Piano() {
     // fill sample banks
     juce::WavAudioFormat wavFormat;
     for (const auto &group : metadata.groups) {
-        const auto bank = mSampler.addSoundBank();
+        // const auto bank = mSampler.addSoundBank();
         for (const auto &sample : group.samples) {
             // open file
             const auto sampleFile = juce::File::getCurrentWorkingDirectory().getChildFile(sample.path);
-            const auto audioReader = wavFormat.createReaderFor(sampleFile.createInputStream().release(), true);
+            // const auto audioReader = wavFormat.createReaderFor(sampleFile.createInputStream().release(), true);
 
             // read meta
             juce::BigInteger midiNotes, velocities;
             midiNotes.setRange(sample.loNote, sample.hiNote - sample.loNote + 1, true);
             velocities.setRange(sample.loVel, sample.hiVel - sample.loVel + 1, true);
-            const double maxSampleLengthSeconds = sample.end / 44100.0 + 1; // TODO: use actual sample rate
+            // const double maxSampleLengthSeconds = sample.end / 44100.0 + 1; // TODO: use actual sample rate
 
             // add sound
-            const auto sound = new LayeredSamplerSound(sample.path, *audioReader, midiNotes, velocities, sample.rootNote, 0.001, 0.1, maxSampleLengthSeconds);
-            mSampler.addSoundToBank(sound, bank);
+            const auto sound = new PapageiSound(sampleFile, midiNotes, velocities, sample.rootNote);
+            mSampler.addSound(sound);
+            printf("added sound %s\n", sampleFile.getFileName().toStdString().c_str());
+            // const auto sound = new LayeredSamplerSound(sample.path, *audioReader, midiNotes, velocities, sample.rootNote, 0.001, 0.1, maxSampleLengthSeconds);
+            // mSampler.addSoundToBank(sound, bank);
         }
     }
 
@@ -71,8 +75,8 @@ void Piano::processBlock(juce::AudioBuffer<float> &buffer, juce::MidiBuffer &mid
 // should reset any playing voices
 void Piano::reset() {
     mSampler.clearVoices();
-    for (unsigned int i = 0; i < 128; i++) {
-        mSampler.addVoice(new juce::SamplerVoice());
+    for (unsigned int i = 0; i < 64; i++) {
+        mSampler.addVoice(new PapageiVoice(nullptr));
     }
 }
 

@@ -12,6 +12,11 @@ public:
     // construct sampler
     PapageiSampler() {}
 
+    // --- overrides ---
+
+    // handle note on event
+    void noteOn(int midiChannel, int midiNoteNumber, float velocity) override;
+
 private:
 };
 

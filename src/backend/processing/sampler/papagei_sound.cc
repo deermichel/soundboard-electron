@@ -5,7 +5,7 @@ namespace processing {
 
 // construct sampler sound
 PapageiSound::PapageiSound(const juce::File &file, const juce::BigInteger &midiNotes, const juce::BigInteger &velocities, int midiNoteForNormalPitch) :
-    mFileName(file.getFullPathName().toStdString()), mMidiNotes(midiNotes), mRootNote(midiNoteForNormalPitch), mVelocities(mVelocities) {
+    mFileName(file.getFullPathName().toStdString()), mMidiNotes(midiNotes), mRootNote(midiNoteForNormalPitch), mVelocities(velocities) {
 
     // map file to memory
     juce::WavAudioFormat waf;
@@ -16,6 +16,10 @@ PapageiSound::PapageiSound(const juce::File &file, const juce::BigInteger &midiN
     mSourceSampleRate = mAudioFormatReader->sampleRate;
     mLength = mAudioFormatReader->lengthInSamples;
     if (mSourceSampleRate == 0 || mLength == 0) throw std::runtime_error("invalid sample rate or empty audio file: " + mFileName);
+
+    // adsr
+    mAdsrParams.attack = 0.001;
+    mAdsrParams.release = 0.1;
 
     // preload sample
     setPreloadSize(PRELOAD_BUFFER_SIZE);

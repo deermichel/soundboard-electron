@@ -27,11 +27,12 @@ target_sources(soundboard
         "ext/juce/modules/juce_gui_basics/juce_gui_basics.mm"
         "src/backend/audio_engine.cc"
         "src/backend/main.cc"
-        "src/backend/processing/layered_sampler.cc"
-        "src/backend/processing/layered_sampler_sound.cc"
         "src/backend/processing/mixer.cc"
         "src/backend/processing/oscillator.cc"
         "src/backend/processing/piano.cc"
+        "src/backend/processing/sampler/papagei_sampler.cc"
+        "src/backend/processing/sampler/papagei_sound.cc"
+        "src/backend/processing/sampler/papagei_voice.cc"
 )
 
 # defs

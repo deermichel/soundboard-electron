@@ -22,6 +22,9 @@ public:
     // return adsr parameters
     juce::ADSR::Parameters getEnvelopeParameters() const { return mAdsrParams; }
 
+    // return length in samples
+    unsigned int getLength() const { return mLength; }
+
 	// return pitch ratio for the note number
 	double getPitchRatio(int noteNumberToPitch) const { return pow(2.0, (noteNumberToPitch - mRootNote) / 12.0); }
 
@@ -52,7 +55,7 @@ public:
     bool appliesToChannel(int midiChannel) override;
 
     // return true if this sound should be played when a given midi note is pressed
-    bool appliesToNote(int midiNoteNumber) override { jassertfalse; return false; } // ERROR: wrong method called -> use appliesToNoteWithVelocity instead
+    bool appliesToNote(int midiNoteNumber) override { return mMidiNotes[midiNoteNumber]; } // TODO: currently ignore velocity for noteOff
 
 private:
     // adsr parameters
