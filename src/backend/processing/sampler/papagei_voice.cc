@@ -82,7 +82,7 @@ void PapageiVoice::startNote(int midiNoteNumber, float velocity, juce::Synthesis
 
         // pitch & velocity
         mPitchRatio = juce::jmin(sound->getPitchRatio(midiNoteNumber), (double)MAX_SAMPLER_PITCH) * sound->getSourceSampleRate() / getSampleRate();
-        mGain = velocity * 3;
+        mGain = velocity;
 
         // adsr
         mAdsr.setSampleRate(sound->getSourceSampleRate());
