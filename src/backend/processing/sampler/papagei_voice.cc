@@ -37,7 +37,7 @@ void PapageiVoice::renderNextBlock(juce::AudioBuffer<float> &outputBuffer, int s
     }
 
     // get buffers
-    mLoader.fillSampleBlockBuffer(mSamplesForThisBlock, samplesToCopy, offset);
+    mLoader.fillSampleBlockBuffer(mSamplesForThisBlock, samplesToCopy, (mSourceSamplePosition + numSamples * mPitchRatio) - offset, offset);
     const float *inL = mSamplesForThisBlock.getReadPointer(0);
     const float *inR = mSamplesForThisBlock.getNumChannels() > 1 ? mSamplesForThisBlock.getReadPointer(1) : nullptr;
     float *outL = outputBuffer.getWritePointer(0, startSample);

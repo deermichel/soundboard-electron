@@ -17,9 +17,11 @@ SampleLoader::SampleLoader(juce::ThreadPool *threadPool) :
 }
 
 // fill buffer with samples from the current read buffer (works with buffer swapping)
-void SampleLoader::fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuffer, int numSamples, int sampleIndex) {
+void SampleLoader::fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuffer, int numSamples, int numActualSamples, int sampleIndex) {
     // since the numSamples is only a estimate for buffering, the sampleIndex is used for the exact clock
     mReadIndex = sampleIndex % mBufferSize;
+
+    // printf("fill %d r %d c %d cA %d\n", sampleIndex, mReadIndex, numSamples, numActualSamples);
 
     // fill buffer
     jassert(mSound != nullptr);
@@ -34,18 +36,30 @@ void SampleLoader::fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuf
         juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, 0), mReadBuffer->getReadPointer(0, mReadIndex), remainingSamples);
         juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, 0), mReadBuffer->getReadPointer(1, mReadIndex), remainingSamples);
 
+        jassert(!mWriteBufferIsBeingFilled);
+        const int numSamplesInNewReadBuffer = numSamples - remainingSamples;
+        juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, remainingSamples), mWriteBuffer->getReadPointer(0, 0), numSamplesInNewReadBuffer);
+        juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, remainingSamples), mWriteBuffer->getReadPointer(1, 0), numSamplesInNewReadBuffer);
+
         // swap buffers and copy remaining samples from the new read buffer
-        if (swapBuffers()) {
-            mReadIndex = 0;
-            const int numSamplesInNewReadBuffer = numSamples - remainingSamples;
-            juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(0, remainingSamples), mReadBuffer->getReadPointer(0, mReadIndex), numSamplesInNewReadBuffer);
-            juce::FloatVectorOperations::copy(sampleBlockBuffer.getWritePointer(1, remainingSamples), mReadBuffer->getReadPointer(1, mReadIndex), numSamplesInNewReadBuffer);
-            mPositionInSampleFile += mBufferSize;
-            requestNewData();
-        } else {
-            jassertfalse; // ERROR: background thread was not quick enough -> increase preload / buffer size
+        if (mReadIndex + numActualSamples >= mBufferSize) {
+            if (swapBuffers()) {
+                mPositionInSampleFile += mBufferSize;
+                requestNewData();
+            } else {
+                jassertfalse; // ERROR: background thread was not quick enough -> increase preload / buffer size
+            }
         }
     }
+
+    // auto &buffer = mSound->getPreloadBuffer();
+    // static int count = 0;
+    // for (int i = 0; i < numSamples; i++) {
+    //     if (sampleBlockBuffer.getSample(0, i) != buffer.getSample(0, i+sampleIndex)) {
+    //         printf("%d (%d): %f vs %f\n", i+sampleIndex, i, sampleBlockBuffer.getSample(0, i), buffer.getSample(0, i+sampleIndex));
+    //         if (count++ > 256) exit(1);
+    //     }
+    // }
 }
 
 // reset loader (unloads sound)

@@ -5,7 +5,7 @@
 #include "papagei_sound.h"
 
 // streaming buffer size
-#define STREAMING_BUFFER_SIZE 128
+#define STREAMING_BUFFER_SIZE 512
 
 namespace soundboard {
 namespace processing {
@@ -17,7 +17,7 @@ public:
     SampleLoader(juce::ThreadPool *threadPool);
 
     // fill buffer with samples from the current read buffer (works with buffer swapping)
-    void fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuffer, int numSamples, int sampleIndex);
+    void fillSampleBlockBuffer(juce::AudioSampleBuffer &sampleBlockBuffer, int numSamples, int numActualSamples, int sampleIndex);
 
     // return loaded sound
     const PapageiSound* getLoadedSound() const { return mSound; }
