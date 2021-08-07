@@ -2,21 +2,28 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AudioUnit, AudioUnitParamId, AudioUnitId, Session, AudioUnitRef, ParameterValue } from "backend/types";
 import { AppThunk } from "./index";
 
+// views
+export enum View {
+    Devices = "devices",
+    Edit = "edit",
+    Perform = "perform",
+}
+
 // app state
 interface AppState {
-    editMode: boolean,
     parameterValues: { [ref in AudioUnitRef]: { [id in AudioUnitParamId]: ParameterValue } },
     session: Session,
+    view: View,
 }
 
 // initial state
 const initialState: AppState = {
-    editMode: false,
     parameterValues: {},
     session: {
         channelStrips: [],
         name: "New Session",
     },
+    view: View.Perform,
 };
 
 // slice
@@ -44,9 +51,9 @@ const appSlice = createSlice({
             state.session.channelStrips.splice(payload.index, 1);
         },
 
-        // set edit mode
-        setEditMode: (state, { payload }: PayloadAction<boolean>) => {
-            state.editMode = payload;
+        // set view
+        setView: (state, { payload }: PayloadAction<View>) => {
+            state.view = payload;
         },
 
         // update parameter values (single audio unit)
@@ -62,7 +69,7 @@ const appSlice = createSlice({
 });
 
 // inferred actions
-export const { setEditMode } = appSlice.actions;
+export const { setView } = appSlice.actions;
 
 // TODO: action payload validation + error handling
 

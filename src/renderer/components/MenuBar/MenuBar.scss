@@ -1,6 +1,6 @@
 @import "theme.scss";
 
-.button {
+.iconButton {
     all: unset;
     align-items: center;
     background-color: $color-container;
@@ -9,12 +9,21 @@
     display: flex;
     height: 64px;
     justify-content: center;
+    margin-right: 16px;
     // transition: .1s ease-out;
     width: 64px;
 
     &:active {
         background-color: #595959; // TODO: theming
     }
+}
+
+.button {
+    @extend .iconButton;
+    font-weight: bold;
+    padding: 0 16px;
+    width: auto;
+    span { margin-left: 8px; }
 }
 
 .root {
@@ -24,7 +33,7 @@
     display: flex;
     left: 0;
     justify-content: flex-end;
-    padding: 16px;
+    padding: 16px 0;
     position: fixed;
     right: 0;
     top: 0;

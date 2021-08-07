@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AudioUnitPlaceholder, AudioUnit } from "renderer/components";
 import { AudioUnitParamId, AudioUnitId, AudioUnitType } from "backend/types";
 import { useAppDispatch, useAppSelector } from "renderer/store/hooks";
-import { addChannelStrip, insertAudioUnit, removeAudioUnit, removeChannelStrip, setParameterValue } from "renderer/store/app";
+import { addChannelStrip, insertAudioUnit, removeAudioUnit, removeChannelStrip, setParameterValue, View } from "renderer/store/app";
 import styles from "./ChannelStrip.scss";
 import MenuButtons from "./MenuButtons";
 
@@ -17,7 +17,7 @@ const ChannelStrip = ({ channelStripIndex }: ChannelStripProps) => {
     const dispatch = useAppDispatch();
     const audioUnits = useAppSelector((state) => state.session.channelStrips[channelStripIndex]?.audioUnits || []);
     const parameterValues = useAppSelector((state) => state.parameterValues);
-    const editMode = useAppSelector((state) => state.editMode);
+    const editMode = useAppSelector((state) => state.view === View.Edit);
     const [showPlaceholder, setShowPlaceholder] = useState<{ atIndex: number, mode: "add" | "edit" }>(); // show audio unit placeholder at index
     const isPlaceholder = audioUnits.length === 0;
 
