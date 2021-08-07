@@ -71,6 +71,7 @@ TODO: write some history starting from Pedalboard and the four attempts before t
 
 ### Ideas
 - [backend&frontend] quick transpose
+- [backend&frontend] support [SOUL](https://soul.dev/) modules
 - [frontend] first steps builtin tutorial
 - [frontend] i18n: church slang
 - [org] setup CI/CD pipeline with GitHub Actions
