@@ -5,7 +5,7 @@
             "sources": [
                 "ext/juce/modules/juce_audio_basics/juce_audio_basics.mm",
                 "ext/juce/modules/juce_audio_devices/juce_audio_devices.mm",
-                "ext/juce/modules/juce_audio_formats/juce_audio_formats.mm"
+                "ext/juce/modules/juce_audio_formats/juce_audio_formats.mm",
                 "ext/juce/modules/juce_audio_processors/juce_audio_processors.mm",
                 "ext/juce/modules/juce_audio_utils/juce_audio_utils.mm",
                 "ext/juce/modules/juce_core/juce_core.mm",
